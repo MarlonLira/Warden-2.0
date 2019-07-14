@@ -104,7 +104,9 @@
     <Content Include="Components\Styles\CssUsc.ascx" />
     <Content Include="Components\Styles\JsUsc.ascx" />
     <Content Include="Default.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Components\BaseUsc.ascx.cs">
