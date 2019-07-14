@@ -10,6 +10,6 @@
 namespace Warden.Components.Styles {
     
     
-    public partial class JsUsc {
+    public partial class Jss {
     }
 }
