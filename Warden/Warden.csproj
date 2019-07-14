@@ -90,6 +90,7 @@
     <Content Include="assets\js\core\bootstrap.min.js" />
     <Content Include="assets\js\core\jquery.min.js" />
     <Content Include="assets\js\core\popper.min.js" />
+    <Content Include="assets\js\core\sidebar.js" />
     <Content Include="assets\js\plugins\bootstrap-notify.js" />
     <Content Include="assets\js\plugins\chartjs.min.js" />
     <Content Include="assets\js\plugins\perfect-scrollbar.jquery.min.js" />
