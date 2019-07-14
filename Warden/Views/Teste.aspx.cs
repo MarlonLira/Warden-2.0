@@ -9,7 +9,8 @@ namespace Warden.Views {
         }
 
         private void Btn_teste_OnClick() {
-            Response.Redirect("www.google.com.br", false);
+            Label1.Text = "teste";
+            
         }
     }
 }

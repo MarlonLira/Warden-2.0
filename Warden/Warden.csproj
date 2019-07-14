@@ -98,7 +98,12 @@
     <Content Include="assets\js\plugins\perfect-scrollbar.jquery.min.js" />
     <Content Include="BasePge.aspx" />
     <Content Include="Components\BaseUsc.ascx" />
+    <Content Include="Components\Common\AlertUsc.ascx" />
     <Content Include="Components\Common\ButtonUsc.ascx" />
+    <Content Include="Components\Common\CardUsc.ascx" />
+    <Content Include="Components\Common\DropdownUsc.ascx" />
+    <Content Include="Components\Common\TableUsc.ascx" />
+    <Content Include="Components\Common\TextBoxUsc.ascx" />
     <Content Include="Components\Controls\FooterUsc.ascx" />
     <Content Include="Components\Controls\MainUsc.ascx" />
     <Content Include="Components\Controls\NavbarUsc.ascx" />
@@ -127,12 +132,47 @@
     <Compile Include="Components\BaseUsc.ascx.designer.cs">
       <DependentUpon>BaseUsc.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Common\AlertUsc.ascx.cs">
+      <DependentUpon>AlertUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\AlertUsc.ascx.designer.cs">
+      <DependentUpon>AlertUsc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\Common\ButtonUsc.ascx.cs">
       <DependentUpon>ButtonUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Components\Common\ButtonUsc.ascx.designer.cs">
       <DependentUpon>ButtonUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\CardUsc.ascx.cs">
+      <DependentUpon>CardUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\CardUsc.ascx.designer.cs">
+      <DependentUpon>CardUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\DropdownUsc.ascx.cs">
+      <DependentUpon>DropdownUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\DropdownUsc.ascx.designer.cs">
+      <DependentUpon>DropdownUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\TableUsc.ascx.cs">
+      <DependentUpon>TableUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\TableUsc.ascx.designer.cs">
+      <DependentUpon>TableUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\TextBoxUsc.ascx.cs">
+      <DependentUpon>TextBoxUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\TextBoxUsc.ascx.designer.cs">
+      <DependentUpon>TextBoxUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Controls\FooterUsc.ascx.cs">
       <DependentUpon>FooterUsc.ascx</DependentUpon>
