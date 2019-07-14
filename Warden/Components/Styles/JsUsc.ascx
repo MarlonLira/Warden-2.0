@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="JsUsc.ascx.cs" Inherits="Warden.Components.Styles.Jss" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="JsUsc.ascx.cs" Inherits="Warden.Components.Styles.JsUsc" %>
 <%@ Import Namespace="Warden.Helper" %>
 
 <!--   Core JS Files   -->
@@ -8,8 +8,8 @@
 <script src="<%=Help.FormatUrl("/assets/js/plugins/perfect-scrollbar.jquery.min")%>"></script>
 
 <!--  Google Maps Plugin    -->
-<!-- Place this tag in your head or just before your close body tag. -->
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+<!-- Place this tag in your head or just before your close body tag. 
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>-->
 
 <!-- Chart JS -->
 <script src="<%=Help.FormatUrl("/assets/js/plugins/chartjs.min")%>"></script>
@@ -19,6 +19,7 @@
 
 <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="<%=Help.FormatUrl("/assets/js/black-dashboard.min.js?v=1.0.0")%>"></script>
+<script src="<%=Help.FormatUrl("/assets/demo/demo.js")%>"></script>
 
 
 <script>

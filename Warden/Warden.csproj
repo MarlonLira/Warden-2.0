@@ -94,6 +94,9 @@
     <Content Include="assets\js\plugins\chartjs.min.js" />
     <Content Include="assets\js\plugins\perfect-scrollbar.jquery.min.js" />
     <Content Include="Components\BaseUsc.ascx" />
+    <Content Include="Components\Controls\FooterUsc.ascx" />
+    <Content Include="Components\Controls\MainUsc.ascx" />
+    <Content Include="Components\Controls\SidebarUsc.ascx" />
     <Content Include="Components\Styles\CssUsc.ascx" />
     <Content Include="Components\Styles\JsUsc.ascx" />
     <Content Include="Default.aspx" />
@@ -106,6 +109,27 @@
     </Compile>
     <Compile Include="Components\BaseUsc.ascx.designer.cs">
       <DependentUpon>BaseUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Controls\FooterUsc.ascx.cs">
+      <DependentUpon>FooterUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\FooterUsc.ascx.designer.cs">
+      <DependentUpon>FooterUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Controls\MainUsc.ascx.cs">
+      <DependentUpon>MainUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\MainUsc.ascx.designer.cs">
+      <DependentUpon>MainUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Controls\SidebarUsc.ascx.cs">
+      <DependentUpon>SidebarUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\SidebarUsc.ascx.designer.cs">
+      <DependentUpon>SidebarUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Styles\CssUsc.ascx.cs">
       <DependentUpon>CssUsc.ascx</DependentUpon>

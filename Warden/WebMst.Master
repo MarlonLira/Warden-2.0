@@ -10,7 +10,8 @@
     <usc:CssUsc runat="server" ID="css_control" />
 </head>
 <body>
-    <form id="form1" runat="server">
+    <form id="frm_main" runat="server" class="wrapper">
+        <usc:SidebarUsc runat="server" />
         <div>
             <asp:ContentPlaceHolder ID="cph_main" runat="server">
             </asp:ContentPlaceHolder>

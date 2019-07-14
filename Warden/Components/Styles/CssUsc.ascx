@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CssUsc.ascx.cs" Inherits="Warden.Components.Styles.Css" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CssUsc.ascx.cs" Inherits="Warden.Components.Styles.CssUsc" %>
 <%@ Import Namespace="Warden.Helper" %>
 
 <!--     Fonts and icons     -->
@@ -10,3 +10,4 @@
 
 <!-- CSS Files -->
 <link href="<%=Help.FormatUrl("/assets/css/black-dashboard.css?v=1.0.0") %>" rel="stylesheet" />
+<link href="<%=Help.FormatUrl("/assets/demo/demo.css") %>" rel="stylesheet" />
