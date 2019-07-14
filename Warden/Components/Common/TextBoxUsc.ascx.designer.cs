@@ -7,10 +7,10 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Warden.Components.Controls {
+namespace Warden.Components.Common {
     
     
-    public partial class MainUsc {
+    public partial class TextBoxUsc {
         
         /// <summary>
         /// Controle pnl_control.

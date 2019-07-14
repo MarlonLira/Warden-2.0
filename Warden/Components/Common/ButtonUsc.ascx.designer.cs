@@ -7,18 +7,18 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Warden.Components.Controls {
+namespace Warden.Components.Common {
     
     
-    public partial class MainUsc {
+    public partial class ButtonUsc {
         
         /// <summary>
-        /// Controle pnl_control.
+        /// Controle btn_control.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_control;
+        protected global::System.Web.UI.HtmlControls.HtmlButton btn_control;
     }
 }
