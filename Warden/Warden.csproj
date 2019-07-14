@@ -128,6 +128,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Helper\Help.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebMst.Master.cs">
       <DependentUpon>WebMst.Master</DependentUpon>
