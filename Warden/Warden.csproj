@@ -70,6 +70,37 @@
     <Content Include="assets\css\all.css" />
     <Content Include="assets\css\black-dashboard.css" />
     <Content Include="assets\css\black-dashboard.min.css" />
+    <Content Include="assets\css\calendar\Calendar.css" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="assets\css\calendar\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\css\calendar\fullcalendar.css" />
+    <Content Include="assets\css\calendar\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="assets\css\calendar\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="assets\css\calendar\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="assets\css\calendar\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="assets\css\calendar\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="assets\css\calendar\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="assets\css\calendar\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="assets\css\calendar\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="assets\css\calendar\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="assets\css\calendar\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="assets\css\calendar\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="assets\css\calendar\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="assets\css\calendar\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="assets\css\calendar\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="assets\css\calendar\jquery-ui-1.7.3.custom.css" />
     <Content Include="assets\css\fontfamily.css" />
     <Content Include="assets\css\nucleo-icons.css" />
     <Content Include="assets\demo\demo.css" />
@@ -89,6 +120,13 @@
     <Content Include="assets\img\now-logo.png" />
     <Content Include="assets\js\black-dashboard.js" />
     <Content Include="assets\js\black-dashboard.min.js" />
+    <Content Include="assets\js\calendar\Calendar2.js" />
+    <Content Include="assets\js\calendar\calendarscript.js" />
+    <Content Include="assets\js\calendar\fullcalendar.min.js" />
+    <Content Include="assets\js\calendar\jquery-1.3.2.min.js" />
+    <Content Include="assets\js\calendar\jquery-ui-1.7.3.custom.min.js" />
+    <Content Include="assets\js\calendar\jquery-ui-timepicker-addon-0.6.2.min.js" />
+    <Content Include="assets\js\calendar\jquery.qtip-1.0.0-rc3.min.js" />
     <Content Include="assets\js\core\bootstrap.min.js" />
     <Content Include="assets\js\core\jquery.min.js" />
     <Content Include="assets\js\core\popper.min.js" />
@@ -100,6 +138,7 @@
     <Content Include="Components\BaseUsc.ascx" />
     <Content Include="Components\Common\AlertUsc.ascx" />
     <Content Include="Components\Common\ButtonUsc.ascx" />
+    <Content Include="Components\Common\CalendarUsc.ascx" />
     <Content Include="Components\Common\CardUsc.ascx" />
     <Content Include="Components\Common\DropdownUsc.ascx" />
     <Content Include="Components\Common\TableUsc.ascx" />
@@ -109,10 +148,16 @@
     <Content Include="Components\Controls\NavbarUsc.ascx" />
     <Content Include="Components\Controls\SettingsUsc.ascx" />
     <Content Include="Components\Controls\SidebarUsc.ascx" />
+    <Content Include="Components\Styles\CalendarCssUsc.ascx" />
+    <Content Include="Components\Styles\CalendarJsUsc.ascx" />
     <Content Include="Components\Styles\CssUsc.ascx" />
     <Content Include="Components\Styles\JsUsc.ascx" />
     <Content Include="Default.aspx" />
+    <Content Include="Views\Calendar2.aspx" />
+    <Content Include="Views\Colaborador\Calendar.aspx" />
     <Content Include="Views\Teste.aspx" />
+    <Content Include="Views\Calendar.aspx" />
+    <Content Include="Views\teste3.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -145,6 +190,13 @@
     </Compile>
     <Compile Include="Components\Common\ButtonUsc.ascx.designer.cs">
       <DependentUpon>ButtonUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\CalendarUsc.ascx.cs">
+      <DependentUpon>CalendarUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\CalendarUsc.ascx.designer.cs">
+      <DependentUpon>CalendarUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\CardUsc.ascx.cs">
       <DependentUpon>CardUsc.ascx</DependentUpon>
@@ -209,6 +261,20 @@
     <Compile Include="Components\Controls\SidebarUsc.ascx.designer.cs">
       <DependentUpon>SidebarUsc.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Styles\CalendarCssUsc.ascx.cs">
+      <DependentUpon>CalendarCssUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Styles\CalendarCssUsc.ascx.designer.cs">
+      <DependentUpon>CalendarCssUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Styles\CalendarJsUsc.ascx.cs">
+      <DependentUpon>CalendarJsUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Styles\CalendarJsUsc.ascx.designer.cs">
+      <DependentUpon>CalendarJsUsc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\Styles\CssUsc.ascx.cs">
       <DependentUpon>CssUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -231,13 +297,44 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Helper\Help.cs" />
+    <Compile Include="Models\CalendarEvent.cs" />
+    <Compile Include="Models\EventDAO.cs" />
+    <Compile Include="Models\ImproperCalendarEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Calendar2.aspx.cs">
+      <DependentUpon>Calendar2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Calendar2.aspx.designer.cs">
+      <DependentUpon>Calendar2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Colaborador\Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Colaborador\Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Teste.aspx.cs">
       <DependentUpon>Teste.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Teste.aspx.designer.cs">
       <DependentUpon>Teste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\teste3.aspx.cs">
+      <DependentUpon>teste3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\teste3.aspx.designer.cs">
+      <DependentUpon>teste3.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebMst.Master.cs">
       <DependentUpon>WebMst.Master</DependentUpon>
@@ -400,6 +497,7 @@
     <Content Include="assets\scss\black-dashboard\plugins\_plugin-perfect-scrollbar.scss" />
     <Content Include="assets\scss\black-dashboard\_buttons.scss" />
     <Content Include="assets\scss\black-dashboard\_typography.scss" />
+    <Content Include="JsonResponse.ashx" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
