@@ -1,0 +1,22 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebMst.master.cs" Inherits="Warden.WebMst" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    
+    <usc:CssUsc runat="server" ID="css_control" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="cph_main" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <usc:JsUsc runat="server" ID="js_control" />
+</body>
+</html>
