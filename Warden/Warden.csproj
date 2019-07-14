@@ -96,25 +96,43 @@
     <Content Include="assets\js\plugins\bootstrap-notify.js" />
     <Content Include="assets\js\plugins\chartjs.min.js" />
     <Content Include="assets\js\plugins\perfect-scrollbar.jquery.min.js" />
+    <Content Include="BasePge.aspx" />
     <Content Include="Components\BaseUsc.ascx" />
+    <Content Include="Components\Common\ButtonUsc.ascx" />
     <Content Include="Components\Controls\FooterUsc.ascx" />
     <Content Include="Components\Controls\MainUsc.ascx" />
+    <Content Include="Components\Controls\NavbarUsc.ascx" />
     <Content Include="Components\Controls\SettingsUsc.ascx" />
     <Content Include="Components\Controls\SidebarUsc.ascx" />
     <Content Include="Components\Styles\CssUsc.ascx" />
     <Content Include="Components\Styles\JsUsc.ascx" />
     <Content Include="Default.aspx" />
+    <Content Include="Views\Teste.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasePge.aspx.cs">
+      <DependentUpon>BasePge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BasePge.aspx.designer.cs">
+      <DependentUpon>BasePge.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Components\BaseUsc.ascx.cs">
       <DependentUpon>BaseUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Components\BaseUsc.ascx.designer.cs">
       <DependentUpon>BaseUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\ButtonUsc.ascx.cs">
+      <DependentUpon>ButtonUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\ButtonUsc.ascx.designer.cs">
+      <DependentUpon>ButtonUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Controls\FooterUsc.ascx.cs">
       <DependentUpon>FooterUsc.ascx</DependentUpon>
@@ -129,6 +147,13 @@
     </Compile>
     <Compile Include="Components\Controls\MainUsc.ascx.designer.cs">
       <DependentUpon>MainUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Controls\NavbarUsc.ascx.cs">
+      <DependentUpon>NavbarUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\NavbarUsc.ascx.designer.cs">
+      <DependentUpon>NavbarUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Controls\SettingsUsc.ascx.cs">
       <DependentUpon>SettingsUsc.ascx</DependentUpon>
@@ -167,6 +192,13 @@
     </Compile>
     <Compile Include="Helper\Help.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Teste.aspx.cs">
+      <DependentUpon>Teste.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Teste.aspx.designer.cs">
+      <DependentUpon>Teste.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebMst.Master.cs">
       <DependentUpon>WebMst.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -337,9 +369,7 @@
     </None>
     <Content Include="WebMst.Master" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

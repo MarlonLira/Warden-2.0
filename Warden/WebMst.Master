@@ -6,17 +6,22 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Warden</title>
-    
     <usc:CssUsc runat="server" ID="css_control" />
 </head>
 <body>
     <form id="frm_main" runat="server" class="wrapper">
         <usc:SidebarUsc runat="server" />
-        <div>
-            <asp:ContentPlaceHolder ID="cph_main" runat="server">
-            </asp:ContentPlaceHolder>
+        <usc:NavbarUsc runat="server" />
+
+        <div class="main-panel">
+            <div class="content">
+                <asp:ContentPlaceHolder ID="cph_main" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
         </div>
+
     </form>
+
     <usc:SettingsUsc runat="server" />
     <usc:FooterUsc runat="server" />
     <usc:JsUsc runat="server" ID="js_control" />
