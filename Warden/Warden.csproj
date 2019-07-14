@@ -67,8 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\all.css" />
     <Content Include="assets\css\black-dashboard.css" />
     <Content Include="assets\css\black-dashboard.min.css" />
+    <Content Include="assets\css\fontfamily.css" />
     <Content Include="assets\css\nucleo-icons.css" />
     <Content Include="assets\demo\demo.css" />
     <Content Include="assets\demo\demo.js" />
@@ -97,6 +99,7 @@
     <Content Include="Components\BaseUsc.ascx" />
     <Content Include="Components\Controls\FooterUsc.ascx" />
     <Content Include="Components\Controls\MainUsc.ascx" />
+    <Content Include="Components\Controls\SettingsUsc.ascx" />
     <Content Include="Components\Controls\SidebarUsc.ascx" />
     <Content Include="Components\Styles\CssUsc.ascx" />
     <Content Include="Components\Styles\JsUsc.ascx" />
@@ -124,6 +127,13 @@
     </Compile>
     <Compile Include="Components\Controls\MainUsc.ascx.designer.cs">
       <DependentUpon>MainUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Controls\SettingsUsc.ascx.cs">
+      <DependentUpon>SettingsUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\SettingsUsc.ascx.designer.cs">
+      <DependentUpon>SettingsUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Controls\SidebarUsc.ascx.cs">
       <DependentUpon>SidebarUsc.ascx</DependentUpon>

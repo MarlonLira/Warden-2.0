@@ -5,7 +5,7 @@
 <html>
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Warden</title>
     
     <usc:CssUsc runat="server" ID="css_control" />
 </head>
@@ -17,7 +17,8 @@
             </asp:ContentPlaceHolder>
         </div>
     </form>
-
+    <usc:SettingsUsc runat="server" />
+    <usc:FooterUsc runat="server" />
     <usc:JsUsc runat="server" ID="js_control" />
 </body>
 </html>

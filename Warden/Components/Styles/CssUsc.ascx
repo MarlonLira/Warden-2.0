@@ -2,6 +2,8 @@
 <%@ Import Namespace="Warden.Helper" %>
 
 <!--     Fonts and icons     -->
+<link href="<%=Help.FormatUrl("/assets/css/fontfamily.css") %>" rel="stylesheet" />
+<link href="<%=Help.FormatUrl("/assets/css/all.css") %>" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
 <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
 
