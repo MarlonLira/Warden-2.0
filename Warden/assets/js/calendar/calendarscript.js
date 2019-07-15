@@ -140,7 +140,7 @@ $(document).ready(function() {
         autoOpen: false,
         width: 470,
         buttons: {
-            "update": function() {
+            "Atualizar": function() {
                 //alert(currentUpdateEvent.title);
                 var eventToUpdate = {
                     id: currentUpdateEvent.id,
@@ -161,7 +161,7 @@ $(document).ready(function() {
                 }
 
             },
-            "delete": function() {
+            "Deletar": function() {
 
                 if (confirm("do you really want to delete this event?")) {
 
@@ -180,7 +180,7 @@ $(document).ready(function() {
         autoOpen: false,
         width: 470,
         buttons: {
-            "Add": function() {
+            "Salvar": function() {
                 //alert("aqui");
                 //alert("sent:" + addStartDate.format("dd-MM-yyyy hh:mm:ss tt") + "==" + addStartDate.toLocaleString());
                 var eventToAdd = {
