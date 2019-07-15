@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SidebarUsc.ascx.cs" Inherits="Warden.Components.Controls.SidebarUsc" %>
 
-<div class="sidebar">
+<div class="sidebar" data="blue">
       <!--
         Tip 1: You can change the color of the sidebar using: data="blue | green | orange | red"
     -->
