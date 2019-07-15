@@ -8,6 +8,7 @@ namespace Warden.Components {
         }
 
         public String Text { get; set; }
+        public String ComponentId { get; set; }
         public String ComponentStyle { get; set; }
         public String ComponentSize { get; set; }
     }

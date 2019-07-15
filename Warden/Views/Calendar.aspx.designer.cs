@@ -31,13 +31,67 @@ namespace Warden.Views {
         protected global::System.Web.UI.HtmlControls.HtmlForm frm_calendar;
         
         /// <summary>
-        /// Controle ScriptManager1.
+        /// Controle spt_calendar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager ScriptManager1;
+        protected global::System.Web.UI.ScriptManager spt_calendar;
+        
+        /// <summary>
+        /// Controle TextBoxUsc1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextBoxUsc TextBoxUsc1;
+        
+        /// <summary>
+        /// Controle TextBoxUsc6.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextBoxUsc TextBoxUsc6;
+        
+        /// <summary>
+        /// Controle TextBoxUsc3.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextBoxUsc TextBoxUsc3;
+        
+        /// <summary>
+        /// Controle TextBoxUsc2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextBoxUsc TextBoxUsc2;
+        
+        /// <summary>
+        /// Controle TextBoxUsc4.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextBoxUsc TextBoxUsc4;
+        
+        /// <summary>
+        /// Controle TextBoxUsc5.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextBoxUsc TextBoxUsc5;
         
         /// <summary>
         /// Controle jsonDiv.
