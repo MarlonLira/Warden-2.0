@@ -76,24 +76,6 @@ namespace Warden.Views {
         protected global::Warden.Components.Common.TextBoxUsc TextBoxUsc2;
         
         /// <summary>
-        /// Controle TextBoxUsc4.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::Warden.Components.Common.TextBoxUsc TextBoxUsc4;
-        
-        /// <summary>
-        /// Controle TextBoxUsc5.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::Warden.Components.Common.TextBoxUsc TextBoxUsc5;
-        
-        /// <summary>
         /// Controle jsonDiv.
         /// </summary>
         /// <remarks>
