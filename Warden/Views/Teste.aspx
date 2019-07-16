@@ -25,12 +25,15 @@
         <usc:TextBoxUsc runat="server" />
     </div>
     <usc:TableUsc runat="server" />
-    <usc:AlertUsc runat="server" />
+    <usc:AlertUsc runat="server" Title="Error" Text="Componente de alerta" />
     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     <div class="row">
         <usc:BigChartLineUsc runat="server" />
         <usc:ChartBarUsc runat="server" />
         <usc:ChartLineUsc runat="server" />
     </div>
-    <usc:TableTaskUsc runat="server" />
+    <div class="row">
+        <usc:TableTaskUsc runat="server" />
+        <usc:TableSimpleUsc runat="server" />
+    </div>
 </asp:Content>
