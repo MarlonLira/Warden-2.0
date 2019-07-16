@@ -32,4 +32,5 @@
         <usc:ChartBarUsc runat="server" />
         <usc:ChartLineUsc runat="server" />
     </div>
+    <usc:TableTaskUsc runat="server" />
 </asp:Content>

@@ -144,6 +144,8 @@
     <Content Include="Components\Common\ChartLineUsc.ascx" />
     <Content Include="Components\Common\ChartBarUsc.ascx" />
     <Content Include="Components\Common\DropdownUsc.ascx" />
+    <Content Include="Components\Common\TableSimpleUsc.ascx" />
+    <Content Include="Components\Common\TableTaskUsc.ascx" />
     <Content Include="Components\Common\TableUsc.ascx" />
     <Content Include="Components\Common\TextBoxUsc.ascx" />
     <Content Include="Components\Controls\FooterUsc.ascx" />
@@ -235,6 +237,20 @@
     </Compile>
     <Compile Include="Components\Common\DropdownUsc.ascx.designer.cs">
       <DependentUpon>DropdownUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\TableSimpleUsc.ascx.cs">
+      <DependentUpon>TableSimpleUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\TableSimpleUsc.ascx.designer.cs">
+      <DependentUpon>TableSimpleUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\TableTaskUsc.ascx.cs">
+      <DependentUpon>TableTaskUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\TableTaskUsc.ascx.designer.cs">
+      <DependentUpon>TableTaskUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\TableUsc.ascx.cs">
       <DependentUpon>TableUsc.ascx</DependentUpon>
