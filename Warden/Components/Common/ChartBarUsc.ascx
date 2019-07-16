@@ -23,7 +23,7 @@ var green = "#00d6b4";
 var pink = "#d048b6";
 var red = "#52170b"
 
-    gradientBarChartConfiguration = {
+    gradientChartConfiguration = {
         maintainAspectRatio: false,
         legend: {
             display: false
@@ -100,7 +100,7 @@ var red = "#52170b"
                 data: [53, 20, 10, 80, 100, 45],
             }]
         },
-        options: gradientBarChartConfiguration
+        options: gradientChartConfiguration
     });
 
 </script>

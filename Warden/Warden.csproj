@@ -137,6 +137,7 @@
     <Content Include="BasePge.aspx" />
     <Content Include="Components\BaseUsc.ascx" />
     <Content Include="Components\Common\AlertUsc.ascx" />
+    <Content Include="Components\Common\BigChartLineUsc.ascx" />
     <Content Include="Components\Common\ButtonUsc.ascx" />
     <Content Include="Components\Common\CalendarUsc.ascx" />
     <Content Include="Components\Common\CardUsc.ascx" />
@@ -185,6 +186,13 @@
     </Compile>
     <Compile Include="Components\Common\AlertUsc.ascx.designer.cs">
       <DependentUpon>AlertUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\BigChartLineUsc.ascx.cs">
+      <DependentUpon>BigChartLineUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\BigChartLineUsc.ascx.designer.cs">
+      <DependentUpon>BigChartLineUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\ButtonUsc.ascx.cs">
       <DependentUpon>ButtonUsc.ascx</DependentUpon>

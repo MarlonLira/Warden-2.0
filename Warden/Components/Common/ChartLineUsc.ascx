@@ -23,7 +23,7 @@ var green = "#00d6b4";
 var pink = "#d048b6";
 var red = "#52170b"
 
-    gradientBarChartConfiguration = {
+    gradientChartConfiguration = {
         maintainAspectRatio: false,
         legend: {
             display: false
@@ -103,7 +103,7 @@ var red = "#52170b"
     var myChart = new Chart(ctx, {
       type: 'line',
       data: data,
-      options: gradientBarChartConfiguration
+      options: gradientChartConfiguration
 
     });
 
