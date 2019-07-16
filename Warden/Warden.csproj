@@ -140,7 +140,8 @@
     <Content Include="Components\Common\ButtonUsc.ascx" />
     <Content Include="Components\Common\CalendarUsc.ascx" />
     <Content Include="Components\Common\CardUsc.ascx" />
-    <Content Include="Components\Common\CountryChartUsc.ascx" />
+    <Content Include="Components\Common\ChartLineUsc.ascx" />
+    <Content Include="Components\Common\ChartBarUsc.ascx" />
     <Content Include="Components\Common\DropdownUsc.ascx" />
     <Content Include="Components\Common\TableUsc.ascx" />
     <Content Include="Components\Common\TextBoxUsc.ascx" />
@@ -206,12 +207,19 @@
     <Compile Include="Components\Common\CardUsc.ascx.designer.cs">
       <DependentUpon>CardUsc.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Components\Common\CountryChartUsc.ascx.cs">
-      <DependentUpon>CountryChartUsc.ascx</DependentUpon>
+    <Compile Include="Components\Common\ChartLineUsc.ascx.cs">
+      <DependentUpon>ChartLineUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Components\Common\CountryChartUsc.ascx.designer.cs">
-      <DependentUpon>CountryChartUsc.ascx</DependentUpon>
+    <Compile Include="Components\Common\ChartLineUsc.ascx.designer.cs">
+      <DependentUpon>ChartLineUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\ChartBarUsc.ascx.cs">
+      <DependentUpon>ChartBarUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\ChartBarUsc.ascx.designer.cs">
+      <DependentUpon>ChartBarUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\DropdownUsc.ascx.cs">
       <DependentUpon>DropdownUsc.ascx</DependentUpon>

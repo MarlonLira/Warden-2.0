@@ -33,4 +33,3 @@ C:\Web\Warden-2.0\Warden\Warden\obj\Debug\Warden.csproj.CoreCompileInputs.cache
 C:\Web\Warden-2.0\Warden\Warden\obj\Debug\Warden.csproj.CopyComplete
 C:\Web\Warden-2.0\Warden\Warden\obj\Debug\Warden.dll
 C:\Web\Warden-2.0\Warden\Warden\obj\Debug\Warden.pdb
-C:\Web\Warden-2.0\Warden\Warden\obj\Debug\Warden.csprojAssemblyReference.cache

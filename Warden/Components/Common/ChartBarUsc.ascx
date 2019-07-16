@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CountryChartUsc.ascx.cs" Inherits="Warden.Components.Common.CountryChartUsc" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ChartBarUsc.ascx.cs" Inherits="Warden.Components.Common.ChartBarUsc" %>
 <%@ Import Namespace="Warden.Helper" %>
 
 <div class="col-lg-4">
@@ -17,6 +17,11 @@
 
 <script src="<%=Help.FormatUrl("/assets/js/plugins/chartjs.min.js")%>"></script>
 <script type="text/javascript">
+type = ['primary', 'info', 'success', 'warning', 'danger'];
+var blue = "#1f8ef1";
+var green = "#00d6b4";
+var pink = "#d048b6";
+var red = "#52170b"
 
     gradientBarChartConfiguration = {
         maintainAspectRatio: false,

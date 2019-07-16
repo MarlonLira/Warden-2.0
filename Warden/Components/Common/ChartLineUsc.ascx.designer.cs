@@ -10,6 +10,6 @@
 namespace Warden.Components.Common {
     
     
-    public partial class CountryChartUsc {
+    public partial class ChartLineUsc {
     }
 }

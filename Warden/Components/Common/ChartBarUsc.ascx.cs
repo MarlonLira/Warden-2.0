@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Warden.Components.Common {
-    public partial class CountryChartUsc : BaseUsc {
+    public partial class ChartBarUsc : BaseUsc {
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
         }
