@@ -70,8 +70,6 @@
     <Content Include="assets\css\all.css" />
     <Content Include="assets\css\black-dashboard.css" />
     <Content Include="assets\css\black-dashboard.min.css" />
-    <Content Include="assets\css\bootstrap.css" />
-    <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\calendar\Calendar.css" />
     <Content Include="assets\css\calendar\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
     <Content Include="assets\css\calendar\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
@@ -104,15 +102,7 @@
     <Content Include="assets\css\calendar\images\ui-icons_ffffff_256x240.png" />
     <Content Include="assets\css\calendar\jquery-ui-1.7.3.custom.css" />
     <Content Include="assets\css\fontfamily.css" />
-    <Content Include="assets\css\jquery-ui-1.12.1.css" />
-    <Content Include="assets\css\jquery\jquery-ui.css" />
-    <Content Include="assets\css\jquery\jquery-ui.min.css" />
-    <Content Include="assets\css\jquery\jquery-ui.structure.css" />
-    <Content Include="assets\css\jquery\jquery-ui.structure.min.css" />
-    <Content Include="assets\css\jquery\jquery-ui.theme.css" />
-    <Content Include="assets\css\jquery\jquery-ui.theme.min.css" />
     <Content Include="assets\css\nucleo-icons.css" />
-    <Content Include="assets\css\Site.css" />
     <Content Include="assets\demo\demo.css" />
     <Content Include="assets\demo\demo.js" />
     <Content Include="assets\img\12345.png" />
@@ -150,6 +140,7 @@
     <Content Include="Components\Common\ButtonUsc.ascx" />
     <Content Include="Components\Common\CalendarUsc.ascx" />
     <Content Include="Components\Common\CardUsc.ascx" />
+    <Content Include="Components\Common\CountryChartUsc.ascx" />
     <Content Include="Components\Common\DropdownUsc.ascx" />
     <Content Include="Components\Common\TableUsc.ascx" />
     <Content Include="Components\Common\TextBoxUsc.ascx" />
@@ -214,6 +205,13 @@
     </Compile>
     <Compile Include="Components\Common\CardUsc.ascx.designer.cs">
       <DependentUpon>CardUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\CountryChartUsc.ascx.cs">
+      <DependentUpon>CountryChartUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\CountryChartUsc.ascx.designer.cs">
+      <DependentUpon>CountryChartUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\DropdownUsc.ascx.cs">
       <DependentUpon>DropdownUsc.ascx</DependentUpon>

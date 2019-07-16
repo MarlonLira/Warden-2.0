@@ -18,4 +18,5 @@
     <usc:TableUsc runat="server" />
     <usc:AlertUsc runat="server" />
     <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <usc:CountryChartUsc runat="server" />
 </asp:Content>
