@@ -7,9 +7,9 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Warden.Components {
+namespace Warden.Components.Common {
     
     
-    public partial class BaseUsc {
+    public partial class TableTaskUsc {
     }
 }

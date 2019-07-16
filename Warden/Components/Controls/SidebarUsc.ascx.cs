@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Warden.Components.Controls {
-    public partial class SidebarUsc : System.Web.UI.UserControl {
+    public partial class SidebarUsc : BaseUsc {
         protected void Page_Load(object sender, EventArgs e) {
 
         }

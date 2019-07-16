@@ -67,6 +67,60 @@ namespace Warden.Views {
         protected global::Warden.Components.Common.ButtonUsc ButtonUsc5;
         
         /// <summary>
+        /// Controle ButtonUsc6.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ButtonUsc ButtonUsc6;
+        
+        /// <summary>
+        /// Controle ButtonUsc7.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ButtonUsc ButtonUsc7;
+        
+        /// <summary>
+        /// Controle ButtonUsc8.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ButtonUsc ButtonUsc8;
+        
+        /// <summary>
+        /// Controle ButtonUsc9.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ButtonUsc ButtonUsc9;
+        
+        /// <summary>
+        /// Controle ButtonUsc10.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ButtonUsc ButtonUsc10;
+        
+        /// <summary>
+        /// Controle ButtonUsc11.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ButtonUsc ButtonUsc11;
+        
+        /// <summary>
         /// Controle Label1.
         /// </summary>
         /// <remarks>

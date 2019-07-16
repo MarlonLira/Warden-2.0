@@ -137,10 +137,15 @@
     <Content Include="BasePge.aspx" />
     <Content Include="Components\BaseUsc.ascx" />
     <Content Include="Components\Common\AlertUsc.ascx" />
+    <Content Include="Components\Common\BigChartLineUsc.ascx" />
     <Content Include="Components\Common\ButtonUsc.ascx" />
     <Content Include="Components\Common\CalendarUsc.ascx" />
     <Content Include="Components\Common\CardUsc.ascx" />
+    <Content Include="Components\Common\ChartLineUsc.ascx" />
+    <Content Include="Components\Common\ChartBarUsc.ascx" />
     <Content Include="Components\Common\DropdownUsc.ascx" />
+    <Content Include="Components\Common\TableSimpleUsc.ascx" />
+    <Content Include="Components\Common\TableTaskUsc.ascx" />
     <Content Include="Components\Common\TableUsc.ascx" />
     <Content Include="Components\Common\TextBoxUsc.ascx" />
     <Content Include="Components\Controls\FooterUsc.ascx" />
@@ -184,6 +189,13 @@
     <Compile Include="Components\Common\AlertUsc.ascx.designer.cs">
       <DependentUpon>AlertUsc.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Common\BigChartLineUsc.ascx.cs">
+      <DependentUpon>BigChartLineUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\BigChartLineUsc.ascx.designer.cs">
+      <DependentUpon>BigChartLineUsc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\Common\ButtonUsc.ascx.cs">
       <DependentUpon>ButtonUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -205,12 +217,40 @@
     <Compile Include="Components\Common\CardUsc.ascx.designer.cs">
       <DependentUpon>CardUsc.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Common\ChartLineUsc.ascx.cs">
+      <DependentUpon>ChartLineUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\ChartLineUsc.ascx.designer.cs">
+      <DependentUpon>ChartLineUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\ChartBarUsc.ascx.cs">
+      <DependentUpon>ChartBarUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\ChartBarUsc.ascx.designer.cs">
+      <DependentUpon>ChartBarUsc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\Common\DropdownUsc.ascx.cs">
       <DependentUpon>DropdownUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Components\Common\DropdownUsc.ascx.designer.cs">
       <DependentUpon>DropdownUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\TableSimpleUsc.ascx.cs">
+      <DependentUpon>TableSimpleUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\TableSimpleUsc.ascx.designer.cs">
+      <DependentUpon>TableSimpleUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\TableTaskUsc.ascx.cs">
+      <DependentUpon>TableTaskUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\TableTaskUsc.ascx.designer.cs">
+      <DependentUpon>TableTaskUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\TableUsc.ascx.cs">
       <DependentUpon>TableUsc.ascx</DependentUpon>

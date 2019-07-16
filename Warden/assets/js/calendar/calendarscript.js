@@ -2,6 +2,11 @@
 var addStartDate;
 var addEndDate;
 var globalAllDay;
+var AutoWidth = screen.width / 4;
+
+if (AutoWidth < 300) {
+    AutoWidth = 300;
+}
 
 function updateEvent(event, element) {
     //alert(event.description);
@@ -138,7 +143,7 @@ $(document).ready(function() {
     // update Dialog
     $('#updatedialog').dialog({
         autoOpen: false,
-        width: 470,
+        width: AutoWidth,
         buttons: {
             "Atualizar": function() {
                 //alert(currentUpdateEvent.title);
@@ -178,7 +183,7 @@ $(document).ready(function() {
     //add dialog
     $('#addDialog').dialog({
         autoOpen: false,
-        width: 470,
+        width: AutoWidth,
         buttons: {
             "Salvar": function() {
                 //alert("aqui");
