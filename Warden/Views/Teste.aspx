@@ -36,4 +36,7 @@
         <usc:TableTaskUsc runat="server" />
         <usc:TableSimpleUsc runat="server" />
     </div>
+
+    <usc:LoginUsc  ID="usc_login" runat="server" />
+    <usc:LabelUsc runat="server" Text="testando" ForeColor="White" FontSize="15" />
 </asp:Content>

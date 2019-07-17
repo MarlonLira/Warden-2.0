@@ -8,6 +8,8 @@ namespace Warden.Components.Common {
 
         public String HelpText { get; set; }
         public Boolean IsTextArea { get; set; }
+        public String Placeholder { get; set; }
+        public String TextMode { get; set; }
 
         public override void LoadDataSource() {
             base.LoadDataSource();
