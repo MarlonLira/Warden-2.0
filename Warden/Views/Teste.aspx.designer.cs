@@ -121,13 +121,49 @@ namespace Warden.Views {
         protected global::Warden.Components.Common.ButtonUsc ButtonUsc11;
         
         /// <summary>
-        /// Controle Label1.
+        /// Controle dd_teste2.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::Warden.Components.Common.DropdownUsc dd_teste2;
+        
+        /// <summary>
+        /// Controle dd_teste.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.DropdownUsc dd_teste;
+        
+        /// <summary>
+        /// Controle txt_teste.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextBoxUsc txt_teste;
+        
+        /// <summary>
+        /// Controle txt_teste2.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextBoxUsc txt_teste2;
+        
+        /// <summary>
+        /// Controle lbl_teste.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_teste;
         
         /// <summary>
         /// Controle usc_login.
