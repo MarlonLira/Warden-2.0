@@ -16,17 +16,13 @@
         <div class="main-panel">
             <div class="content">
                 <asp:ContentPlaceHolder ID="cph_main" runat="server">
-                    
                 </asp:ContentPlaceHolder>
-                
             </div>
             <usc:FooterUsc runat="server" />
         </div>
-        
     </form>
 
     <usc:SettingsUsc runat="server" />
-    
     <usc:JsUsc runat="server" ID="js_control" />
 </body>
     
