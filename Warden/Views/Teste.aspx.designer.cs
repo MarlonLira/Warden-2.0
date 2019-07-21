@@ -166,6 +166,24 @@ namespace Warden.Views {
         protected global::System.Web.UI.WebControls.Label lbl_teste;
         
         /// <summary>
+        /// Controle chartBar_control.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ChartBarUsc chartBar_control;
+        
+        /// <summary>
+        /// Controle chartLine_control.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ChartLineUsc chartLine_control;
+        
+        /// <summary>
         /// Controle usc_login.
         /// </summary>
         /// <remarks>

@@ -13,8 +13,10 @@ namespace Warden.Components {
 
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
+            LoadDataSource();
         }
 
+        public List<ListItem> Itens;
 
         //Text
         public Boolean ReadOnly { get; set; }

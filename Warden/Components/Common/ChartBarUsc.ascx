@@ -87,9 +87,9 @@ var red = "#52170b"
             display: false
         },
         data: {
-            labels: ['USA', 'GER', 'AUS', 'UK', 'RO', 'BR'],
+            labels: <%=Titles%>,
             datasets: [{
-                label: "Countries",
+                label: <%=Labels%>,
                 fill: true,
                 backgroundColor: gradientStroke,
                 hoverBackgroundColor: gradientStroke,
@@ -97,7 +97,7 @@ var red = "#52170b"
                 borderWidth: 2,
                 borderDash: [],
                 borderDashOffset: 0.0,
-                data: [53, 20, 10, 80, 100, 45],
+                data: <%=Values%>,
             }]
         },
         options: gradientChartConfiguration

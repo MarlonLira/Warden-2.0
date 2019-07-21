@@ -29,8 +29,8 @@
     <asp:Label ID="lbl_teste" runat="server" Text="Label"></asp:Label>
     <div class="row">
         <usc:BigChartLineUsc runat="server" />
-        <usc:ChartBarUsc runat="server" />
-        <usc:ChartLineUsc runat="server" />
+        <usc:ChartBarUsc runat="server" ID="chartBar_control" Text="Up"/>
+        <usc:ChartLineUsc runat="server" ID="chartLine_control" Text="Views" />
     </div>
     <div class="row">
         <usc:TableTaskUsc runat="server" />
