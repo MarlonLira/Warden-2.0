@@ -80,9 +80,9 @@ var red = "#52170b"
       gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); 
 
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
+      labels: <%=Titles%>,
       datasets: [{
-        label: "My First dataset",
+        label: <%=Labels%>,
         fill: true,
         backgroundColor: gradientStroke,
         borderColor: blue,
@@ -96,7 +96,7 @@ var red = "#52170b"
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [90, 27, 60, 12, 80],
+        data: <%=Values%>,
       }]
     };
 

@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
+using System.Web.UI.WebControls;
 
 namespace Warden.Helper {
     public static class Help {
@@ -135,6 +137,61 @@ namespace Warden.Helper {
             }
 
             return WordType;
+        }
+
+        public static String ConvertToJsArray(String[] Array) {
+            String Result = "";
+            String Init = "[";
+            String End = "]";
+            String Comma = ", ";
+            Int32 Count = 1;
+
+            if (Array != null) {
+                Result = Init;
+                foreach (String Item in Array) {
+                    Result += "'" + Item + "'";
+                    if (Count  < Array.Length) {
+                        Result += Comma;
+                    }
+                    Count++;
+                }
+                Result += End;
+            }
+            return Result;
+        }
+
+        public static String ConvertToJsArray(List<ListItem> Itens) {
+            String Result = "";
+            String Init = "[";
+            String End = "]";
+            String Comma = ", ";
+            String Separator = " / ";
+            Int32 Count = 1;
+
+            if (Itens != null) {
+                Result = Init;
+                foreach (ListItem Item in Itens) {
+                    Result += "'" + Item.Text + "'";
+                    if (Count < Itens.Count) {
+                        Result += Comma;
+                    }
+                    Count++;
+                }
+                Result += End;
+                Count = 1;
+                Result += Separator;
+                Result += Init;
+                foreach (ListItem Item in Itens) {
+                    Result += "'" + Item.Value + "'";
+                    if (Count < Itens.Count) {
+                        Result += Comma;
+                    }
+                    Count++;
+                }
+
+                Result += End;
+            }
+            return Result;
         }
         #endregion
     }

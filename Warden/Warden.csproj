@@ -137,6 +137,7 @@
     <Content Include="BasePge.aspx" />
     <Content Include="Components\BaseUsc.ascx" />
     <Content Include="Components\Common\AlertUsc.ascx" />
+    <Content Include="Components\Common\BaseChartUsc.ascx" />
     <Content Include="Components\Common\BigChartLineUsc.ascx" />
     <Content Include="Components\Common\ButtonUsc.ascx" />
     <Content Include="Components\Common\CalendarUsc.ascx" />
@@ -144,11 +145,13 @@
     <Content Include="Components\Common\ChartLineUsc.ascx" />
     <Content Include="Components\Common\ChartBarUsc.ascx" />
     <Content Include="Components\Common\DropdownUsc.ascx" />
+    <Content Include="Components\Common\LabelUsc.ascx" />
     <Content Include="Components\Common\TableSimpleUsc.ascx" />
     <Content Include="Components\Common\TableTaskUsc.ascx" />
     <Content Include="Components\Common\TableUsc.ascx" />
     <Content Include="Components\Common\TextBoxUsc.ascx" />
     <Content Include="Components\Controls\FooterUsc.ascx" />
+    <Content Include="Components\Controls\LoginUsc.ascx" />
     <Content Include="Components\Controls\MainUsc.ascx" />
     <Content Include="Components\Controls\NavbarUsc.ascx" />
     <Content Include="Components\Controls\SettingsUsc.ascx" />
@@ -158,6 +161,7 @@
     <Content Include="Components\Styles\CssUsc.ascx" />
     <Content Include="Components\Styles\JsUsc.ascx" />
     <Content Include="Default.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Views\Calendar2.aspx" />
     <Content Include="Views\Colaborador\Calendar.aspx" />
     <Content Include="Views\Teste.aspx" />
@@ -188,6 +192,13 @@
     </Compile>
     <Compile Include="Components\Common\AlertUsc.ascx.designer.cs">
       <DependentUpon>AlertUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\BaseChartUsc.ascx.cs">
+      <DependentUpon>BaseChartUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\BaseChartUsc.ascx.designer.cs">
+      <DependentUpon>BaseChartUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\BigChartLineUsc.ascx.cs">
       <DependentUpon>BigChartLineUsc.ascx</DependentUpon>
@@ -238,6 +249,13 @@
     <Compile Include="Components\Common\DropdownUsc.ascx.designer.cs">
       <DependentUpon>DropdownUsc.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Common\LabelUsc.ascx.cs">
+      <DependentUpon>LabelUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\LabelUsc.ascx.designer.cs">
+      <DependentUpon>LabelUsc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\Common\TableSimpleUsc.ascx.cs">
       <DependentUpon>TableSimpleUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -272,6 +290,13 @@
     </Compile>
     <Compile Include="Components\Controls\FooterUsc.ascx.designer.cs">
       <DependentUpon>FooterUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Controls\LoginUsc.ascx.cs">
+      <DependentUpon>LoginUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\LoginUsc.ascx.designer.cs">
+      <DependentUpon>LoginUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Controls\MainUsc.ascx.cs">
       <DependentUpon>MainUsc.ascx</DependentUpon>
@@ -337,6 +362,13 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Helper\Help.cs" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Models\CalendarEvent.cs" />
     <Compile Include="Models\EventDAO.cs" />
     <Compile Include="Models\ImproperCalendarEvent.cs" />

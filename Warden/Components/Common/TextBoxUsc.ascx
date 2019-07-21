@@ -4,9 +4,9 @@
     <div style="padding-left:10px; padding-top:10px">
         <label for="exampleInputEmail1"><b><%=Title %></b></label>
         <%if (!IsTextArea) { %>
-            <input type="email" class="form-control" id="<%=ComponentId %>" aria-describedby="emailHelp" placeholder="Enter Text" title="<%=Text %>" style="color:slategray" >
+            <input type="<%=TextMode %>" class="form-control" id="<%=ComponentId %>" aria-describedby="emailHelp" placeholder="<%=Placeholder %>" value="<%=Text %>" style="color:slategray" >
         <%} else {%>
-            <textarea rows="3" cols="30" class="form-control" id="<%=ComponentId %>" aria-describedby="emailHelp" placeholder="Enter text" title="<%=Text %>" style="color:slategray" ></textarea>
+            <textarea rows="3" cols="30" class="form-control" id="<%=ComponentId %>" aria-describedby="emailHelp" placeholder="<%=Placeholder %>" title="<%=Text %>" style="color:slategray" ></textarea>
         <%} %>
         <small id="emailHelp" class="form-text text-muted"><%=HelpText %></small>
     </div>

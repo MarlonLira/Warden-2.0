@@ -7,18 +7,18 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Warden.Components.Common {
+namespace Warden {
     
     
-    public partial class DropdownUsc {
+    public partial class Login {
         
         /// <summary>
-        /// Controle dd_control.
+        /// Controle usc_login.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dd_control;
+        protected global::Warden.Components.Controls.LoginUsc usc_login;
     }
 }
