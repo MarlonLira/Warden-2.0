@@ -48,8 +48,8 @@ namespace Warden.Views {
             dd_teste2.ItemList = new List<ListItem>();
             dd_teste2.ItemList = dd_teste.ItemList;
 
-            dd_teste.LoadDataSource();
-            dd_teste2.LoadDataSource();
+            //dd_teste.LoadDataSource();
+            //dd_teste2.LoadDataSource();
         }
     }
 }

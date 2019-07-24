@@ -19,7 +19,10 @@
 
     <usc:DropdownUsc  ComponentStyle="primary" runat="server" ID="dd_teste2" ReadOnly="true" />
     <usc:DropdownUsc runat="server" ID="dd_teste" />
-    <usc:CardUsc runat="server" />
+    <div class="row">
+        <usc:CardUsc runat="server" ID="card_control" Text="Testando o Componente Card" Title="O Card" BtnText="Acessar" />
+        <usc:CardUsc runat="server" ID="CardUsc1" Text="Testando o Componente Card uma segunda vez" Title="O segundo Card" BtnText="Acessar"  ComponentStyle="primary Round"/>
+    </div>
     <div class="form-row">
         <usc:TextBoxUsc runat="server" ID="txt_teste"/>
         <usc:TextBoxUsc runat="server" ID="txt_teste2" />

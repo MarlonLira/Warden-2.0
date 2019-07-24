@@ -23,15 +23,15 @@ namespace Warden.Components.Common {
         public override void LoadDataSource() {
             base.LoadDataSource();
             if (!IsPostBack) {
-
                 if (String.IsNullOrEmpty(ComponentStyle)) {
                     ComponentStyle = "default";
                 }
                 dd_control.Attributes.Add("class", "btn btn-" + ComponentStyle.ToLower() + " dropdown - toggle");
-
-                if (ItemList != null) {
-                    foreach (ListItem Item in ItemList) {
-                        dd_control.Items.Add(Item);
+                if (dd_control.Items.Count == 0) {
+                    if (ItemList != null) {
+                        foreach (ListItem Item in ItemList) {
+                            dd_control.Items.Add(Item);
+                        }
                     }
                 }
             }

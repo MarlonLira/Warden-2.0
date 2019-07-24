@@ -139,6 +139,24 @@ namespace Warden.Views {
         protected global::Warden.Components.Common.DropdownUsc dd_teste;
         
         /// <summary>
+        /// Controle card_control.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.CardUsc card_control;
+        
+        /// <summary>
+        /// Controle CardUsc1.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.CardUsc CardUsc1;
+        
+        /// <summary>
         /// Controle txt_teste.
         /// </summary>
         /// <remarks>
