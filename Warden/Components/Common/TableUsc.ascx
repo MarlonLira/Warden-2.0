@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TableUsc.ascx.cs" Inherits="Warden.Components.Common.TableUsc" %>
 
-<table class="table">
+<table class="table" id="tbl_control">
     <thead>
         <tr>
             <th class="text-center">#</th>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -34,6 +35,10 @@ namespace Warden.Components {
         }
 
         public virtual void LoadDataSource(List<ListItem> Itens) {
+            //Carregamento de dados dos Componentes
+        }
+
+        public virtual void LoadDataSource(DataTable Table) {
             //Carregamento de dados dos Componentes
         }
     }

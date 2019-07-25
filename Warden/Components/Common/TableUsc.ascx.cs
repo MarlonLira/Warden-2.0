@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Warden.Components.Common {
-    public partial class TableUsc : System.Web.UI.UserControl {
-        protected void Page_Load(object sender, EventArgs e) {
+    public partial class TableUsc : BaseTableUsc {
+        protected override void OnLoad(EventArgs e) {
+            base.OnLoad(e);
+        }
 
+        public override void LoadDataSource() {
+            base.LoadDataSource();
         }
     }
 }
