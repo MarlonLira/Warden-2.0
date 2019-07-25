@@ -209,5 +209,14 @@ namespace Warden.Views {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::Warden.Components.Controls.LoginUsc usc_login;
+        
+        /// <summary>
+        /// Controle tbl_teste.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TableCustomUsc tbl_teste;
     }
 }

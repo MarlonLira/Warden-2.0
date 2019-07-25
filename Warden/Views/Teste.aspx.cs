@@ -2,6 +2,7 @@
 using Warden.Components.Common;
 using System.Collections.Generic;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace Warden.Views {
     public partial class Teste : BasePge {
@@ -10,6 +11,7 @@ namespace Warden.Views {
             btn_teste.OnClick += new ButtonUsc.OnClickEvent(Btn_teste_OnClick);
             LoadDropdown();
             LoadCharBar();
+            LoadTable();
         }
 
         private void Btn_teste_OnClick() {
@@ -50,6 +52,34 @@ namespace Warden.Views {
 
             //dd_teste.LoadDataSource();
             //dd_teste2.LoadDataSource();
+        }
+
+        private void LoadTable() {
+            tbl_teste.TableColumns = new List<BaseTableUsc.TableColumn>() {
+                new BaseTableUsc.TableColumn(){ Name = "Dosage", Text ="Dosagem"},
+                new BaseTableUsc.TableColumn(){ Name = "Drug", Text ="Remedio"},
+                new BaseTableUsc.TableColumn(){ Name = "Patient", Text ="Paciente"},
+                new BaseTableUsc.TableColumn(){ Name = "Date", Text ="Data"}
+            };
+
+            tbl_teste.LoadDataSource(GetData());
+        }
+
+        private DataTable GetData() {
+            // DataTable de teste
+            DataTable table = new DataTable();
+            table.Columns.Add("Dosage", typeof(int));
+            table.Columns.Add("Drug", typeof(string));
+            table.Columns.Add("Patient", typeof(string));
+            table.Columns.Add("Date", typeof(string));
+
+            // Here we add five DataRows.
+            table.Rows.Add(25, "Indocin", "David", DateTime.Now.ToShortDateString());
+            table.Rows.Add(50, "Enebrel", "Sam", DateTime.Now.ToShortDateString());
+            table.Rows.Add(10, "Hydralazine", "Christoff", DateTime.Now.ToShortDateString());
+            table.Rows.Add(21, "Combivent", "Janet", DateTime.Now.ToShortDateString());
+            table.Rows.Add(100, "Dilantin", "Melanie", DateTime.Now.ToShortDateString());
+            return table;
         }
     }
 }

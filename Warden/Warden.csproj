@@ -138,6 +138,7 @@
     <Content Include="Components\BaseUsc.ascx" />
     <Content Include="Components\Common\AlertUsc.ascx" />
     <Content Include="Components\Common\BaseChartUsc.ascx" />
+    <Content Include="Components\Common\BaseTableUsc.ascx" />
     <Content Include="Components\Common\BigChartLineUsc.ascx" />
     <Content Include="Components\Common\ButtonUsc.ascx" />
     <Content Include="Components\Common\CalendarUsc.ascx" />
@@ -146,6 +147,7 @@
     <Content Include="Components\Common\ChartBarUsc.ascx" />
     <Content Include="Components\Common\DropdownUsc.ascx" />
     <Content Include="Components\Common\LabelUsc.ascx" />
+    <Content Include="Components\Common\TableCustomUsc.ascx" />
     <Content Include="Components\Common\TableSimpleUsc.ascx" />
     <Content Include="Components\Common\TableTaskUsc.ascx" />
     <Content Include="Components\Common\TableUsc.ascx" />
@@ -199,6 +201,13 @@
     </Compile>
     <Compile Include="Components\Common\BaseChartUsc.ascx.designer.cs">
       <DependentUpon>BaseChartUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\BaseTableUsc.ascx.cs">
+      <DependentUpon>BaseTableUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\BaseTableUsc.ascx.designer.cs">
+      <DependentUpon>BaseTableUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\BigChartLineUsc.ascx.cs">
       <DependentUpon>BigChartLineUsc.ascx</DependentUpon>
@@ -255,6 +264,13 @@
     </Compile>
     <Compile Include="Components\Common\LabelUsc.ascx.designer.cs">
       <DependentUpon>LabelUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\TableCustomUsc.ascx.cs">
+      <DependentUpon>TableCustomUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\TableCustomUsc.ascx.designer.cs">
+      <DependentUpon>TableCustomUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\TableSimpleUsc.ascx.cs">
       <DependentUpon>TableSimpleUsc.ascx</DependentUpon>

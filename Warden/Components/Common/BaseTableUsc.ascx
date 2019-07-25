@@ -1,0 +1,1 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BaseTableUsc.ascx.cs" Inherits="Warden.Components.Common.BaseTableUsc" %>
