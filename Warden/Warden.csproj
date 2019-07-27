@@ -164,11 +164,8 @@
     <Content Include="Components\Styles\JsUsc.ascx" />
     <Content Include="Default.aspx" />
     <Content Include="Login.aspx" />
-    <Content Include="Views\Calendar2.aspx" />
-    <Content Include="Views\Colaborador\Calendar.aspx" />
     <Content Include="Views\Teste.aspx" />
     <Content Include="Views\Calendar.aspx" />
-    <Content Include="Views\teste3.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -389,20 +386,6 @@
     <Compile Include="Models\EventDAO.cs" />
     <Compile Include="Models\ImproperCalendarEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Calendar2.aspx.cs">
-      <DependentUpon>Calendar2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Calendar2.aspx.designer.cs">
-      <DependentUpon>Calendar2.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Colaborador\Calendar.aspx.cs">
-      <DependentUpon>Calendar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\Colaborador\Calendar.aspx.designer.cs">
-      <DependentUpon>Calendar.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Views\Teste.aspx.cs">
       <DependentUpon>Teste.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -416,13 +399,6 @@
     </Compile>
     <Compile Include="Views\Calendar.aspx.designer.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Views\teste3.aspx.cs">
-      <DependentUpon>teste3.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Views\teste3.aspx.designer.cs">
-      <DependentUpon>teste3.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebMst.Master.cs">
       <DependentUpon>WebMst.Master</DependentUpon>
@@ -595,7 +571,9 @@
     </None>
     <Content Include="WebMst.Master" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Colaborador\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
