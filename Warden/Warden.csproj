@@ -139,6 +139,7 @@
     <Content Include="Components\Common\AlertUsc.ascx" />
     <Content Include="Components\Common\BaseChartUsc.ascx" />
     <Content Include="Components\Common\BaseTableUsc.ascx" />
+    <Content Include="Components\Common\BaseTextUsc.ascx" />
     <Content Include="Components\Common\BigChartLineUsc.ascx" />
     <Content Include="Components\Common\ButtonUsc.ascx" />
     <Content Include="Components\Common\CalendarUsc.ascx" />
@@ -151,13 +152,18 @@
     <Content Include="Components\Common\TableSimpleUsc.ascx" />
     <Content Include="Components\Common\TableTaskUsc.ascx" />
     <Content Include="Components\Common\TableUsc.ascx" />
+    <Content Include="Components\Common\TextAreaUsc.ascx" />
     <Content Include="Components\Common\TextBoxUsc.ascx" />
+    <Content Include="Components\Common\TextInputUsc.ascx" />
     <Content Include="Components\Controls\FooterUsc.ascx" />
     <Content Include="Components\Controls\LoginUsc.ascx" />
     <Content Include="Components\Controls\MainUsc.ascx" />
+    <Content Include="Components\Controls\MapUsc.ascx" />
     <Content Include="Components\Controls\NavbarUsc.ascx" />
     <Content Include="Components\Controls\SettingsUsc.ascx" />
     <Content Include="Components\Controls\SidebarUsc.ascx" />
+    <Content Include="Components\Controls\UserAvatarUsc.ascx" />
+    <Content Include="Components\Controls\UserProfileUsc.ascx" />
     <Content Include="Components\Styles\CalendarCssUsc.ascx" />
     <Content Include="Components\Styles\CalendarJsUsc.ascx" />
     <Content Include="Components\Styles\CssUsc.ascx" />
@@ -166,6 +172,8 @@
     <Content Include="Login.aspx" />
     <Content Include="Views\Teste.aspx" />
     <Content Include="Views\Calendar.aspx" />
+    <Content Include="Views\TesteControls.aspx" />
+    <Content Include="Views\TesteMap.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -205,6 +213,13 @@
     </Compile>
     <Compile Include="Components\Common\BaseTableUsc.ascx.designer.cs">
       <DependentUpon>BaseTableUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\BaseTextUsc.ascx.cs">
+      <DependentUpon>BaseTextUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\BaseTextUsc.ascx.designer.cs">
+      <DependentUpon>BaseTextUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\BigChartLineUsc.ascx.cs">
       <DependentUpon>BigChartLineUsc.ascx</DependentUpon>
@@ -290,12 +305,26 @@
     <Compile Include="Components\Common\TableUsc.ascx.designer.cs">
       <DependentUpon>TableUsc.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Common\TextAreaUsc.ascx.cs">
+      <DependentUpon>TextAreaUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\TextAreaUsc.ascx.designer.cs">
+      <DependentUpon>TextAreaUsc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\Common\TextBoxUsc.ascx.cs">
       <DependentUpon>TextBoxUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Components\Common\TextBoxUsc.ascx.designer.cs">
       <DependentUpon>TextBoxUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\TextInputUsc.ascx.cs">
+      <DependentUpon>TextInputUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\TextInputUsc.ascx.designer.cs">
+      <DependentUpon>TextInputUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Controls\FooterUsc.ascx.cs">
       <DependentUpon>FooterUsc.ascx</DependentUpon>
@@ -318,6 +347,13 @@
     <Compile Include="Components\Controls\MainUsc.ascx.designer.cs">
       <DependentUpon>MainUsc.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Controls\MapUsc.ascx.cs">
+      <DependentUpon>MapUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\MapUsc.ascx.designer.cs">
+      <DependentUpon>MapUsc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\Controls\NavbarUsc.ascx.cs">
       <DependentUpon>NavbarUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -338,6 +374,20 @@
     </Compile>
     <Compile Include="Components\Controls\SidebarUsc.ascx.designer.cs">
       <DependentUpon>SidebarUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Controls\UserAvatarUsc.ascx.cs">
+      <DependentUpon>UserAvatarUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\UserAvatarUsc.ascx.designer.cs">
+      <DependentUpon>UserAvatarUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Controls\UserProfileUsc.ascx.cs">
+      <DependentUpon>UserProfileUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\UserProfileUsc.ascx.designer.cs">
+      <DependentUpon>UserProfileUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Styles\CalendarCssUsc.ascx.cs">
       <DependentUpon>CalendarCssUsc.ascx</DependentUpon>
@@ -399,6 +449,20 @@
     </Compile>
     <Compile Include="Views\Calendar.aspx.designer.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TesteControls.aspx.cs">
+      <DependentUpon>TesteControls.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TesteControls.aspx.designer.cs">
+      <DependentUpon>TesteControls.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TesteMap.aspx.cs">
+      <DependentUpon>TesteMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\TesteMap.aspx.designer.cs">
+      <DependentUpon>TesteMap.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebMst.Master.cs">
       <DependentUpon>WebMst.Master</DependentUpon>

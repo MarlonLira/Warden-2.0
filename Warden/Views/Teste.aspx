@@ -44,4 +44,6 @@
     <usc:LoginUsc  ID="usc_login" runat="server" />
     <usc:LabelUsc runat="server" Text="testando" ForeColor="White" FontSize="15" />
     <usc:TableCustomUsc runat="server" ID="tbl_teste" />"
+
+    <usc:TextInputUsc runat="server" Text="testando componente" Title="Testando" Placeholder="Testando componente novo" />
 </asp:Content>
