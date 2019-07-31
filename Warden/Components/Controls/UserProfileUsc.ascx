@@ -1,4 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserProfileUsc.ascx.cs" Inherits="Warden.Components.Controls.UserProfileUsc" %>
+
 <div class="col-md-8">
     <div class="card">
         <div class="card-header">
