@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebMst.Master" AutoEventWireup="true" CodeBehind="Teste.aspx.cs" Inherits="Warden.Views.Teste" %>
 <asp:Content ID="ctt_teste" ContentPlaceHolderID="cph_main" runat="server">
 
-    
+    <usc:BreadcrumbUsc runat="server" />
     <usc:ButtonUsc runat="server" ID="ButtonUsc1" Text="Regular" ComponentSize="regular" ComponentStyle="primary"/>
     <usc:ButtonUsc runat="server" ID="ButtonUsc2" Text="Small" ComponentSize="small" ComponentStyle="primary"/>
     <usc:ButtonUsc runat="server" ID="btn_teste" Text="Large" ComponentSize="large" ComponentStyle="primary"/>

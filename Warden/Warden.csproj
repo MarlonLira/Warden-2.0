@@ -141,6 +141,7 @@
     <Content Include="Components\Common\BaseTableUsc.ascx" />
     <Content Include="Components\Common\BaseTextUsc.ascx" />
     <Content Include="Components\Common\BigChartLineUsc.ascx" />
+    <Content Include="Components\Common\BreadcrumbUsc.ascx" />
     <Content Include="Components\Common\ButtonUsc.ascx" />
     <Content Include="Components\Common\CalendarUsc.ascx" />
     <Content Include="Components\Common\CardUsc.ascx" />
@@ -228,6 +229,13 @@
     </Compile>
     <Compile Include="Components\Common\BigChartLineUsc.ascx.designer.cs">
       <DependentUpon>BigChartLineUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\BreadcrumbUsc.ascx.cs">
+      <DependentUpon>BreadcrumbUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\BreadcrumbUsc.ascx.designer.cs">
+      <DependentUpon>BreadcrumbUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\ButtonUsc.ascx.cs">
       <DependentUpon>ButtonUsc.ascx</DependentUpon>
