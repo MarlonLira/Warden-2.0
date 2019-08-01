@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebMst.Master" AutoEventWireup="true" CodeBehind="Teste.aspx.cs" Inherits="Warden.Views.Teste" %>
 <asp:Content ID="ctt_teste" ContentPlaceHolderID="cph_main" runat="server">
 
-
+    
     <usc:ButtonUsc runat="server" ID="ButtonUsc1" Text="Regular" ComponentSize="regular" ComponentStyle="primary"/>
     <usc:ButtonUsc runat="server" ID="ButtonUsc2" Text="Small" ComponentSize="small" ComponentStyle="primary"/>
     <usc:ButtonUsc runat="server" ID="btn_teste" Text="Large" ComponentSize="large" ComponentStyle="primary"/>
@@ -46,4 +46,5 @@
     <usc:TableCustomUsc runat="server" ID="tbl_teste" />"
 
     <usc:TextInputUsc runat="server" Text="testando componente" Title="Testando" Placeholder="Testando componente novo" />
+    <usc:ModalUsc runat="server" ComponentId="mdl_erro" ID="mdl_control" Title="Error"/>
 </asp:Content>

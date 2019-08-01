@@ -31,6 +31,15 @@ namespace Warden {
         protected global::System.Web.UI.HtmlControls.HtmlForm frm_main;
         
         /// <summary>
+        /// Controle scpManager.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager scpManager;
+        
+        /// <summary>
         /// Controle cph_main.
         /// </summary>
         /// <remarks>

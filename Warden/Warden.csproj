@@ -148,6 +148,7 @@
     <Content Include="Components\Common\ChartBarUsc.ascx" />
     <Content Include="Components\Common\DropdownUsc.ascx" />
     <Content Include="Components\Common\LabelUsc.ascx" />
+    <Content Include="Components\Common\ModalUsc.ascx" />
     <Content Include="Components\Common\TableCustomUsc.ascx" />
     <Content Include="Components\Common\TableSimpleUsc.ascx" />
     <Content Include="Components\Common\TableTaskUsc.ascx" />
@@ -276,6 +277,13 @@
     </Compile>
     <Compile Include="Components\Common\LabelUsc.ascx.designer.cs">
       <DependentUpon>LabelUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\ModalUsc.ascx.cs">
+      <DependentUpon>ModalUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\ModalUsc.ascx.designer.cs">
+      <DependentUpon>ModalUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\TableCustomUsc.ascx.cs">
       <DependentUpon>TableCustomUsc.ascx</DependentUpon>

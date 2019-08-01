@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Web;
+using System.Web.UI;
 
 namespace Warden.Views {
     public partial class Teste : BasePge {
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
             btn_teste.OnClick += new ButtonUsc.OnClickEvent(Btn_teste_OnClick);
+            ButtonUsc1.OnClick += new ButtonUsc.OnClickEvent(ButtonUsc1_OnClick);
+            ButtonUsc2.OnClick += new ButtonUsc.OnClickEvent(ButtonUsc2_OnClick);
             LoadDropdown();
             LoadCharBar();
             LoadTable();
@@ -17,7 +20,18 @@ namespace Warden.Views {
         }
         HttpCookieCollection MyCookieColl;
         HttpCookie MyCookie;
+        private void ButtonUsc1_OnClick() {
+            //Session.Add("Error", "Testando componente");
+            mdl_control.Text = "Testando o Componente Modal";
+            mdl_control.OpenModal();
+            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "mdl_erro", "$(function() {openModal();});", true);
+            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "mdl_erro", "openModal();", true);
+        }
 
+        private void ButtonUsc2_OnClick() {
+            mdl_control.Text = "Testando o Componente Modal 2";
+            mdl_control.OpenModal();
+        }
         private void Btn_teste_OnClick() {
             lbl_teste.Text = dd_teste.SelectedItem;
             txt_teste.Text = dd_teste2.SelectedValue;
