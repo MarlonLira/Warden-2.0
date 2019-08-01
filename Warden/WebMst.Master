@@ -12,7 +12,7 @@
     <form id="frm_main" runat="server" class="wrapper">
         <usc:SidebarUsc runat="server" />
         <usc:NavbarUsc runat="server" />
-
+        <asp:ScriptManager ID="scpManager" runat="server"></asp:ScriptManager>
         <div class="main-panel">
             <div class="content">
                 <asp:ContentPlaceHolder ID="cph_main" runat="server">

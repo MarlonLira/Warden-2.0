@@ -10,5 +10,9 @@ namespace Warden.Views {
         protected void Page_Load(object sender, EventArgs e) {
 
         }
+
+        protected void OnLoadComplete(object sender, EventArgs e) {
+
+        }
     }
 }
