@@ -7,18 +7,11 @@ using System.Web.UI.WebControls;
 namespace Warden.Components {
     public partial class BaseUsc : UserControl {
 
-        public class Item {
-            public String Value { get; set; }
-            public String Text { get; set; }
-        }
-
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
-            LoadDataSource();
         }
 
-        public List<ListItem> Itens;
-
+        public List<ListItem> Itens { get; set; }
         //Text
         public Boolean ReadOnly { get; set; }
         public String Title { get; set; }
