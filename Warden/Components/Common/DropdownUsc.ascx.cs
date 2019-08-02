@@ -4,11 +4,16 @@ using System.Web.UI.WebControls;
 
 namespace Warden.Components.Common {
     public partial class DropdownUsc : BaseUsc {
-         
+
+        public class Item {
+            public String Value { get; set; }
+            public String Text { get; set; }
+        }
+
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
         }
-
+        
         public List<ListItem> ItemList { get; set; }
         public String SelectedItem {
             get { return dd_control.SelectedItem.Text; }

@@ -5,9 +5,5 @@ namespace Warden.Components.Common {
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
         }
-
-        public override void LoadDataSource() {
-            base.LoadDataSource();
-        }
     }
 }
