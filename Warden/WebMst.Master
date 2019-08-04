@@ -10,9 +10,9 @@
 </head>
 <body>
     <form id="frm_main" runat="server" class="wrapper">
-        <%if (false) { %>
+     
         <usc:SidebarUsc runat="server" />
-        <%} %>
+        
         <usc:NavbarUsc runat="server" />
         <asp:ScriptManager ID="scpManager" runat="server"></asp:ScriptManager>
         <div class="main-panel">

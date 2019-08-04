@@ -28,7 +28,7 @@
         <usc:TextBoxUsc runat="server" ID="txt_teste"/>
         <usc:TextBoxUsc runat="server" ID="txt_teste2" />
     </div>
-    <usc:TableUsc runat="server" />
+    
     <usc:AlertUsc runat="server" Title="Error" Text="Componente de alerta" />
     <asp:Label ID="lbl_teste" runat="server" Text="Label"></asp:Label>
     <div class="row">
@@ -47,4 +47,7 @@
 
     <usc:TextInputUsc runat="server" Text="testando componente" Title="Testando" Placeholder="Testando componente novo" />
     <usc:ModalUsc runat="server" ComponentId="mdl_erro" ID="mdl_control" Title="Error"/>
+    
+    <usc:DataTableTestUsc runat="server" ID="dtbl_control"/>
+    <usc:TableUsc runat="server" ID="tbl_control" ComponentId="tableControl"/>
 </asp:Content>

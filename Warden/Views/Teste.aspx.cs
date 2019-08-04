@@ -105,6 +105,23 @@ namespace Warden.Views {
             };
 
             tbl_teste.LoadDataSource(GetData());
+
+            dtbl_control.TableColumns = new List<BaseTableUsc.TableColumn>() {
+                new BaseTableUsc.TableColumn(){ Name = "Dosage", Text ="Dosagem"},
+                new BaseTableUsc.TableColumn(){ Name = "Drug", Text ="Remedio"},
+                new BaseTableUsc.TableColumn(){ Name = "Patient", Text ="Paciente"},
+                new BaseTableUsc.TableColumn(){ Name = "Date", Text ="Data"}
+            };
+            dtbl_control.DataSource = GetData();
+
+            tbl_control.TableColumns = new List<BaseTableUsc.TableColumn>() {
+                new BaseTableUsc.TableColumn(){ Name = "Dosage", Text ="Dosagem"},
+                new BaseTableUsc.TableColumn(){ Name = "Drug", Text ="Remedio"},
+                new BaseTableUsc.TableColumn(){ Name = "Patient", Text ="Paciente"},
+                new BaseTableUsc.TableColumn(){ Name = "Date", Text ="Data"}
+            };
+
+            tbl_control.DataSource = GetData();
         }
 
         private DataTable GetData() {

@@ -10,7 +10,7 @@
             <form class="form">
               <div class="card card-login card-white">
                 <div class="card-header">
-                  <img src="<%=Help.FormatUrl("/assets/img/card-primary.png") %>" alt="">
+                  <img src="<%=Help.FormatUrl("/assets/img/card-black.png") %>" alt="">
                   <h1 class="card-title">Log in</h1>
                 </div>
                 <div class="card-body">
@@ -32,15 +32,15 @@
                   </div>
                 </div>
                 <div class="card-footer">
-                  <a href="#pablo" class="btn btn-primary btn-lg btn-block mb-3">Get Started</a>
+                    <usc:ButtonUsc runat="server" Text="Confirmar" ComponentSize="large" ComponentStyle="block mb-3" />
                   <div class="pull-left">
                     <h6>
-                      <a href="javascript:void(0)" class="link footer-link">Create Account</a>
+                      <a href="javascript:void(0)" class="link footer-link">Criar Conta</a>
                     </h6>
                   </div>
                   <div class="pull-right">
                     <h6>
-                      <a href="javascript:void(0)" class="link footer-link">Need Help?</a>
+                      <a href="javascript:void(0)" class="link footer-link">Precisa de Ajuda?</a>
                     </h6>
                   </div>
                 </div>
