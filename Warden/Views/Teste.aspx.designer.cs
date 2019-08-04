@@ -227,5 +227,23 @@ namespace Warden.Views {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::Warden.Components.Common.ModalUsc mdl_control;
+        
+        /// <summary>
+        /// Controle dtbl_control.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.DataTableTestUsc dtbl_control;
+        
+        /// <summary>
+        /// Controle tbl_control.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TableUsc tbl_control;
     }
 }

@@ -147,6 +147,7 @@
     <Content Include="Components\Common\CardUsc.ascx" />
     <Content Include="Components\Common\ChartLineUsc.ascx" />
     <Content Include="Components\Common\ChartBarUsc.ascx" />
+    <Content Include="Components\Common\DataTableTestUsc.ascx" />
     <Content Include="Components\Common\DataTableUsc.ascx" />
     <Content Include="Components\Common\DropdownUsc.ascx" />
     <Content Include="Components\Common\LabelUsc.ascx" />
@@ -275,6 +276,13 @@
     </Compile>
     <Compile Include="Components\Common\ChartBarUsc.ascx.designer.cs">
       <DependentUpon>ChartBarUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\DataTableTestUsc.ascx.cs">
+      <DependentUpon>DataTableTestUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\DataTableTestUsc.ascx.designer.cs">
+      <DependentUpon>DataTableTestUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\DataTableUsc.ascx.cs">
       <DependentUpon>DataTableUsc.ascx</DependentUpon>

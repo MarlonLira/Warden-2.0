@@ -16,6 +16,7 @@ namespace Warden.Components.Common {
 
         public List<TableColumn> TableColumns { get; set; }
         public String HtmlDataSource { get; set; }
+        public DataTable DataSource { get; set; }
 
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
