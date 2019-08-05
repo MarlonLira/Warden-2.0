@@ -48,6 +48,6 @@
     <usc:TextInputUsc runat="server" Text="testando componente" Title="Testando" Placeholder="Testando componente novo" />
     <usc:ModalUsc runat="server" ComponentId="mdl_erro" ID="mdl_control" Title="Error"/>
     
-    <usc:DataTableTestUsc runat="server" ID="dtbl_control"/>
+    <usc:TableUsc runat="server" ID="dtbl_control" ComponentId="tableControl2"/>
     <usc:TableUsc runat="server" ID="tbl_control" ComponentId="tableControl"/>
 </asp:Content>
