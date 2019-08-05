@@ -235,7 +235,7 @@ namespace Warden.Views {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.DataTableTestUsc dtbl_control;
+        protected global::Warden.Components.Common.TableUsc dtbl_control;
         
         /// <summary>
         /// Controle tbl_control.
