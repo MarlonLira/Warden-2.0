@@ -22,7 +22,7 @@
                 <div class="row">
                     <usc:TextInputUsc runat="server" Text="NewYork" Title="City" Placeholder="City" Size="4" Type="text"/>
                     <usc:TextInputUsc runat="server" Text="EUA" Title="Country" Placeholder="Country" Size="4" Type="text"/>
-                    <usc:TextInputUsc runat="server" Text="54180070" Title="Postal Code" Placeholder="ZIP Code" Size="4" Type="number"/>
+                    <usc:TextInputUsc runat="server" Text="54180070" Title="Postal Code" Placeholder="ZIP Code" Size="4" Type="text"/>
                 </div>
                 <div class="row">
                     <usc:TextAreaUsc runat="server" Text="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo." Placeholder="Here can be your description" Title="About Me" Size="8" />
