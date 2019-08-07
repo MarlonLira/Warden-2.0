@@ -131,6 +131,8 @@
     <Content Include="assets\js\core\jquery.min.js" />
     <Content Include="assets\js\core\popper.min.js" />
     <Content Include="assets\js\core\sidebar.js" />
+    <Content Include="assets\js\datatable\jquery.dataTables.min.js" />
+    <Content Include="assets\js\datatable\jquery.tablesorter.js" />
     <Content Include="assets\js\plugins\bootstrap-notify.js" />
     <Content Include="assets\js\plugins\chartjs.min.js" />
     <Content Include="assets\js\plugins\perfect-scrollbar.jquery.min.js" />
@@ -151,6 +153,7 @@
     <Content Include="Components\Common\DropdownUsc.ascx" />
     <Content Include="Components\Common\LabelUsc.ascx" />
     <Content Include="Components\Common\ModalUsc.ascx" />
+    <Content Include="Components\Common\SearchModalUsc.ascx" />
     <Content Include="Components\Common\TableCustomUsc.ascx" />
     <Content Include="Components\Common\TableSimpleUsc.ascx" />
     <Content Include="Components\Common\TableTaskUsc.ascx" />
@@ -158,6 +161,7 @@
     <Content Include="Components\Common\TextAreaUsc.ascx" />
     <Content Include="Components\Common\TextBoxUsc.ascx" />
     <Content Include="Components\Common\TextInputUsc.ascx" />
+    <Content Include="Components\Common\TimeLineUsc.ascx" />
     <Content Include="Components\Controls\FooterUsc.ascx" />
     <Content Include="Components\Controls\LoginUsc.ascx" />
     <Content Include="Components\Controls\MainUsc.ascx" />
@@ -304,6 +308,13 @@
     <Compile Include="Components\Common\ModalUsc.ascx.designer.cs">
       <DependentUpon>ModalUsc.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Common\SearchModalUsc.ascx.cs">
+      <DependentUpon>SearchModalUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\SearchModalUsc.ascx.designer.cs">
+      <DependentUpon>SearchModalUsc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\Common\TableCustomUsc.ascx.cs">
       <DependentUpon>TableCustomUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -352,6 +363,13 @@
     </Compile>
     <Compile Include="Components\Common\TextInputUsc.ascx.designer.cs">
       <DependentUpon>TextInputUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\TimeLineUsc.ascx.cs">
+      <DependentUpon>TimeLineUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\TimeLineUsc.ascx.designer.cs">
+      <DependentUpon>TimeLineUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Controls\FooterUsc.ascx.cs">
       <DependentUpon>FooterUsc.ascx</DependentUpon>
