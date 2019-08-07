@@ -8,9 +8,9 @@
     <title>Warden</title>
     <usc:CssUsc runat="server" ID="css_control" />
 </head>
-<body>
+<body class="sidebar-mini">
     <form id="frm_main" runat="server" class="wrapper">
-     
+     <usc:SearchModalUsc runat="server" />
         <usc:SidebarUsc runat="server" />
         
         <usc:NavbarUsc runat="server" />
@@ -24,8 +24,10 @@
         </div>
     </form>
 
+    
     <usc:SettingsUsc runat="server" />
     <usc:JsUsc runat="server" ID="js_control" />
+
 </body>
     
 </html>
