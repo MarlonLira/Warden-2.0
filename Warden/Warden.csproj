@@ -44,6 +44,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -477,6 +480,7 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Helper\Help.cs" />
+    <Compile Include="Helper\SendAnything.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -485,8 +489,15 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\CalendarEvent.cs" />
+    <Compile Include="Models\Email.cs" />
     <Compile Include="Models\EventDAO.cs" />
     <Compile Include="Models\ImproperCalendarEvent.cs" />
+    <Compile Include="Models\Messages.cs" />
+    <Compile Include="Models\Sms.cs" />
+    <Compile Include="Models\WhatsApp.cs" />
+    <Compile Include="Persistences\EmailPst.cs" />
+    <Compile Include="Persistences\SmsPst.cs" />
+    <Compile Include="Persistences\WhatsAppPst.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\CalendarTeste.aspx.cs">
       <DependentUpon>CalendarTeste.aspx</DependentUpon>
@@ -702,6 +713,7 @@
     <Content Include="WebMst.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Interfaces\" />
     <Folder Include="Views\Colaborador\" />
   </ItemGroup>
   <PropertyGroup>
