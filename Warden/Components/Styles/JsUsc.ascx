@@ -24,15 +24,9 @@
 
 <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
 <script src="<%=Help.FormatUrl("/assets/js/black-dashboard.min.js?v=1.0.0")%>"></script>
-<script src="<%=Help.FormatUrl("/assets/demo/demo.js")%>"></script>
 
-<script>
-    $(document).ready(function() {
-        // Javascript method's body can be found in assets/js/demos.js
-        demo.initDashboardPageCharts();
 
-    });
-</script>
+
 <script>
     $(document).ready(function() {
       $().ready(function() {

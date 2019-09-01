@@ -741,6 +741,663 @@ demo = {
         align: align
       }
     });
-  }
+    },
+
+  showSwal: function (type) {
+        if (type == 'basic') {
+            swal({
+                title: "Here's a message!",
+                buttonsStyling: false,
+                confirmButtonClass: "btn btn-success"
+            }).catch(swal.noop);
+
+        } else if (type == 'title-and-text') {
+            swal({
+                title: "Here's a message!",
+                text: "It's pretty, isn't it?",
+                buttonsStyling: false,
+                confirmButtonClass: "btn btn-info"
+            }).catch(swal.noop);
+
+        } else if (type == 'success-message') {
+            swal({
+                title: "Good job!",
+                text: "You clicked the button!",
+                buttonsStyling: false,
+                confirmButtonClass: "btn btn-success",
+                type: "success"
+            }).catch(swal.noop);
+
+        } else if (type == 'warning-message-and-confirmation') {
+            swal({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonClass: 'btn btn-success',
+                cancelButtonClass: 'btn btn-danger',
+                confirmButtonText: 'Yes, delete it!',
+                buttonsStyling: false
+            }).then(function () {
+                swal({
+                    title: 'Deleted!',
+                    text: 'Your file has been deleted.',
+                    type: 'success',
+                    confirmButtonClass: "btn btn-success",
+                    buttonsStyling: false
+                });
+            }).catch(swal.noop);
+        } else if (type == 'warning-message-and-cancel') {
+            swal({
+                title: 'Are you sure?',
+                text: 'You will not be able to recover this imaginary file!',
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, keep it',
+                confirmButtonClass: "btn btn-success",
+                cancelButtonClass: "btn btn-danger",
+                buttonsStyling: false
+            }).then(function () {
+                swal({
+                    title: 'Deleted!',
+                    text: 'Your imaginary file has been deleted.',
+                    type: 'success',
+                    confirmButtonClass: "btn btn-success",
+                    buttonsStyling: false
+                }).catch(swal.noop);
+            }, function (dismiss) {
+                // dismiss can be 'overlay', 'cancel', 'close', 'esc', 'timer'
+                if (dismiss === 'cancel') {
+                    swal({
+                        title: 'Cancelled',
+                        text: 'Your imaginary file is safe :)',
+                        type: 'error',
+                        confirmButtonClass: "btn btn-info",
+                        buttonsStyling: false
+                    }).catch(swal.noop);
+                }
+            }).catch(swal.noop);
+
+        } else if (type == 'custom-html') {
+            swal({
+                title: 'HTML example',
+                buttonsStyling: false,
+                confirmButtonClass: "btn btn-success",
+                html:
+                    'You can use <b>bold text</b>, ' +
+                    '<a href="http://github.com">links</a> ' +
+                    'and other HTML tags'
+            }).catch(swal.noop);
+
+        } else if (type == 'auto-close') {
+            swal({
+                title: "Auto close alert!",
+                text: "I will close in 2 seconds.",
+                timer: 2000,
+                showConfirmButton: false
+            }).catch(swal.noop);
+        } else if (type == 'input-field') {
+            swal({
+                title: 'Input something',
+                html: '<div class="form-group">' +
+                    '<input id="input-field" type="text" class="form-control" />' +
+                    '</div>',
+                showCancelButton: true,
+                confirmButtonClass: 'btn btn-success',
+                cancelButtonClass: 'btn btn-danger',
+                buttonsStyling: false
+            }).then(function (result) {
+                swal({
+                    type: 'success',
+                    html: 'You entered: <strong>' +
+                        $('#input-field').val() +
+                        '</strong>',
+                    confirmButtonClass: 'btn btn-success',
+                    buttonsStyling: false
+
+                }).catch(swal.noop);
+            }).catch(swal.noop);
+        }
+    },
+
+    initNowUiWizard: function () {
+        // Code for the Validator
+        var $validator = $('.card-wizard form').validate({
+            rules: {
+                firstname: {
+                    required: true,
+                    minlength: 3
+                },
+                lastname: {
+                    required: true,
+                    minlength: 3
+                },
+                email: {
+                    required: true,
+                    minlength: 3,
+                },
+                number: {
+                    required: true,
+                    minlength: 3,
+                }
+
+            },
+            highlight: function (element) {
+                $(element).closest('.input-group').removeClass('has-success').addClass('has-danger');
+            },
+            success: function (element) {
+                $(element).closest('.input-group').removeClass('has-danger').addClass('has-success');
+            }
+        });
+
+        // Wizard Initialization
+        $('.card-wizard').bootstrapWizard({
+            'tabClass': 'nav nav-pills',
+            'nextSelector': '.btn-next',
+            'previousSelector': '.btn-previous',
+
+            onNext: function (tab, navigation, index) {
+                var $valid = $('.card-wizard form').valid();
+                if (!$valid) {
+                    $validator.focusInvalid();
+                    return false;
+                }
+            },
+
+            onInit: function (tab, navigation, index) {
+                //check number of tabs and fill the entire row
+                var $total = navigation.find('li').length;
+                $width = 100 / $total;
+
+                navigation.find('li').css('width', $width + '%');
+
+            },
+
+            onTabClick: function (tab, navigation, index) {
+                var $valid = $('.card-wizard form').valid();
+
+                if (!$valid) {
+                    return false;
+                } else {
+                    return true;
+                }
+            },
+
+            onTabShow: function (tab, navigation, index) {
+                var $total = navigation.find('li').length;
+                var $current = index + 1;
+
+                var $wizard = navigation.closest('.card-wizard');
+
+                // If it's the last tab then hide the last button and show the finish instead
+                if ($current >= $total) {
+                    $($wizard).find('.btn-next').hide();
+                    $($wizard).find('.btn-finish').show();
+                } else {
+                    $($wizard).find('.btn-next').show();
+                    $($wizard).find('.btn-finish').hide();
+                }
+
+                //update progress
+                var move_distance = 100 / $total;
+                move_distance = move_distance * (index) + move_distance / 2;
+
+                $wizard.find($('.progress-bar')).css({ width: move_distance + '%' });
+                //e.relatedTarget // previous tab
+
+                $wizard.find($('.card-wizard .nav-pills li .nav-link.active')).addClass('checked');
+
+            }
+        });
+
+
+        // Prepare the preview for profile picture
+        $("#wizard-picture").change(function () {
+            readURL(this);
+        });
+
+        $('[data-toggle="wizard-radio"]').click(function () {
+            wizard = $(this).closest('.card-wizard');
+            wizard.find('[data-toggle="wizard-radio"]').removeClass('active');
+            $(this).addClass('active');
+            $(wizard).find('[type="radio"]').removeAttr('checked');
+            $(this).find('[type="radio"]').attr('checked', 'true');
+        });
+
+        $('[data-toggle="wizard-checkbox"]').click(function () {
+            if ($(this).hasClass('active')) {
+                $(this).removeClass('active');
+                $(this).find('[type="checkbox"]').removeAttr('checked');
+            } else {
+                $(this).addClass('active');
+                $(this).find('[type="checkbox"]').attr('checked', 'true');
+            }
+        });
+
+        $('.set-full-height').css('height', 'auto');
+
+        //Function to show image before upload
+
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#wizardPicturePreview').attr('src', e.target.result).fadeIn('slow');
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+    },
+
+    initSliders: function () {
+        // Sliders for demo purpose in refine cards section
+        var slider = document.getElementById('sliderRegular');
+
+        noUiSlider.create(slider, {
+            start: 40,
+            connect: [true, false],
+            range: {
+                min: 0,
+                max: 100
+            }
+        });
+
+        var slider2 = document.getElementById('sliderDouble');
+
+        noUiSlider.create(slider2, {
+            start: [20, 60],
+            connect: true,
+            range: {
+                min: 0,
+                max: 100
+            }
+        });
+    },
+
+    initVectorMap: function () {
+        var mapData = {
+            "AU": 760,
+            "BR": 550,
+            "CA": 120,
+            "DE": 1300,
+            "FR": 540,
+            "GB": 690,
+            "GE": 200,
+            "IN": 200,
+            "RO": 600,
+            "RU": 300,
+            "US": 2920,
+        };
+
+        $('#worldMap').vectorMap({
+            map: 'world_mill_en',
+            backgroundColor: "transparent",
+            zoomOnScroll: false,
+            regionStyle: {
+                initial: {
+                    fill: '#e4e4e4',
+                    "fill-opacity": 0.9,
+                    stroke: 'none',
+                    "stroke-width": 0,
+                    "stroke-opacity": 0
+                }
+            },
+
+            series: {
+                regions: [{
+                    values: mapData,
+                    scale: ["#AAAAAA", "#444444"],
+                    normalizeFunction: 'polynomial'
+                }]
+            },
+        });
+    },
+
+
+    initGoogleMaps: function () {
+        var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+        var mapOptions = {
+            zoom: 13,
+            center: myLatlng,
+            scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
+            styles: [
+                {
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#1d2c4d"
+                        }
+                    ]
+                },
+                {
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#8ec3b9"
+                        }
+                    ]
+                },
+                {
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                        {
+                            "color": "#1a3646"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.country",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                        {
+                            "color": "#4b6878"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.land_parcel",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#64779e"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "administrative.province",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                        {
+                            "color": "#4b6878"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape.man_made",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                        {
+                            "color": "#334e87"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "landscape.natural",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#023e58"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#283d6a"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#6f9ba5"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                        {
+                            "color": "#1d2c4d"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#023e58"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "poi.park",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#3C7680"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#304a7d"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#98a5be"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                        {
+                            "color": "#1d2c4d"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#2c6675"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#9d2a80"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                        {
+                            "color": "#9d2a80"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#b0d5ce"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "road.highway",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                        {
+                            "color": "#023e58"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#98a5be"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                        {
+                            "color": "#1d2c4d"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit.line",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                        {
+                            "color": "#283d6a"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "transit.station",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#3a4762"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "geometry",
+                    "stylers": [
+                        {
+                            "color": "#0e1626"
+                        }
+                    ]
+                },
+                {
+                    "featureType": "water",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                        {
+                            "color": "#4e6d70"
+                        }
+                    ]
+                }
+            ]
+        };
+
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            title: "Hello World!"
+        });
+
+        // To add the marker to the map, call setMap();
+        marker.setMap(map);
+    },
+
+    initSmallGoogleMaps: function () {
+
+        // Regular Map
+        var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+        var mapOptions = {
+            zoom: 8,
+            center: myLatlng,
+            scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
+        }
+
+        var map = new google.maps.Map(document.getElementById("regularMap"), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            title: "Regular Map!"
+        });
+
+        marker.setMap(map);
+
+
+        // Custom Skin & Settings Map
+        var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+        var mapOptions = {
+            zoom: 13,
+            center: myLatlng,
+            scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
+            disableDefaultUI: true, // a way to quickly hide all controls
+            zoomControl: true,
+            styles: [{ "featureType": "water", "stylers": [{ "saturation": 43 }, { "lightness": -11 }, { "hue": "#0088ff" }] }, { "featureType": "road", "elementType": "geometry.fill", "stylers": [{ "hue": "#ff0000" }, { "saturation": -100 }, { "lightness": 99 }] }, { "featureType": "road", "elementType": "geometry.stroke", "stylers": [{ "color": "#808080" }, { "lightness": 54 }] }, { "featureType": "landscape.man_made", "elementType": "geometry.fill", "stylers": [{ "color": "#ece2d9" }] }, { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [{ "color": "#ccdca1" }] }, { "featureType": "road", "elementType": "labels.text.fill", "stylers": [{ "color": "#767676" }] }, { "featureType": "road", "elementType": "labels.text.stroke", "stylers": [{ "color": "#ffffff" }] }, { "featureType": "poi", "stylers": [{ "visibility": "off" }] }, { "featureType": "landscape.natural", "elementType": "geometry.fill", "stylers": [{ "visibility": "on" }, { "color": "#b8cb93" }] }, { "featureType": "poi.park", "stylers": [{ "visibility": "on" }] }, { "featureType": "poi.sports_complex", "stylers": [{ "visibility": "on" }] }, { "featureType": "poi.medical", "stylers": [{ "visibility": "on" }] }, { "featureType": "poi.business", "stylers": [{ "visibility": "simplified" }] }]
+
+        }
+
+        var map = new google.maps.Map(document.getElementById("customSkinMap"), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            title: "Custom Skin & Settings Map!"
+        });
+
+        marker.setMap(map);
+
+
+
+        // Satellite Map
+        var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+        var mapOptions = {
+            zoom: 3,
+            scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
+            center: myLatlng,
+            mapTypeId: google.maps.MapTypeId.SATELLITE,
+
+        }
+
+        var map = new google.maps.Map(document.getElementById("satelliteMap"), mapOptions);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            title: "Satellite Map!"
+        });
+
+        marker.setMap(map);
+
+
+    },
+
+    showNotification: function (from, align) {
+        color = Math.floor((Math.random() * 4) + 1);
+
+        $.notify({
+            icon: "tim-icons icon-bell-55",
+            message: "Welcome to <b>Black Dashboard Pro</b> - a beautiful freebie for every web developer."
+
+        }, {
+                type: type[color],
+                timer: 8000,
+                placement: {
+                    from: from,
+                    align: align
+                }
+            });
+    }
 
 };
