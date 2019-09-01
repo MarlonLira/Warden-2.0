@@ -19411,8 +19411,8 @@ Copyright (c) 2015 Daniel Eden
 
             .card-user .author .block.block-one,
             .card-user .author .block.block-two {
-                background: rgba(225, 78, 202, .6);
-                background: linear-gradient(90deg, rgba(225, 78, 202, .6) 0, rgba(225, 78, 202, 0));
+                background: rgba(51, 88, 244, 0.6);
+                background: linear-gradient(90deg, rgba(51, 88, 244, 0.6) 0, rgba(225, 78, 202, 0));
                 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=10)
             }
 
@@ -19429,8 +19429,8 @@ Copyright (c) 2015 Daniel Eden
 
             .card-user .author .block.block-four,
             .card-user .author .block.block-three {
-                background: rgba(225, 78, 202, .6);
-                background: linear-gradient(90deg, rgba(225, 78, 202, .6) 0, rgba(225, 78, 202, 0));
+                background: rgba(51, 88, 244, 0.6);
+                background: linear-gradient(90deg, rgba(51, 88, 244, 0.6) 0, rgba(225, 78, 202, 0));
                 filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=10);
                 right: -45px
             }

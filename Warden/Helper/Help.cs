@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI.WebControls;
+using System.Xml;
 
 namespace Warden.Helper {
     public static class Help {
@@ -193,6 +196,171 @@ namespace Warden.Helper {
             }
             return Result;
         }
+
+        public static String MsgFormat(String CreateMsg, String FullName, String Email) {
+            String Msg = CreateMsg;
+            String[] Name = FullName.Split(' ');
+            String SelectName = Name[0];
+
+            Msg = Msg.Replace("{NOME}", RandomTalk(SelectName));
+            Msg = Msg.Replace("{RESPONDER_PARA}", Email);
+            
+            return Msg;
+        }
+
+        public static String RandomTalk(String Name) {
+            String Talk = "";
+            Int32 Num = RandomNumber(1, 13);
+
+            switch (Num) {
+                case 1: {
+                        Talk = "Bom dia " + Name + " Tudo bem com você ?";
+                        break;
+                    }
+                case 2: {
+                        Talk = "Olá tudo bem? " + Name;
+                        break;
+                    }
+                case 3: {
+                        Talk = "Como vai? " + Name;
+                        break;
+                    }
+                case 4: {
+                        Talk = "Olá " + Name;
+                        break;
+                    }
+                case 5: {
+                        Talk = "Oi tudo bem? " + Name;
+                        break;
+                    }
+                case 6: {
+                        Talk = "Olá, Como vai? " + Name;
+                        break;
+                    }
+                case 7: {
+                        Talk = "Bom dia, Como vai? " + Name;
+                        break;
+                    }
+                case 8: {
+                        Talk = "Tudo Bem? " + Name;
+                        break;
+                    }
+                case 9: {
+                        Talk = "Olá " + Name + " Como vai?";
+                        break;
+                    }
+                case 10: {
+                        Talk = "Olá " + Name + " Tudo bem?";
+                        break;
+                    }
+                case 11: {
+                        Talk = Name + " Como vai?";
+                        break;
+                    }
+                case 12: {
+                        Talk = "Olá " + Name + " Tudo Bem com você?";
+                        break;
+                    }
+                case 13: {
+                        Talk = "Bom dia " + Name + " Como vai? ";
+                        break;
+                    }
+            }
+
+            return Talk;
+        }
+
+        public static Int32 RandomNumber(Int32 Min, Int32 Max) {
+            Random Random = new Random();
+            return Random.Next(Min, Max);
+        }
+
+        public static String RandomIdGenerator() {
+            String Id = "";
+            String Rd = "";
+
+            try {
+                Rd = Guid.NewGuid().ToString();
+
+                Id = "msg-" + RandomNumber(0, 99) + "-" + Rd;
+
+                return Id;
+            } finally {
+                Id = "";
+                Rd = "";
+            }
+        }
+
+        public static String ShortLink(String urlOriginal) {
+
+            XmlDocument xmlDoc = new XmlDocument();        // O documento XML que será usado para tratar a reposta do servidor
+
+            //Faz uma solicitação ao bitly
+            WebRequest request = WebRequest.Create("http://api.bitly.com/v3/shorten");
+            //passa os dados do usuário, a chave da API e a url original
+            byte[] data = Encoding.UTF8.GetBytes(string.Format("login={0}&apiKey={1}&longUrl={2}&format={3}",
+                "hiacademia",                                     // seu nome de usuário na bitly
+                "R_0aeffa67b9c747eeb20fde762001cee7",                // sua chave para usar a API (API key)
+                HttpUtility.UrlEncode(urlOriginal),                 // Aplicar Encode na url que vamos encurtar
+                "xml"));                                            // O formato da resposta que desejamos que o servidor responda
+                                                                    //envia os dados via POST 
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
+            request.ContentLength = data.Length;
+            using (Stream ds = request.GetRequestStream()) {
+                ds.Write(data, 0, data.Length);
+            }
+
+            //lê o arquivo XML obtido so servidor
+            String Result = "";
+            using (WebResponse response = request.GetResponse()) {
+                using (StreamReader sr = new StreamReader(response.GetResponseStream())) {
+                    xmlDoc.LoadXml(sr.ReadToEnd());
+                    Result = xmlDoc.GetElementsByTagName("url")[0].InnerText;
+                }
+            }
+
+            return Result;
+        }
+
+        public static Int32 WaitTime(Int32 Contador) {
+
+            Int32 Time = 0;
+
+            if (Contador <= 50) {
+                Time = 60000;
+
+            } else {
+                Contador = 0;
+                Time = 1200000;
+            }
+
+            return Time;
+        }
+
+        public static Boolean EmailCheck(String Email) {
+            Regex Reg = new Regex(@"^[a-zA-Z0-9_+-]+[a-zA-Z0-9._+-]*[a-zA-Z0-9_+-]+@[a-zA-Z0-9_+-]+[a-zA-Z0-9._+-]*[.]{1,1}[a-zA-Z]{2,}$");
+
+            return Reg.IsMatch(Email);
+        }
+
+        public static String WhatsLinkGenerator(String Number, String Text) {
+            String WhatsLink = "https://api.whatsapp.com/send?phone=" + Number + "&text=" + Text;
+            return WhatsLink;
+        }
+
+        public static String WhatsMsgFormat(String Text, String Name) {
+            String TextFormat = "";
+            String[] NomeFormat = Name.Split(' ');
+            TextFormat = Text.Replace("{nome}", NomeFormat[0]);
+            TextFormat = TextFormat.Replace("{hix}", "Texto fixo Hix");
+            TextFormat = TextFormat.Replace("{hi}", "Texto fixo Hi");
+            TextFormat = TextFormat.Replace("{comprimento}", RandomTalk(Name));
+            TextFormat = TextFormat.Replace("{comprimentoplus}", RandomTalk(NomeFormat[0]));
+
+            return TextFormat;
+        }
+
         #endregion
     }
 }
