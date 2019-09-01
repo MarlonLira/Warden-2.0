@@ -56,8 +56,6 @@ namespace Warden.Persistences {
 
                     WebResponse = WebPost.UploadValues(ApiUrl, "POST", WebFields);
                     Result = HTTP_ENCODING.GetString(WebResponse);
-
-                    //String[] Part = Result.Split(':');
                     
                     dynamic Json = JValue.Parse(Result);
                     this.Status = Json.status;

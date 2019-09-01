@@ -270,9 +270,25 @@ namespace Warden.Helper {
             return Talk;
         }
 
-        public static int RandomNumber(Int32 Min, Int32 Max) {
+        public static Int32 RandomNumber(Int32 Min, Int32 Max) {
             Random Random = new Random();
             return Random.Next(Min, Max);
+        }
+
+        public static String RandomIdGenerator() {
+            String Id = "";
+            String Rd = "";
+
+            try {
+                Rd = Guid.NewGuid().ToString();
+
+                Id = "msg-" + RandomNumber(0, 99) + "-" + Rd;
+
+                return Id;
+            } finally {
+                Id = "";
+                Rd = "";
+            }
         }
 
         public static String ShortLink(String urlOriginal) {
@@ -326,6 +342,23 @@ namespace Warden.Helper {
             Regex Reg = new Regex(@"^[a-zA-Z0-9_+-]+[a-zA-Z0-9._+-]*[a-zA-Z0-9_+-]+@[a-zA-Z0-9_+-]+[a-zA-Z0-9._+-]*[.]{1,1}[a-zA-Z]{2,}$");
 
             return Reg.IsMatch(Email);
+        }
+
+        public static String WhatsLinkGenerator(String Number, String Text) {
+            String WhatsLink = "https://api.whatsapp.com/send?phone=" + Number + "&text=" + Text;
+            return WhatsLink;
+        }
+
+        public static String WhatsMsgFormat(String Text, String Name) {
+            String TextFormat = "";
+            String[] NomeFormat = Name.Split(' ');
+            TextFormat = Text.Replace("{nome}", NomeFormat[0]);
+            TextFormat = TextFormat.Replace("{hix}", "Texto fixo Hix");
+            TextFormat = TextFormat.Replace("{hi}", "Texto fixo Hi");
+            TextFormat = TextFormat.Replace("{comprimento}", RandomTalk(Name));
+            TextFormat = TextFormat.Replace("{comprimentoplus}", RandomTalk(NomeFormat[0]));
+
+            return TextFormat;
         }
 
         #endregion

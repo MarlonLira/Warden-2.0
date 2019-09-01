@@ -3,12 +3,19 @@
 namespace Warden.Models {
     public abstract class Messages {
 
+        #region Atributes
+
         public String Title { get; set; }
         public String Text { get; set; }
         public Sender Sender { get; set; }
         public Recipient Recipient { get; set; }
         public String Status { get; set; }
         public String Return { get; set; }
+        public String Image { get; set; }
+
+        #endregion
+
+        #region Methods
 
         public virtual void Send() {
 
@@ -26,7 +33,11 @@ namespace Warden.Models {
         }
 
         protected virtual void LoadAndVerify() {}
+
+        #endregion
     }
+
+    #region SubClasses
 
     public class Recipient {
         public String Name { get; set; }
@@ -38,5 +49,8 @@ namespace Warden.Models {
         public String User { get; set; }
         public String Pass { get; set; }
         public String Email { get; set; }
+        public String PhoneNumber { get; set; }
     }
+
+    #endregion
 }
