@@ -1,5 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SidebarUsc.ascx.cs" Inherits="Warden.Components.Controls.SidebarUsc" %>
-
+<%@ Import Namespace="Warden.Helper" %>
     
 <div class="sidebar" data="blue">
       <!--
@@ -16,7 +16,7 @@
         </div>
         <ul class="nav">
           <li class="active">
-            <a href="#">
+            <a href="<%=Help.FormatUrl("/Default.aspx") %>">
               <i class="tim-icons icon-chart-pie-36"></i>
               <p>Dashboard</p>
             </a>
@@ -38,19 +38,19 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">RS</span>
-                    <span class="sidebar-normal"> RTL Support </span>
+                  <a href="<%=Help.FormatUrl("/Views/Marketing/MessagePge.aspx") %>">
+                    <span class="sidebar-mini-icon">MK</span>
+                    <span class="sidebar-normal"> Marketing </span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="<%=Help.FormatUrl("/Views/Teste.aspx") %>">
                     <span class="sidebar-mini-icon">T</span>
-                    <span class="sidebar-normal"> Timeline </span>
+                    <span class="sidebar-normal"> Testes </span>
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="<%=Help.FormatUrl("/Login.aspx") %>">
                     <span class="sidebar-mini-icon">L</span>
                     <span class="sidebar-normal"> Login </span>
                   </a>
@@ -68,150 +68,9 @@
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="<%=Help.FormatUrl("/Views/TesteControls.aspx") %>">
                     <span class="sidebar-mini-icon">UP</span>
                     <span class="sidebar-normal"> User Profile </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a data-toggle="collapse" href="#componentsExamples">
-              <i class="tim-icons icon-molecule-40"></i>
-              <p>
-                Components
-                <b class="caret"></b>
-              </p>
-            </a>
-            <div class="collapse" id="componentsExamples">
-              <ul class="nav">
-                <li>
-                  <a data-toggle="collapse" aria-expanded="false" href="#multicollapse">
-                    <span class="sidebar-mini-icon">MLT</span>
-                    <span class="sidebar-normal"> Multi Level Collapse
-                      <b class="caret"></b>
-                    </span>
-                  </a>
-                  <div class="collapse" id="multicollapse">
-                    <ul class="nav">
-                      <li>
-                        <a>
-                          <span class="sidebar-mini-icon">E</span>
-                          <span class="sidebar-normal"> Example </span>
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">B</span>
-                    <span class="sidebar-normal"> Buttons </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">G</span>
-                    <span class="sidebar-normal"> Grid System </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">P</span>
-                    <span class="sidebar-normal"> Panels </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">SA</span>
-                    <span class="sidebar-normal"> Sweet Alert </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">N</span>
-                    <span class="sidebar-normal"> Notifications </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">I</span>
-                    <span class="sidebar-normal"> Icons </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">T</span>
-                    <span class="sidebar-normal"> Typography </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a data-toggle="collapse" href="#formsExamples">
-              <i class="tim-icons icon-notes"></i>
-              <p>
-                Forms
-                <b class="caret"></b>
-              </p>
-            </a>
-            <div class="collapse" id="formsExamples">
-              <ul class="nav">
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">RF</span>
-                    <span class="sidebar-normal"> Regular Forms </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">EF</span>
-                    <span class="sidebar-normal"> Extended Forms </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">V</span>
-                    <span class="sidebar-normal"> Validation Forms </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">W</span>
-                    <span class="sidebar-normal"> Wizard </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a data-toggle="collapse" href="#tablesExamples">
-              <i class="tim-icons icon-puzzle-10"></i>
-              <p>
-                Tables
-                <b class="caret"></b>
-              </p>
-            </a>
-            <div class="collapse" id="tablesExamples">
-              <ul class="nav">
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">RT</span>
-                    <span class="sidebar-normal"> Regular Tables </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">ET</span>
-                    <span class="sidebar-normal"> Extended Tables </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">DT</span>
-                    <span class="sidebar-normal"> DataTables.net </span>
                   </a>
                 </li>
               </ul>
@@ -228,40 +87,16 @@
             <div class="collapse" id="mapsExamples">
               <ul class="nav">
                 <li>
-                  <a href="#">
+                  <a href="<%=Help.FormatUrl("/Views/TesteMap.aspx") %>">
                     <span class="sidebar-mini-icon">GM</span>
                     <span class="sidebar-normal"> Google Maps </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">FM</span>
-                    <span class="sidebar-normal"> Full Screen Map </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">VM</span>
-                    <span class="sidebar-normal"> Vector Map </span>
                   </a>
                 </li>
               </ul>
             </div>
           </li>
           <li>
-            <a href="#">
-              <i class="tim-icons icon-settings"></i>
-              <p>Widgets</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="tim-icons icon-chart-bar-32"></i>
-              <p>Charts</p>
-            </a>
-          </li>
-          <li>
-            <a href="#">
+            <a href="<%=Help.FormatUrl("/Views/CalendarTeste.aspx") %>">
               <i class="tim-icons icon-time-alarm"></i>
               <p>Calendar</p>
             </a>
