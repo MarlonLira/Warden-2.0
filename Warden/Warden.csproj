@@ -185,6 +185,7 @@
     <Content Include="Views\CalendarTeste.aspx" />
     <Content Include="Views\LoginTeste.aspx" />
     <Content Include="Views\Marketing\MessagePge.aspx" />
+    <Content Include="Views\testando.aspx" />
     <Content Include="Views\Teste.aspx" />
     <Content Include="Views\Calendar.aspx" />
     <Content Include="Views\TesteControls.aspx" />
@@ -529,6 +530,13 @@
     </Compile>
     <Compile Include="Views\Marketing\MessagePge.aspx.designer.cs">
       <DependentUpon>MessagePge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\testando.aspx.cs">
+      <DependentUpon>testando.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\testando.aspx.designer.cs">
+      <DependentUpon>testando.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Teste.aspx.cs">
       <DependentUpon>Teste.aspx</DependentUpon>
