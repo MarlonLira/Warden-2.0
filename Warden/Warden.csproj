@@ -479,6 +479,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Helper\AnyException.cs" />
     <Compile Include="Helper\Help.cs" />
     <Compile Include="Helper\SendAnything.cs" />
     <Compile Include="Login.aspx.cs">

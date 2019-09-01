@@ -4,6 +4,7 @@ using System.IO;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI.WebControls;
 using System.Xml;
@@ -304,6 +305,27 @@ namespace Warden.Helper {
             }
 
             return Result;
+        }
+
+        public static Int32 WaitTime(Int32 Contador) {
+
+            Int32 Time = 0;
+
+            if (Contador <= 50) {
+                Time = 60000;
+
+            } else {
+                Contador = 0;
+                Time = 1200000;
+            }
+
+            return Time;
+        }
+
+        public static Boolean EmailCheck(String Email) {
+            Regex Reg = new Regex(@"^[a-zA-Z0-9_+-]+[a-zA-Z0-9._+-]*[a-zA-Z0-9_+-]+@[a-zA-Z0-9_+-]+[a-zA-Z0-9._+-]*[.]{1,1}[a-zA-Z]{2,}$");
+
+            return Reg.IsMatch(Email);
         }
 
         #endregion
