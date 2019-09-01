@@ -13,7 +13,7 @@ namespace Warden.Persistences {
 
         }
 
-        private void LoadAndVerify() {
+        protected override void LoadAndVerify() {
 
             if (this.Sender == null) {
                 Sender = new Sender() {

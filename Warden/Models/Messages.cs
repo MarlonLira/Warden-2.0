@@ -24,6 +24,8 @@ namespace Warden.Models {
                 throw new Exception("Erro: O Destinatario não foi informado!");
             }
         }
+
+        protected virtual void LoadAndVerify() {}
     }
 
     public class Recipient {

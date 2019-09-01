@@ -12,15 +12,24 @@ namespace Warden.Persistences {
 
         public readonly Encoding HTTP_ENCODING = Encoding.UTF8;
         private const String URL_PLATFORM = @"http://app.smsfast.com.br/api.ashx?";
-        private const String Login = "81999269773";
-        private const String Pass = "820475";
 
         #endregion
 
         #region Methods
         public override void Send() {
             base.Send();
+            LoadAndVerify();
             WebReq();
+        }
+
+        protected override void LoadAndVerify() {
+            base.LoadAndVerify();
+            if (this.Sender == null) {
+                Sender = new Sender() {
+                    User = "81999269773",
+                    Pass = "820475"
+                };
+            }
         }
 
         private dynamic WebReq() {
@@ -38,8 +47,8 @@ namespace Warden.Persistences {
                   
                     WebFields = new NameValueCollection();
                     WebFields["action"] = "sendsms";
-                    WebFields["lgn"] = Login;
-                    WebFields["pwd"] = Pass;
+                    WebFields["lgn"] = this.Sender.User;
+                    WebFields["pwd"] = this.Sender.Pass;
                     WebFields["content"] = this.Text;
                     WebFields["numbers"] = this.Recipient.PhoneNumber;
                     WebFields["type_service"] = "LONGCODE";
