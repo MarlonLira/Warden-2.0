@@ -175,6 +175,7 @@
     <Content Include="Components\Controls\UserAvatarUsc.ascx" />
     <Content Include="Components\Controls\UserLoginUsc.ascx" />
     <Content Include="Components\Controls\UserProfileUsc.ascx" />
+    <Content Include="Components\Controls\WizardUsc.ascx" />
     <Content Include="Components\Styles\CalendarCssUsc.ascx" />
     <Content Include="Components\Styles\CalendarJsUsc.ascx" />
     <Content Include="Components\Styles\CssUsc.ascx" />
@@ -183,6 +184,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Views\CalendarTeste.aspx" />
     <Content Include="Views\LoginTeste.aspx" />
+    <Content Include="Views\Marketing\MessagePge.aspx" />
     <Content Include="Views\Teste.aspx" />
     <Content Include="Views\Calendar.aspx" />
     <Content Include="Views\TesteControls.aspx" />
@@ -444,6 +446,13 @@
     <Compile Include="Components\Controls\UserProfileUsc.ascx.designer.cs">
       <DependentUpon>UserProfileUsc.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Controls\WizardUsc.ascx.cs">
+      <DependentUpon>WizardUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\WizardUsc.ascx.designer.cs">
+      <DependentUpon>WizardUsc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\Styles\CalendarCssUsc.ascx.cs">
       <DependentUpon>CalendarCssUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -513,6 +522,13 @@
     </Compile>
     <Compile Include="Views\LoginTeste.aspx.designer.cs">
       <DependentUpon>LoginTeste.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Marketing\MessagePge.aspx.cs">
+      <DependentUpon>MessagePge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Marketing\MessagePge.aspx.designer.cs">
+      <DependentUpon>MessagePge.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Teste.aspx.cs">
       <DependentUpon>Teste.aspx</DependentUpon>
@@ -715,7 +731,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
-    <Folder Include="Views\Colaborador\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

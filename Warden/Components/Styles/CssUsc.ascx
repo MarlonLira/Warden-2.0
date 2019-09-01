@@ -17,4 +17,4 @@
 
 <!-- CSS Files -->
 <link href="<%=Help.FormatUrl("/assets/css/black-dashboard.min.css?v=1.0.0") %>" rel="stylesheet" />
-<link href="<%=Help.FormatUrl("/assets/demo/demo.css") %>" rel="stylesheet" />
+

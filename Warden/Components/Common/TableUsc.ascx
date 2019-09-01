@@ -1,6 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TableUsc.ascx.cs" Inherits="Warden.Components.Common.TableUsc" %>
 <%@ Import Namespace="System.Data" %>
+<%@ Import Namespace="Warden.Helper" %>
 
+ <script src="<%=Help.FormatUrl("/assets/js/core/jquery.min.js") %>"></script>
+
+<%if (this.TableColumns != null) {%>
 <div class="row mt-5">
     <div class="col-md-12">
         <div class="card">
@@ -51,6 +55,7 @@
     </div>
     <!-- end col-md-12 -->
 </div>
+<%} %>
 
 <script>
     $(document).ready(function() {

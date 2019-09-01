@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebMst.Master" AutoEventWireup="true" CodeBehind="Teste.aspx.cs" Inherits="Warden.Views.Teste" %>
+
 <asp:Content ID="ctt_teste" ContentPlaceHolderID="cph_main" runat="server">
 
     <usc:BreadcrumbUsc runat="server" />
@@ -51,5 +52,5 @@
     <usc:TableUsc runat="server" ID="dtbl_control" ComponentId="tableControl2"/>
     <usc:TableUsc runat="server" ID="tbl_control" ComponentId="tableControl"/>
 
-    
+    <usc:WizardUsc runat="server" />
 </asp:Content>
