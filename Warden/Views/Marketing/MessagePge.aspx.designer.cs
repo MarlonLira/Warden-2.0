@@ -22,6 +22,15 @@ namespace Warden.Views.Marketing {
         protected global::Warden.Components.Common.TextInputUsc txtTitle;
         
         /// <summary>
+        /// Controle txtText.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextAreaUsc txtText;
+        
+        /// <summary>
         /// Controle lblType.
         /// </summary>
         /// <remarks>

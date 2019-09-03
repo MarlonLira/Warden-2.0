@@ -12,7 +12,7 @@
                     <usc:LabelUsc runat="server" Text="Mensagem" Bold="true"  FontSize="15"/>
                     <div style="padding-top:10px;padding-bottom:10px">
                         <usc:TextInputUsc runat="server" Title="Titulo" ID="txtTitle" Size="4" />
-                        <usc:TextAreaUsc runat="server" Placeholder="Escreva a mensagem aqui!" Title="Mensagem" Size="8" />
+                        <usc:TextAreaUsc runat="server" Placeholder="Escreva a mensagem aqui!" Title="Mensagem" Size="8" ID="txtText"/>
                     </div>
                 </div>
             </div>

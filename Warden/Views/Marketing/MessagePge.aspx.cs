@@ -6,9 +6,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Warden.Components.Common;
+using Warden.Models;
+using Warden.Persistences;
 
 namespace Warden.Views.Marketing {
     public partial class MessagePge : BasePge {
+
+        private DataTable UserTable { get; set; }
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
             Loading();
@@ -17,6 +21,28 @@ namespace Warden.Views.Marketing {
 
         private void BtnPesquisar_OnClick() {
             LoadTable();
+        }
+
+        private void Enviar() {
+            SmsPst Sms;
+            try {
+                Sms = new SmsPst();
+                Sms.Title = txtTitle.Text;
+                Sms.Text = txtText.Text;
+                Sms.Status = "AT";
+
+                foreach (DataRow Row in UserTable.Rows) {
+                    Sms.Recipient = new Recipient() {
+                        Name = Convert.ToString(Row["name"]),
+                        PhoneNumber = Convert.ToString(Row["PhoneNumber"])
+                    };
+
+                    Sms.Send();
+                }
+
+            } catch (Exception Except) {
+
+            }
         }
 
         public void Loading() {
