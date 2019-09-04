@@ -44,8 +44,13 @@ namespace Warden.Views.Marketing {
 
                 if (ddGateway.SelectedValue == "1")
                     Sms.SelectedAPI = SmsPst.APIs.SmsFast;
-                else if (ddGateway.SelectedValue == "2")
+                else if (ddGateway.SelectedValue == "2") {
                     Sms.SelectedAPI = SmsPst.APIs.FacilitaSms;
+                    Sms.Sender = new Sender() {
+                        User = "hi.academia.newton",
+                        Pass = "hi.academia.newton123"
+                    };
+                }
 
                 if (String.IsNullOrEmpty(txtNumberList.Text)) {
                     foreach (DataRow Row in UserTable.Rows) {

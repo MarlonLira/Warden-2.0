@@ -39,7 +39,6 @@ namespace Warden.Persistences {
 
         public APIs SelectedAPI { get; set; }
         public SendType SelectedSendType { get; set; }
-
         public Boolean IsFlashSms { get; set; }
 
         #endregion
@@ -91,11 +90,13 @@ namespace Warden.Persistences {
 
                     WebResponse = WebPost.UploadValues(ApiUrl, "POST", WebFields);
                     Result = HTTP_ENCODING.GetString(WebResponse);
-                    
-                    dynamic Json = JValue.Parse(Result);
-                    this.Status = Json.status;
-                    this.Campaign = Json.data;
-                    this.Return = Json.msg;
+
+                    if (SelectedAPI == APIs.SmsFast) {
+                        dynamic Json = JValue.Parse(Result);
+                        this.Status = Json.status;
+                        this.Campaign = Json.data;
+                        this.Return = Json.msg;
+                    }
 
                 } catch {
                     throw;

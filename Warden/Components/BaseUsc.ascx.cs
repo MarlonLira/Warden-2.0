@@ -15,7 +15,7 @@ namespace Warden.Components {
         //Text
         public Boolean ReadOnly { get; set; }
         public String Title { get; set; }
-        public String Text { get; set; }
+        public virtual String Text { get; set; }
 
         //Style
         public String ComponentId { get; set; }

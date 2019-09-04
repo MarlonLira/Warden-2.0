@@ -5,6 +5,6 @@
         <%if (!String.IsNullOrEmpty(Title)) { %>
         <label><%=Title %></label>
         <% }%>
-        <input type="<%=TextMode%>" class="form-control" placeholder="<%=Placeholder %>" value="<%=Text %>" <%=Disabled %> >
+        <input runat="server" id="txt_control"  class="form-control" />
     </div>
 </div>
