@@ -8,10 +8,27 @@ using Warden.Models;
 namespace Warden.Persistences {
     public class SmsPst: Sms {
 
+        #region Enums
+
+        public enum APIs
+        {
+            SmsFast,
+            FacilitaSms
+        }
+
+        #endregion
+
         #region Constants
 
         public readonly Encoding HTTP_ENCODING = Encoding.UTF8;
         private const String URL_PLATFORM = @"http://app.smsfast.com.br/api.ashx?";
+        private const String URL_PLATFORM2 = @"http://www.facilitamovel.com.br/api";
+
+        #endregion
+
+        #region Atributes
+
+        public APIs SelectedAPI { get; set; }
 
         #endregion
 
@@ -44,15 +61,19 @@ namespace Warden.Persistences {
                 Byte[] WebResponse = null;
 
                 try {
-                  
                     WebFields = new NameValueCollection();
-                    WebFields["action"] = "sendsms";
-                    WebFields["lgn"] = this.Sender.User;
-                    WebFields["pwd"] = this.Sender.Pass;
-                    WebFields["content"] = this.Text;
-                    WebFields["numbers"] = this.Recipient.PhoneNumber;
-                    WebFields["type_service"] = "LONGCODE";
-                    //WebFields["url_callback"] = "URL DE RETORNO";
+
+                    switch (SelectedAPI) {
+                        case APIs.SmsFast: {
+                            WebFields = SmsFast();
+                            break;
+                        }
+                        case APIs.FacilitaSms: {
+                            WebFields = FacilitaSms();
+                                ApiUrl += "multipleSend.ft?";
+                            break;
+                        }
+                    }
 
                     WebResponse = WebPost.UploadValues(ApiUrl, "POST", WebFields);
                     Result = HTTP_ENCODING.GetString(WebResponse);
@@ -70,6 +91,36 @@ namespace Warden.Persistences {
                 }
                 return Result;
             }
+        }
+
+        private NameValueCollection SmsFast() {
+            NameValueCollection Result = new NameValueCollection();
+
+            Result = new NameValueCollection();
+            Result["action"] = "sendsms";
+            Result["lgn"] = this.Sender.User;
+            Result["pwd"] = this.Sender.Pass;
+            Result["content"] = this.Text;
+            Result["numbers"] = this.Recipient.PhoneNumber;
+            Result["type_service"] = "LONGCODE";
+            //Result["url_callback"] = "URL DE RETORNO";
+
+            return Result;
+        }
+
+        private NameValueCollection FacilitaSms() {
+            NameValueCollection Result = new NameValueCollection();
+
+            Result = new NameValueCollection();
+            Result["action"] = "sendsms";
+            Result["user"] = this.Sender.User;
+            Result["password"] = this.Sender.Pass;
+            Result["msg"] = this.Text;
+            Result["destinatario"] = this.Recipient.PhoneNumber;
+            Result["externalkey"] = "URL DE RETORNO";
+            Result["flashsms"] = "0";
+
+            return Result;
         }
 
         #endregion
