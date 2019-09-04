@@ -21,6 +21,32 @@
               <p>Dashboard</p>
             </a>
           </li>
+            <li>
+            <a data-toggle="collapse" href="#pagesExamples">
+              <i class="tim-icons icon-image-02"></i>
+              <p>
+                Marketing
+                <b class="caret"></b>
+              </p>
+            </a>
+            <div class="collapse" id="pagesExamples">
+              <ul class="nav">
+                <li>
+                  <a href="#">
+                    <span class="sidebar-mini-icon">P</span>
+                    <span class="sidebar-normal"> Pricing </span>
+                  </a>
+                </li>
+                <li>
+                  <a href="<%=Help.FormatUrl("/Views/Marketing/MessagePge.aspx") %>">
+                    <span class="sidebar-mini-icon">MK</span>
+                    <span class="sidebar-normal"> Mensagens </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
           <li>
             <a data-toggle="collapse" href="#pagesExamples">
               <i class="tim-icons icon-image-02"></i>

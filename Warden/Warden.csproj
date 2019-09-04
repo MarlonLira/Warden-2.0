@@ -499,6 +499,7 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\BaseMdl.cs" />
     <Compile Include="Models\CalendarEvent.cs" />
     <Compile Include="Models\Email.cs" />
     <Compile Include="Models\EventDAO.cs" />

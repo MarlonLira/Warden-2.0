@@ -17,6 +17,11 @@ namespace Warden.Views.Marketing {
             base.OnLoad(e);
             Loading();
             btnPesquisar.OnClick += new ButtonUsc.OnClickEvent(BtnPesquisar_OnClick);
+            btnEnviar.OnClick += new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
+        }
+
+        private void BtnEnviar_OnClick() {
+            Enviar();
         }
 
         private void BtnPesquisar_OnClick() {
@@ -30,18 +35,38 @@ namespace Warden.Views.Marketing {
                 Sms.Title = txtTitle.Text;
                 Sms.Text = txtText.Text;
                 Sms.Status = "AT";
+                Sms.SelectedSendType = SmsPst.SendType.Multiple;
 
-                foreach (DataRow Row in UserTable.Rows) {
+                if (ddSendType.SelectedValue == "1")
+                    Sms.SelectedSendType = SmsPst.SendType.Simple;
+                else if(ddSendType.SelectedValue == "2")
+                    Sms.SelectedSendType = SmsPst.SendType.Multiple;
+
+                if (ddGateway.SelectedValue == "1")
+                    Sms.SelectedAPI = SmsPst.APIs.SmsFast;
+                else if (ddGateway.SelectedValue == "2")
+                    Sms.SelectedAPI = SmsPst.APIs.FacilitaSms;
+
+                if (String.IsNullOrEmpty(txtNumberList.Text)) {
+                    foreach (DataRow Row in UserTable.Rows) {
+                        Sms.Recipient = new Recipient() {
+                            Name = Convert.ToString(Row["name"]),
+                            PhoneNumber = Convert.ToString(Row["PhoneNumber"])
+                        };
+
+                        Sms.Send();
+                    }
+                } else {
                     Sms.Recipient = new Recipient() {
-                        Name = Convert.ToString(Row["name"]),
-                        PhoneNumber = Convert.ToString(Row["PhoneNumber"])
+                        Name = Convert.ToString("Lista"),
+                        PhoneNumber = txtNumberList.Text
                     };
 
                     Sms.Send();
                 }
 
             } catch (Exception Except) {
-
+                base.ShowException(Except.Message);
             }
         }
 
@@ -54,21 +79,39 @@ namespace Warden.Views.Marketing {
 
             ddType.ItemList = new List<ListItem>() {
                 new ListItem { Text = "Selecione uma opção", Value="0" },
-                new ListItem {Text = "SMS", Value = "1"},
-                new ListItem {Text = "Email", Value = "2"},
-                new ListItem {Text = "WhatsApp", Value = "3"}
+                new ListItem {Text = "ShortCode", Value = "1"},
+                new ListItem {Text = "LongCode", Value = "2"},
+                new ListItem {Text = "Flash", Value = "3"}
             };
+
+            ddType.SelectedValue = "2";
+            ddType.ReadOnly = true;
 
             ddCompany.ItemList = new List<ListItem>() {
                 new ListItem { Text = "Selecione uma opção", Value="0" },
                 new ListItem {Text = "Empresa 1", Value = "1"},
-                new ListItem {Text = "Emrpesa 2", Value = "2"},
-                new ListItem {Text = "Emrpesa 3", Value = "3"}
+                new ListItem {Text = "Empresa 2", Value = "2"},
+                new ListItem {Text = "Empresa 3", Value = "3"}
             };
+
+            ddGateway.ItemList = new List<ListItem>() {
+                new ListItem { Text = "Selecione uma opção", Value="0" },
+                new ListItem {Text = "SmsFast", Value = "1"},
+                new ListItem {Text = "FacilitaMovel", Value = "2"}
+            };
+
+            ddSendType.ItemList = new List<ListItem>() {
+                new ListItem { Text = "Selecione uma opção", Value="0" },
+                new ListItem {Text = "Simples", Value = "1"},
+                new ListItem {Text = "Multiplo", Value = "2"}
+            };
+
 
             ddRecipient.LoadDataSource();
             ddType.LoadDataSource();
             ddCompany.LoadDataSource();
+            ddSendType.LoadDataSource();
+            ddGateway.LoadDataSource();
         }
 
         private DataTable GetData() {

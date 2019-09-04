@@ -31,6 +31,15 @@ namespace Warden.Views.Marketing {
         protected global::Warden.Components.Common.TextAreaUsc txtText;
         
         /// <summary>
+        /// Controle txtNumberList.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextAreaUsc txtNumberList;
+        
+        /// <summary>
         /// Controle lblType.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,42 @@ namespace Warden.Views.Marketing {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::Warden.Components.Common.DropdownUsc ddCompany;
+        
+        /// <summary>
+        /// Controle lblSendType.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.LabelUsc lblSendType;
+        
+        /// <summary>
+        /// Controle ddSendType.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.DropdownUsc ddSendType;
+        
+        /// <summary>
+        /// Controle lblGateway.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.LabelUsc lblGateway;
+        
+        /// <summary>
+        /// Controle ddGateway.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.DropdownUsc ddGateway;
         
         /// <summary>
         /// Controle LabelUsc1.

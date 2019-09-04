@@ -11,8 +11,9 @@
                 <div class="card-body">
                     <usc:LabelUsc runat="server" Text="Mensagem" Bold="true"  FontSize="15"/>
                     <div style="padding-top:10px;padding-bottom:10px">
-                        <usc:TextInputUsc runat="server" Title="Titulo" ID="txtTitle" Size="4" />
-                        <usc:TextAreaUsc runat="server" Placeholder="Escreva a mensagem aqui!" Title="Mensagem" Size="8" ID="txtText"/>
+                        <usc:TextInputUsc runat="server" Title="Titulo" ID="txtTitle" Size="4" Text="teste" />
+                        <usc:TextAreaUsc runat="server" Placeholder="Escreva a mensagem aqui!" Title="Mensagem" Size="8" ID="txtText" Text="Teste"/>
+                        <usc:TextAreaUsc runat="server" Placeholder="Escreva aqui a lista de números só se for usar" Title="Lista de Números" Size="8" ID="txtNumberList" Text="81983460962"/>
                     </div>
                 </div>
             </div>
@@ -35,6 +36,16 @@
                         <div style="padding-left:5px; padding-right:5px;padding-top:10px; padding-bottom:10px; align-content:stretch">
                             <usc:LabelUsc runat="server" Text="Unidade" ID="lblCompany" Bold="true"  FontSize="10" />
                             <usc:DropdownUsc runat="server" ID="ddCompany" />
+                        </div>
+
+                        <div style="padding-left:5px; padding-right:5px;padding-top:10px; padding-bottom:10px; align-content:stretch">
+                            <usc:LabelUsc runat="server" Text="Tipo de Envio" ID="lblSendType" Bold="true"  FontSize="10" />
+                            <usc:DropdownUsc runat="server" ID="ddSendType" />
+                        </div>
+
+                        <div style="padding-left:5px; padding-right:5px;padding-top:10px; padding-bottom:10px; align-content:stretch">
+                            <usc:LabelUsc runat="server" Text="Gateway" ID="lblGateway" Bold="true"  FontSize="10" />
+                            <usc:DropdownUsc runat="server" ID="ddGateway" />
                         </div>
                     </div>
                     <div class="row" style="justify-content:center">
