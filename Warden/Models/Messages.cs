@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace Warden.Models {
-    public abstract class Messages {
+    public abstract class Messages: BaseMdl {
 
         #region Atributes
 

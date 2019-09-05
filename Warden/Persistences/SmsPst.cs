@@ -12,23 +12,34 @@ namespace Warden.Persistences {
 
         public enum APIs
         {
+            [StringValue("http://app.smsfast.com.br/api.ashx?")]
             SmsFast,
+
+            [StringValue("http://www.facilitamovel.com.br/api")]
             FacilitaSms
+        }
+
+        public enum SendType
+        {
+            [StringValue("/simpleSend.ft?")]
+            Simple,
+            [StringValue("/multipleSend.ft?")]
+            Multiple
         }
 
         #endregion
 
         #region Constants
 
-        public readonly Encoding HTTP_ENCODING = Encoding.UTF8;
-        private const String URL_PLATFORM = @"http://app.smsfast.com.br/api.ashx?";
-        private const String URL_PLATFORM2 = @"http://www.facilitamovel.com.br/api";
+            public readonly Encoding HTTP_ENCODING = Encoding.UTF8;
 
         #endregion
 
         #region Atributes
 
         public APIs SelectedAPI { get; set; }
+        public SendType SelectedSendType { get; set; }
+        public Boolean IsFlashSms { get; set; }
 
         #endregion
 
@@ -51,7 +62,7 @@ namespace Warden.Persistences {
 
         private dynamic WebReq() {
             dynamic Result;
-            String ApiUrl = URL_PLATFORM;
+            String ApiUrl = "";
             
             ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => { return true; };
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
@@ -66,22 +77,26 @@ namespace Warden.Persistences {
                     switch (SelectedAPI) {
                         case APIs.SmsFast: {
                             WebFields = SmsFast();
+                            ApiUrl = APIs.SmsFast.GetStringValue();
                             break;
                         }
                         case APIs.FacilitaSms: {
                             WebFields = FacilitaSms();
-                                ApiUrl += "multipleSend.ft?";
+                            ApiUrl = APIs.FacilitaSms.GetStringValue();
+                            ApiUrl += SelectedSendType.GetStringValue();
                             break;
                         }
                     }
 
                     WebResponse = WebPost.UploadValues(ApiUrl, "POST", WebFields);
                     Result = HTTP_ENCODING.GetString(WebResponse);
-                    
-                    dynamic Json = JValue.Parse(Result);
-                    this.Status = Json.status;
-                    this.Campaign = Json.data;
-                    this.Return = Json.msg;
+
+                    if (SelectedAPI == APIs.SmsFast) {
+                        dynamic Json = JValue.Parse(Result);
+                        this.Status = Json.status;
+                        this.Campaign = Json.data;
+                        this.Return = Json.msg;
+                    }
 
                 } catch {
                     throw;
@@ -112,13 +127,17 @@ namespace Warden.Persistences {
             NameValueCollection Result = new NameValueCollection();
 
             Result = new NameValueCollection();
-            Result["action"] = "sendsms";
+            //Result["action"] = "sendsms";
             Result["user"] = this.Sender.User;
             Result["password"] = this.Sender.Pass;
             Result["msg"] = this.Text;
             Result["destinatario"] = this.Recipient.PhoneNumber;
-            Result["externalkey"] = "URL DE RETORNO";
-            Result["flashsms"] = "0";
+            Result["externalkey"] = Helper.Help.RandomIdGenerator();
+            if (IsFlashSms) {
+                Result["flashsms"] = "1";
+            } else {
+                Result["flashsms"] = "0";
+            }
 
             return Result;
         }

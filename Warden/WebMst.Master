@@ -13,7 +13,6 @@
     <form id="frm_main" runat="server" class="wrapper">
      <usc:SearchModalUsc runat="server" />
         <usc:SidebarUsc runat="server" />
-        
         <usc:NavbarUsc runat="server" />
         <asp:ScriptManager ID="scpManager" runat="server"></asp:ScriptManager>
         <div class="main-panel">

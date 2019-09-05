@@ -3,6 +3,6 @@
 <div class="col-md-<%=Size %> pr-md-1">
     <div class="form-group">
         <label><%=Title %></label>
-        <textarea rows="<%=Rows %>" cols="<%=Cols %>" class="form-control" <%=Disabled %> placeholder="<%=Placeholder %>" > <%=Text %> </textarea>
+        <textarea runat="server" id="txta_control" class="form-control" ></textarea>
     </div>
 </div>
