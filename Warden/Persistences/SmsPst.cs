@@ -1,12 +1,15 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Specialized;
+using System.Data;
+using System.Data.SqlClient;
 using System.Net;
 using System.Text;
+using Warden.Interfaces;
 using Warden.Models;
 
 namespace Warden.Persistences {
-    public class SmsPst: Sms {
+    public class SmsPst: Sms, IEntitie {
 
         #region Enums
 
@@ -40,10 +43,19 @@ namespace Warden.Persistences {
         public APIs SelectedAPI { get; set; }
         public SendType SelectedSendType { get; set; }
         public Boolean IsFlashSms { get; set; }
+        private DbConnect DbConnect { get; set; }
+        private SqlCommand Sql {
+            get {
+                DbConnect = Connection.VerifyAndConnect(DbConnect, "WARDEN");
+                return DbConnect.Sql;
+            }
+        }
 
         #endregion
 
         #region Methods
+
+
         public override void Send() {
             base.Send();
             LoadAndVerify();
@@ -140,6 +152,24 @@ namespace Warden.Persistences {
             }
 
             return Result;
+        }
+
+        public DataTable Search() {
+            throw new NotImplementedException();
+        }
+
+        public string Save() {
+            String Result = "";
+            
+            return Result;
+        }
+
+        public string Update() {
+            throw new NotImplementedException();
+        }
+
+        public string Delete() {
+            throw new NotImplementedException();
         }
 
         #endregion

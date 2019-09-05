@@ -4,17 +4,15 @@ using System.Data;
 using System.Data.Entity;
 using System.Data.SqlClient;
 
-namespace Warden.Persistences
-{
-    public class DbConnect : DbContext
-    {
+namespace Warden.Persistences {
+    public class DbConnect : DbContext {
 
         public DbConnect()
         : base("warden") {
         }
         
-        public string CreateGestorCon = ConfigurationManager.ConnectionStrings["gestor2"].ConnectionString;
-        public string CreateWardenCon = ConfigurationManager.ConnectionStrings["warden"].ConnectionString;
+        private string CreateGestorCon = ConfigurationManager.ConnectionStrings["gestor2"].ConnectionString;
+        private string CreateWardenCon = ConfigurationManager.ConnectionStrings["warden"].ConnectionString;
 
         public SqlConnection Con;
         public SqlCommand Sql;
@@ -44,5 +42,23 @@ namespace Warden.Persistences
         public void CloseCon() {
             Con.Close();
         }
+    }
+
+    public static class Connection {
+        public static DbConnect VerifyAndConnect(DbConnect DbConnect, String Sql) {
+            DbConnect NewDbConnect = DbConnect;
+
+            if (NewDbConnect == null) {
+                NewDbConnect = new DbConnect();
+                if (Sql.ToUpperInvariant() == "GESTOR2") {
+                    DbConnect.OpenGestorCon();
+                } else {
+                    DbConnect.OpenWardenCon();
+                }
+            }
+
+            return NewDbConnect;
+        }
+
     }
 }

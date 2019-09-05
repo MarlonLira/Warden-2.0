@@ -514,6 +514,7 @@
     <Compile Include="Helper\AnyException.cs" />
     <Compile Include="Helper\Help.cs" />
     <Compile Include="Helper\SendAnything.cs" />
+    <Compile Include="Interfaces\IEntitie.cs" />
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -761,9 +762,7 @@
     </None>
     <Content Include="WebMst.Master" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
