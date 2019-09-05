@@ -9,22 +9,23 @@ namespace Warden.Views.Marketing {
 
         public void VerifyAndLoad() {
             String Result = Request.QueryString["page"];
+            if (!String.IsNullOrEmpty(Result)) {
+                switch (Result.ToUpperInvariant()) {
+                    case "SMS": {
+                            Sms_control.Visible = true;
+                            break;
+                        }
+                    case "EMAIL": {
+                            break;
+                        }
+                    case "WHATSAPP": {
+                            break;
+                        }
+                    default: {
+                            break;
+                        }
 
-            switch (Result) {
-                case "SMS": {
-                        Sms_control.Visible = true;
-                        break;
-                    }
-                case "EMAIL": {
-                        break;
-                    }
-                case "WHATSAPP": {
-                        break;
-                    }
-                default: {
-                        break;
-                    }
-
+                }
             }
         }
 

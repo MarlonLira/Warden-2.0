@@ -74,3 +74,7 @@ C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\obj\Debug\Warden.cs
 C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\obj\Debug\Warden.csproj.CopyComplete
 C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\obj\Debug\Warden.dll
 C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\obj\Debug\Warden.pdb
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\EntityFramework.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\EntityFramework.SqlServer.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\EntityFramework.xml
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\EntityFramework.SqlServer.xml

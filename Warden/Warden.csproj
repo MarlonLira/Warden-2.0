@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -155,6 +161,7 @@
     <Content Include="Components\Common\DataTableUsc.ascx" />
     <Content Include="Components\Common\DropdownUsc.ascx" />
     <Content Include="Components\Common\LabelUsc.ascx" />
+    <Content Include="Components\Common\MenuButtonUsc.ascx" />
     <Content Include="Components\Common\ModalUsc.ascx" />
     <Content Include="Components\Common\SearchModalUsc.ascx" />
     <Content Include="Components\Common\TableCustomUsc.ascx" />
@@ -307,6 +314,13 @@
     </Compile>
     <Compile Include="Components\Common\LabelUsc.ascx.designer.cs">
       <DependentUpon>LabelUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Common\MenuButtonUsc.ascx.cs">
+      <DependentUpon>MenuButtonUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Common\MenuButtonUsc.ascx.designer.cs">
+      <DependentUpon>MenuButtonUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Common\ModalUsc.ascx.cs">
       <DependentUpon>ModalUsc.ascx</DependentUpon>
@@ -515,6 +529,7 @@
     <Compile Include="Models\Messages.cs" />
     <Compile Include="Models\Sms.cs" />
     <Compile Include="Models\WhatsApp.cs" />
+    <Compile Include="Persistences\DbConnect.cs" />
     <Compile Include="Persistences\EmailPst.cs" />
     <Compile Include="Persistences\SmsPst.cs" />
     <Compile Include="Persistences\WhatsAppPst.cs" />

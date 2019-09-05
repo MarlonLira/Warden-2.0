@@ -22,83 +22,18 @@
             </a>
           </li>
             <li>
-            <a data-toggle="collapse" href="#pagesExamples">
+            <a data-toggle="collapse" href="#marketing">
               <i class="tim-icons icon-image-02"></i>
               <p>
                 Marketing
                 <b class="caret"></b>
               </p>
             </a>
-            <div class="collapse" id="pagesExamples">
+            <div class="collapse" id="marketing">
               <ul class="nav">
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">P</span>
-                    <span class="sidebar-normal"> Pricing </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="<%=Help.FormatUrl("/Views/Marketing/MessagePge.aspx") %>">
-                    <span class="sidebar-mini-icon">MK</span>
-                    <span class="sidebar-normal"> Mensagens </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-          <li>
-            <a data-toggle="collapse" href="#pagesExamples">
-              <i class="tim-icons icon-image-02"></i>
-              <p>
-                Pages
-                <b class="caret"></b>
-              </p>
-            </a>
-            <div class="collapse" id="pagesExamples">
-              <ul class="nav">
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">P</span>
-                    <span class="sidebar-normal"> Pricing </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="<%=Help.FormatUrl("/Views/Marketing/MessagePge.aspx") %>">
-                    <span class="sidebar-mini-icon">MK</span>
-                    <span class="sidebar-normal"> Marketing </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="<%=Help.FormatUrl("/Views/Teste.aspx") %>">
-                    <span class="sidebar-mini-icon">T</span>
-                    <span class="sidebar-normal"> Testes </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="<%=Help.FormatUrl("/Login.aspx") %>">
-                    <span class="sidebar-mini-icon">L</span>
-                    <span class="sidebar-normal"> Login </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">R</span>
-                    <span class="sidebar-normal"> Register </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <span class="sidebar-mini-icon">LS</span>
-                    <span class="sidebar-normal"> Lock Screen </span>
-                  </a>
-                </li>
-                <li>
-                  <a href="<%=Help.FormatUrl("/Views/TesteControls.aspx") %>">
-                    <span class="sidebar-mini-icon">UP</span>
-                    <span class="sidebar-normal"> User Profile </span>
-                  </a>
-                </li>
+                  <usc:MenuButtonUsc runat="server" ID="mnuPricing" Url="#" Text="Princing" SmallText="PG" />
+                  <usc:MenuButtonUsc runat="server" ID="mnuSms" Url="/Views/Marketing/MessagePge.aspx?page=sms" Text="SMS" SmallText="SMS" />
+                  <usc:MenuButtonUsc runat="server" ID="mnuEmail" Url="/Views/Marketing/MessagePge.aspx?page=email" Text="EMAIL" SmallText="EML" />
               </ul>
             </div>
           </li>
