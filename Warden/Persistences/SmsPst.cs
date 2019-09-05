@@ -1,12 +1,15 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Specialized;
+using System.Data;
+using System.Data.SqlClient;
 using System.Net;
 using System.Text;
+using Warden.Interfaces;
 using Warden.Models;
 
 namespace Warden.Persistences {
-    public class SmsPst: Sms {
+    public class SmsPst: Sms, IEntitie {
 
         #region Enums
 
@@ -31,7 +34,8 @@ namespace Warden.Persistences {
 
         #region Constants
 
-            public readonly Encoding HTTP_ENCODING = Encoding.UTF8;
+        private const String COMMON_ATTRIBUTES = "@auditoria, @status, @tipo, @campanha, @mensagem, @celular, @quantidade";
+        public readonly Encoding HTTP_ENCODING = Encoding.UTF8;
 
         #endregion
 
@@ -40,10 +44,19 @@ namespace Warden.Persistences {
         public APIs SelectedAPI { get; set; }
         public SendType SelectedSendType { get; set; }
         public Boolean IsFlashSms { get; set; }
+        private DbConnect DbConnect { get; set; }
+        private SqlCommand Sql {
+            get {
+                DbConnect = Connection.VerifyAndConnect(DbConnect, "WARDEN");
+                return DbConnect.Sql;
+            }
+        }
 
         #endregion
 
         #region Methods
+
+
         public override void Send() {
             base.Send();
             LoadAndVerify();
@@ -140,6 +153,50 @@ namespace Warden.Persistences {
             }
 
             return Result;
+        }
+
+        public DataTable Search() {
+            DataTable Table = new DataTable();
+            try {
+                DbConnect.OpenAdpter("EXEC [marketing].[stp_sms_pesquisar]");
+                DbConnect.Adapt.Fill(Table);
+                DbConnect.CloseCon();
+            } catch {
+                throw;
+            }
+
+            return Table;
+        }
+
+        public string Save() {
+            String Result = "";
+
+            try {
+                
+                Sql.CommandText = "EXEC [marketing].[stp_sms_salvar] @id OUTPUT" + COMMON_ATTRIBUTES;
+                Sql.Parameters.AddWithValue("@auditoria", "SALVAR");
+                Sql.Parameters.AddWithValue("@status", this.Status);
+                Sql.Parameters.AddWithValue("@tipo", this.SelectedSendType.GetStringValue());
+                Sql.Parameters.AddWithValue("@campanha", this.Title);
+                Sql.Parameters.AddWithValue("@mensagem", this.Text);
+                Sql.Parameters.AddWithValue("@celular", this.Recipient.PhoneNumber);
+                Sql.Parameters.AddWithValue("@quantidade", 0);
+                Sql.ExecuteNonQuery();
+            } catch {
+                throw;
+            } finally {
+                DbConnect.CloseCon();
+            }
+
+            return Result;
+        }
+
+        public string Update() {
+            throw new NotImplementedException();
+        }
+
+        public string Delete() {
+            throw new NotImplementedException();
         }
 
         #endregion

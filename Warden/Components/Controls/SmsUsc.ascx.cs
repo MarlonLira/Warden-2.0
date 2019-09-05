@@ -68,8 +68,8 @@ namespace Warden.Components.Controls
                     Sms.Send();
                 }
 
-            } catch (Exception Except) {
-                
+            } catch {
+                throw;
             }
         }
 

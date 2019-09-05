@@ -86,8 +86,8 @@ namespace Warden.Persistences {
                     if (Part[0] == SUCCESS) {
                         Result = "success";
                     }
-                } catch (Exception e) {
-
+                } catch {
+                    throw;
                 } finally {
                     WebFields = null;
                     WebResponse = null;
