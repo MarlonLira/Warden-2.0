@@ -78,3 +78,7 @@ C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\EntityFramework
 C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\EntityFramework.SqlServer.dll
 C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\EntityFramework.xml
 C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\EntityFramework.SqlServer.xml
+C:\Web\Warden-2.0\Warden\Warden\bin\EntityFramework.dll
+C:\Web\Warden-2.0\Warden\Warden\bin\EntityFramework.SqlServer.dll
+C:\Web\Warden-2.0\Warden\Warden\bin\EntityFramework.xml
+C:\Web\Warden-2.0\Warden\Warden\bin\EntityFramework.SqlServer.xml
