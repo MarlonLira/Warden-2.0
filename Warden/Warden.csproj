@@ -196,6 +196,7 @@
     <Content Include="TransactSql\dbahelper\stp_error.sql" />
     <Content Include="TransactSql\ddl\ddl.sql" />
     <Content Include="TransactSql\ddl\Schemas.sql" />
+    <Content Include="TransactSql\stp\stp_gateway.sql" />
     <Content Include="TransactSql\stp\stp_sms.sql" />
     <Content Include="Views\CalendarTeste.aspx" />
     <Content Include="Views\LoginTeste.aspx" />

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Web.UI.WebControls;
 
 namespace Warden.Components.Common {
@@ -23,6 +24,23 @@ namespace Warden.Components.Common {
         public String SelectedValue {
             get { return dd_control.SelectedValue; }
             set { this.dd_control.SelectedValue = value; }
+        }
+
+        public override void LoadDataSource(DataTable Table) {
+            base.LoadDataSource(Table);
+            if (ItemList == null) {
+                ItemList = new List<ListItem>();
+            }
+            if (Table != null) {
+                foreach (DataRow Row in Table.Rows) {
+                    ListItem NewItem = new ListItem() {
+                        Text = Convert.ToString(Row["nome"]),
+                        Value = Convert.ToString(Row["id"])
+                    };
+                    ItemList.Add(NewItem);
+                }
+                LoadDataSource();
+            }
         }
 
         public override void LoadDataSource() {
