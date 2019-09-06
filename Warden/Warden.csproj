@@ -179,7 +179,7 @@
     <Content Include="Components\Controls\NavbarUsc.ascx" />
     <Content Include="Components\Controls\SettingsUsc.ascx" />
     <Content Include="Components\Controls\SidebarUsc.ascx" />
-    <Content Include="Components\Controls\SmsUsc.ascx" />
+    <Content Include="Components\Controls\Marketing\SmsUsc.ascx" />
     <Content Include="Components\Controls\UserAvatarUsc.ascx" />
     <Content Include="Components\Controls\UserLoginUsc.ascx" />
     <Content Include="Components\Controls\UserProfileUsc.ascx" />
@@ -448,11 +448,11 @@
     <Compile Include="Components\Controls\SidebarUsc.ascx.designer.cs">
       <DependentUpon>SidebarUsc.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Components\Controls\SmsUsc.ascx.cs">
+    <Compile Include="Components\Controls\Marketing\SmsUsc.ascx.cs">
       <DependentUpon>SmsUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Components\Controls\SmsUsc.ascx.designer.cs">
+    <Compile Include="Components\Controls\Marketing\SmsUsc.ascx.designer.cs">
       <DependentUpon>SmsUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Controls\UserAvatarUsc.ascx.cs">

@@ -34,8 +34,8 @@ namespace Warden.Persistences {
 
         #region Constants
 
-        private const String COMMON_ATTRIBUTES = "@auditoria, @status, @tipo, @campanha, @mensagem, @celular, @quantidade, @valor, @data_envio, @data_cadastro, @gateway_id";
-        public readonly Encoding HTTP_ENCODING = Encoding.UTF8;
+        private const String COMMON_ATTRIBUTES = "@auditoria, @status, @tipo, @campanha, @mensagem, @celular, @quantidade, @valor, @data_envio, @data_cadastro, @gateway_id, @resultado";
+        private readonly Encoding HTTP_ENCODING = Encoding.UTF8;
 
         #endregion
 
@@ -67,8 +67,7 @@ namespace Warden.Persistences {
             base.LoadAndVerify();
             if (this.Sender == null) {
                 Sender = new Sender() {
-                    User = "81999269773",
-                    Pass = "820475"
+                    //AJUSTAR
                 };
             }
         }
@@ -103,6 +102,9 @@ namespace Warden.Persistences {
 
                     WebResponse = WebPost.UploadValues(ApiUrl, "POST", WebFields);
                     Result = HTTP_ENCODING.GetString(WebResponse);
+
+                    this.Result = Result;
+                    Save();
 
                     if (SelectedAPI == APIs.SmsFast) {
                         dynamic Json = JValue.Parse(Result);
@@ -188,7 +190,9 @@ namespace Warden.Persistences {
                 Sql.Parameters.AddWithValue("@data_envio", this.SendDate);
                 Sql.Parameters.AddWithValue("@data_cadastro", this.RegistrationDate);
                 Sql.Parameters.AddWithValue("@gateway_id", this.Gateway.Id);
-                
+                Sql.Parameters.AddWithValue("@resultado", this.Result);
+
+
                 Sql.ExecuteNonQuery();
             } catch {
                 throw;

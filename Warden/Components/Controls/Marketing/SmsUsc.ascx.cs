@@ -28,13 +28,20 @@ namespace Warden.Components.Controls
 
         private void Enviar() {
             SmsPst Sms;
+            DateTime CurrentDate = DateTime.UtcNow.AddHours(-3);
             try {
                 Sms = new SmsPst();
                 Sms.Title = txtTitle.Text;
                 Sms.Text = txtText.Text;
                 Sms.Status = "AT";
                 Sms.SelectedSendType = SmsPst.SendType.Multiple;
-
+                Sms.RegistrationDate = CurrentDate;
+                Sms.SendDate = CurrentDate;
+                Sms.Gateway = new GatewayPst() { Id = 1 };
+                Sms.Amount = 1;
+                Sms.Credit = 0.7f;
+                Sms.Audit = "Enviar";
+                
                 if (ddSendType.SelectedValue == "1")
                     Sms.SelectedSendType = SmsPst.SendType.Simple;
                 else if (ddSendType.SelectedValue == "2")
@@ -44,10 +51,7 @@ namespace Warden.Components.Controls
                     Sms.SelectedAPI = SmsPst.APIs.SmsFast;
                 else if (ddGateway.SelectedValue == "2") {
                     Sms.SelectedAPI = SmsPst.APIs.FacilitaSms;
-                    Sms.Sender = new Sender() {
-                        User = "hi.academia.newton",
-                        Pass = "hi.academia.newton123"
-                    };
+                    //AJUSTAR
                 }
 
                 if (String.IsNullOrEmpty(txtNumberList.Text)) {
@@ -108,7 +112,6 @@ namespace Warden.Components.Controls
                 new ListItem {Text = "Simples", Value = "1"},
                 new ListItem {Text = "Multiplo", Value = "2"}
             };
-
 
             ddRecipient.LoadDataSource();
             ddType.LoadDataSource();

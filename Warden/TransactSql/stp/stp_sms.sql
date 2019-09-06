@@ -26,12 +26,17 @@ CREATE PROCEDURE [marketing].[stp_sms_salvar]
 @campanha VARCHAR(255),
 @mensagem VARCHAR(255),
 @celular VARCHAR(15),
-@quantidade INT
+@quantidade INT,
+@valor FLOAT,
+@data_envio DATETIME,
+@data_cadastro DATETIME,
+@gateway_id NUMERIC,
+@resultado VARCHAR(255)
 WITH ENCRYPTION AS
 BEGIN SET NOCOUNT ON BEGIN TRY
 
-		INSERT INTO [marketing].[tbl_sms] ([auditoria], [status], [tipo], [campanha], [mensagem], [celular], [quantidade]) VALUES
-					(@auditoria, @status, @tipo, @campanha, @mensagem, @celular, @quantidade);
+		INSERT INTO [marketing].[tbl_sms] ([auditoria], [status], [tipo], [campanha], [mensagem], [celular], [quantidade], [valor], [data_envio], [data_cadastro], [gateway_id], [resultado]) VALUES
+					(@auditoria, @status, @tipo, @campanha, @mensagem, @celular, @quantidade, @valor, @data_envio, @data_cadastro, @gateway_id, @resultado);
 
 		SET @id = SCOPE_IDENTITY();
 	
