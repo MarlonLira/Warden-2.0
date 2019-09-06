@@ -6,7 +6,6 @@ namespace Warden.Components.Common {
             base.OnLoad(e);
             ComponentTextLoad();
         }
-
         public String HelpText { get; set; }
         public Boolean IsTextArea { get; set; }
         public String Placeholder { get; set; }
@@ -27,7 +26,7 @@ namespace Warden.Components.Common {
         }
         protected String Disabled { get; set; }
 
-        private void ComponentTextLoad() {
+        protected void ComponentTextLoad() {
             if (Size <= 0) {
                 Size = 5;
             }
@@ -35,6 +34,8 @@ namespace Warden.Components.Common {
             if (String.IsNullOrEmpty(this.Type)) {
                 Type = "text";
             }
+
+            LoadDataSource();
         }
     }
 }

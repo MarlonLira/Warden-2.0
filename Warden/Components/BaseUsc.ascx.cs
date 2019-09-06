@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Warden.Persistences;
 
 namespace Warden.Components {
     public partial class BaseUsc : UserControl {
@@ -11,11 +13,13 @@ namespace Warden.Components {
             base.OnLoad(e);
         }
 
+        DbConnect DbConnect { get; set; }
+
         public List<ListItem> Itens { get; set; }
         //Text
         public Boolean ReadOnly { get; set; }
         public String Title { get; set; }
-        public String Text { get; set; }
+        public virtual String Text { get; set; }
 
         //Style
         public String ComponentId { get; set; }
