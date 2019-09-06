@@ -56,7 +56,10 @@ IF [dbahelper].[stf_exists_table]('[marketing].[tbl_sms_gateway]') = 0 BEGIN
 	[status] [varchar](2) NULL,
 	[nome] [varchar](255) NULL,
 	[url] [varchar](255) NULL,
-	[saldo] [float] NULL
+	[saldo] [float] NULL,
+	[usuario][varchar](255) NULL,
+	[senha] [varchar](255) NULL,
+	[token] [varchar](255) NULL
   CONSTRAINT [pk_tbl_sms_gateway] PRIMARY KEY CLUSTERED 
   (
 	  [id] ASC
