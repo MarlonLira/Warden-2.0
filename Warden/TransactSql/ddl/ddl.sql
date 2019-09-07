@@ -76,11 +76,13 @@ END;
 -----------
 
 -- EXEC [dbahelper].[stp_create_column] '[schema].[table_name]', '[atribute]', 'NUMERIC NULL';
+/*
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[valor]', 'FLOAT NULL';
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[data_envio]', 'DATETIME NULL';
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[data_cadastro]', 'DATETIME NULL';
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[gateway_id]', 'NUMERIC NULL';
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[resultado]', 'VARCHAR(255) NULL';
+	*/
 
 -- EXEC [dbahelper].[stp_drop_column] '[schema].[table_name]', '[column]';
 	

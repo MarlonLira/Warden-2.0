@@ -23,15 +23,36 @@ namespace Warden.Persistences {
 
         public DataTable Search() {
             DataTable Table;
+            String Query = "EXEC [marketing].[stp_gateway_pesquisar]";
             DbConnect = new DbConnect();
+            Table = DbConnect.ExecuteReader(Query);
+            
+            /*
             DbConnect.OpenWardenCon();
             Table = new DataTable();
             DbConnect.OpenAdpter("EXEC [marketing].[stp_gateway_pesquisar]");
             DbConnect.Adapt.Fill(Table);
-            DbConnect.CloseCon();
+            DbConnect.CloseCon();*/
 
             return Table;
             
+        }
+
+        public DataRow Search(Int32 Id) {
+            DataTable Table;
+            String Query = "EXEC [marketing].[stp_gateway_pesquisar] " + Convert.ToString(Id);
+            DbConnect = new DbConnect();
+            Table = DbConnect.ExecuteReader(Query);
+
+            /*
+            DbConnect.OpenWardenCon();
+            Table = new DataTable();
+            DbConnect.OpenAdpter("EXEC [marketing].[stp_gateway_pesquisar]");
+            DbConnect.Adapt.Fill(Table);
+            DbConnect.CloseCon();*/
+
+            return Table.Rows[0];
+
         }
 
         public string Update() {
