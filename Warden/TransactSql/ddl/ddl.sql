@@ -38,7 +38,8 @@ IF [dbahelper].[stf_exists_table]('[marketing].[tbl_sms]') = 0 BEGIN
 	[valor] [float] NULL,
 	[data_envio] [datetime] NULL,
 	[data_cadastro][datetime] NULL,
-	[gateway_id] [numeric](18, 0) NULL
+	[gateway_id] [numeric](18, 0) NULL,
+	[resultado] [varchar](255)
   CONSTRAINT [pk_tbl_sms] PRIMARY KEY CLUSTERED 
   (
 	  [id] ASC
@@ -79,9 +80,10 @@ END;
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[data_envio]', 'DATETIME NULL';
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[data_cadastro]', 'DATETIME NULL';
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[gateway_id]', 'NUMERIC NULL';
+	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[resultado]', 'VARCHAR(255) NULL';
 
 -- EXEC [dbahelper].[stp_drop_column] '[schema].[table_name]', '[column]';
-
+	
 -- índices
 ----------
 /*

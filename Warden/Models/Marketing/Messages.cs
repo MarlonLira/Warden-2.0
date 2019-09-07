@@ -17,6 +17,7 @@ namespace Warden.Models {
         public String Audit { get; set; }
         public Single Credit { get; set; }
         public Int32 Amount { get; set; }
+        public String Result { get; set; }
         public GatewayPst Gateway { get; set; }
 
         #endregion

@@ -1,10 +1,18 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using Warden.Interfaces;
 using Warden.Models;
 
 namespace Warden.Persistences {
     public class GatewayPst : Gateway, IEntitie {
+
+        private DbConnect DbConnect { get; set; }
+        private SqlCommand Sql {
+            get {
+                return Connection.VerifyAndConnect(DbConnect, "WARDEN").Sql;
+            }
+        }
         public string Delete() {
             throw new NotImplementedException();
         }
@@ -14,7 +22,16 @@ namespace Warden.Persistences {
         }
 
         public DataTable Search() {
-            throw new NotImplementedException();
+            DataTable Table;
+            DbConnect = new DbConnect();
+            DbConnect.OpenWardenCon();
+            Table = new DataTable();
+            DbConnect.OpenAdpter("EXEC [marketing].[stp_gateway_pesquisar]");
+            DbConnect.Adapt.Fill(Table);
+            DbConnect.CloseCon();
+
+            return Table;
+            
         }
 
         public string Update() {
