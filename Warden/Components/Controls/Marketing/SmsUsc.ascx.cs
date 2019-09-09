@@ -8,9 +8,10 @@ using Warden.Persistences;
 
 namespace Warden.Components.Controls
 {
-    public partial class SmsUsc : BaseUsc
+    public partial class SmsUsc : BaseControlsUsc
     {
         private DataTable UserTable { get; set; }
+       
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
             VerifyAndLoad();
@@ -83,9 +84,7 @@ namespace Warden.Components.Controls
                             PhoneNumber = Convert.ToString(Row["PhoneNumber"])
                         };
 
-                        
-
-                        Sms.Send();
+                        //Sms.Send();
                     }
                     Sms.Amount = UserTable.Rows.Count;
                 } else {
@@ -94,13 +93,18 @@ namespace Warden.Components.Controls
                         PhoneNumber = txtNumberList.Text
                     };
 
-                    Sms.Send();
+                    //Sms.Send();
                 }
-                
+                //mdlControl.Text = "Envio Concluido com Sucesso!";
+                //mdlControl.OpenModal();
                 //ShowMessage.OpenModal("Resultado","Mensagens Enviadas!","mdl_control");
+                ShowMessage = Message;
+                ShowMessage.OpenModal("Testando", "12345789");
 
-            } catch {
-                throw;
+            } catch(Exception Except) {
+                mdlControl.Title = "Error";
+                mdlControl.Text = Except.Message;
+                mdlControl.OpenModal();
             }
         }
 

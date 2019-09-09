@@ -8,7 +8,7 @@ namespace Warden.Views.Marketing {
             VerifyAndLoad();
         }
 
-        public ModalUsc modalControl { get; set; }
+        
 
         public void VerifyAndLoad() {
             String Result = Request.QueryString["page"];
@@ -29,11 +29,6 @@ namespace Warden.Views.Marketing {
                         }
 
                 }
-            }
-
-            if (modalControl != null) {
-                mdlControl = modalControl;
-                mdlControl.OpenModal();
             }
         }
 

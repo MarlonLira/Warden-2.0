@@ -172,6 +172,7 @@
     <Content Include="Components\Common\TextBoxUsc.ascx" />
     <Content Include="Components\Common\TextInputUsc.ascx" />
     <Content Include="Components\Common\TimeLineUsc.ascx" />
+    <Content Include="Components\Controls\BaseControlsUsc.ascx" />
     <Content Include="Components\Controls\FooterUsc.ascx" />
     <Content Include="Components\Controls\LoginUsc.ascx" />
     <Content Include="Components\Controls\MainUsc.ascx" />
@@ -399,6 +400,13 @@
     </Compile>
     <Compile Include="Components\Common\TimeLineUsc.ascx.designer.cs">
       <DependentUpon>TimeLineUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Controls\BaseControlsUsc.ascx.cs">
+      <DependentUpon>BaseControlsUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\BaseControlsUsc.ascx.designer.cs">
+      <DependentUpon>BaseControlsUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Controls\FooterUsc.ascx.cs">
       <DependentUpon>FooterUsc.ascx</DependentUpon>
