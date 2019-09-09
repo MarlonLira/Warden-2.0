@@ -4,9 +4,13 @@ IF EXISTS (SELECT TOP 1 [id] FROM dbo.sysobjects WHERE id = object_id(N'[marketi
 GO
 
 CREATE PROCEDURE [marketing].[stp_gateway_pesquisar]
+@id NUMERIC = NULL
 WITH ENCRYPTION AS
 BEGIN SET NOCOUNT ON BEGIN TRY
-	SELECT * FROM [marketing].[tbl_sms_gateway];
+	IF @id IS NULL
+		SELECT * FROM [marketing].[tbl_sms_gateway];
+	ELSE
+		SELECT * FROM [marketing].[tbl_sms_gateway] WHERE [id] = @id;
 END TRY
 BEGIN CATCH	 
   EXEC [dbahelper].[stp_errorhandler] '[marketing].[stp_gateway_pesquisar]';

@@ -36,6 +36,7 @@ namespace Warden.Components.Common {
                     ListItem NewItem = new ListItem() {
                         Text = Convert.ToString(Row["nome"]),
                         Value = Convert.ToString(Row["id"])
+                       
                     };
                     ItemList.Add(NewItem);
                 }

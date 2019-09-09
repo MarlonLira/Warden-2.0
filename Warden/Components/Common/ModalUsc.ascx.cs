@@ -12,5 +12,14 @@ namespace Warden.Components.Common {
                 ScriptManager.RegisterStartupScript(Page, Page.GetType(), ComponentId, "$(function() {openModal();});", true);
             }
         }
+
+        public void OpenModal(String Title, String Text, String Component) {
+            this.Text = Text;
+            this.Title = Title;
+
+            if (!String.IsNullOrEmpty(Component)) {
+                ScriptManager.RegisterStartupScript(Page, Page.GetType(), Component, "$(function() {openModal();});", true);
+            }
+        }
     }
 }
