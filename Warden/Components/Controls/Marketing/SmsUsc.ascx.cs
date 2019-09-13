@@ -11,12 +11,12 @@ namespace Warden.Components.Controls
     public partial class SmsUsc : BaseControlsUsc
     {
         private DataTable UserTable { get; set; }
-       
+        DataTable GatewayTable { get; set; }
+
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
             VerifyAndLoad();
             Loading();
-            
             
             btnPesquisar.OnClick += new ButtonUsc.OnClickEvent(BtnPesquisar_OnClick);
             btnEnviar.OnClick += new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
@@ -33,11 +33,13 @@ namespace Warden.Components.Controls
         }
 
         private void VerifyAndLoad() {
-            DataTable Table = new DataTable();
-            //gateway
             GatewayPst Gateway = new GatewayPst();
-            Table = Gateway.Search();
-            ddGateway.LoadDataSource(Table);
+            if (GatewayTable == null) {
+                GatewayTable = new DataTable();
+                GatewayTable = Gateway.Search();
+            }
+            
+            ddGateway.LoadDataSource(GatewayTable);
         }
 
         private void Enviar() {
@@ -98,8 +100,11 @@ namespace Warden.Components.Controls
                 //mdlControl.Text = "Envio Concluido com Sucesso!";
                 //mdlControl.OpenModal();
                 //ShowMessage.OpenModal("Resultado","Mensagens Enviadas!","mdl_control");
-                ShowMessage = Message;
-                ShowMessage.OpenModal("Testando", "12345789");
+
+                ShowMessage.Title = "Testando";
+                ShowMessage.Text = "Texto testando";
+                Message = ShowMessage;
+                Message.OpenModal("Testando", "12345789");
 
             } catch(Exception Except) {
                 mdlControl.Title = "Error";
@@ -131,12 +136,6 @@ namespace Warden.Components.Controls
                 new ListItem {Text = "Empresa 2", Value = "2"},
                 new ListItem {Text = "Empresa 3", Value = "3"}
             };
-
-            /*ddGateway.ItemList = new List<ListItem>() {
-                new ListItem { Text = "Selecione uma opção", Value="0" },
-                new ListItem {Text = "SmsFast", Value = "1"},
-                new ListItem {Text = "FacilitaMovel", Value = "2"}
-            };*/
 
             ddSendType.ItemList = new List<ListItem>() {
                 new ListItem { Text = "Selecione uma opção", Value="0" },

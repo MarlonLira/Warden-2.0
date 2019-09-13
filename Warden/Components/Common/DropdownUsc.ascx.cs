@@ -9,6 +9,8 @@ namespace Warden.Components.Common {
         public class Item {
             public String Value { get; set; }
             public String Text { get; set; }
+
+            public object Entite { get; set; }
         }
 
         protected override void OnLoad(EventArgs e) {
@@ -36,7 +38,6 @@ namespace Warden.Components.Common {
                     ListItem NewItem = new ListItem() {
                         Text = Convert.ToString(Row["nome"]),
                         Value = Convert.ToString(Row["id"])
-                       
                     };
                     ItemList.Add(NewItem);
                 }
