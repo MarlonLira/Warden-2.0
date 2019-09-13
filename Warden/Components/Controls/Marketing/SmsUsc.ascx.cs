@@ -22,7 +22,7 @@ namespace Warden.Components.Controls
             btnEnviar.OnClick += new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
         }
 
-        private ModalUsc ShowMessage { get; set; }
+        private ModalUsc ShowMessage { get { return mdlControl; } }
 
         private void BtnEnviar_OnClick() {
             Enviar();
@@ -43,7 +43,6 @@ namespace Warden.Components.Controls
         }
 
         private void Enviar() {
-            ShowMessage = new ModalUsc();
             DataRow SelectedGateway;
             SmsPst Sms;
             DateTime CurrentDate = DateTime.UtcNow.AddHours(-3);
@@ -86,7 +85,7 @@ namespace Warden.Components.Controls
                             PhoneNumber = Convert.ToString(Row["PhoneNumber"])
                         };
 
-                        //Sms.Send();
+                        Sms.Send();
                     }
                     Sms.Amount = UserTable.Rows.Count;
                 } else {
@@ -95,16 +94,9 @@ namespace Warden.Components.Controls
                         PhoneNumber = txtNumberList.Text
                     };
 
-                    //Sms.Send();
+                    Sms.Send();
                 }
-                //mdlControl.Text = "Envio Concluido com Sucesso!";
-                //mdlControl.OpenModal();
-                //ShowMessage.OpenModal("Resultado","Mensagens Enviadas!","mdl_control");
-
-                ShowMessage.Title = "Testando";
-                ShowMessage.Text = "Texto testando";
-                Message = ShowMessage;
-                Message.OpenModal("Testando", "12345789");
+                ShowMessage.OpenModal("Resultado", "Envio Concluido com Sucesso!");
 
             } catch(Exception Except) {
                 mdlControl.Title = "Error";
