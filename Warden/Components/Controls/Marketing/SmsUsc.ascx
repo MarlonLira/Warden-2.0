@@ -1,6 +1,8 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SmsUsc.ascx.cs" Inherits="Warden.Components.Controls.SmsUsc" %>
 <%@ Import Namespace="Warden.Helper" %>
 
+<usc:ModalUsc runat="server" ComponentId="mdl_sms" ID="mdlControl" Title="Resultado"/>
+
     <div class="card" style="padding-left:15px; padding-top:15px; padding-bottom:15px">
         <usc:LabelUsc runat="server" Text="Envio de Mensagens" Bold="true"  FontSize="15"/>
     </div>

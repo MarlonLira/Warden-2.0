@@ -13,6 +13,15 @@ namespace Warden.Views.Marketing {
     public partial class MessagePge {
         
         /// <summary>
+        /// Controle mdlControl.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ModalUsc mdlControl;
+        
+        /// <summary>
         /// Controle Sms_control.
         /// </summary>
         /// <remarks>

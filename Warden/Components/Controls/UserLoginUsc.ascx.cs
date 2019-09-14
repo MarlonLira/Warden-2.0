@@ -1,14 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Warden.Components.Controls {
-    public partial class UserLoginUsc : System.Web.UI.UserControl {
-        protected void Page_Load(object sender, EventArgs e) {
+    public partial class UserLoginUsc : BaseUsc {
+        protected override void OnLoad(EventArgs e) {
+            base.OnLoad(e);
+            btnConfirm.OnClick += new Common.ButtonUsc.OnClickEvent(BtnConfirm_OnClick);
+        }
 
+        private void BtnConfirm_OnClick() {
+            if (!String.IsNullOrEmpty(txtEmail.Text)) {
+                if (txtEmail.Text.ToUpperInvariant() == "ADMIN") {
+                    if (txtPassword.Text == "Root1526") {
+                        Session.Add("User", "ADMIN");
+                        Response.Redirect("~/Default.aspx", false);
+                    }
+                }
+            } 
         }
     }
 }

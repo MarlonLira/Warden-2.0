@@ -9,21 +9,21 @@ using Warden.Interfaces;
 using Warden.Models;
 
 namespace Warden.Persistences {
-    public class SmsPst: Sms, IEntitie {
+    public class SmsPst : Sms, IEntitie {
 
         #region Enums
 
-        public enum APIs
-        {
-            [StringValue("http://app.smsfast.com.br/api.ashx?")]
-            SmsFast,
-
+        public enum APIs {
             [StringValue("http://www.facilitamovel.com.br/api")]
-            FacilitaSms
+            FacilitaSms = 1,
+
+            [StringValue("http://app.smsfast.com.br/api.ashx?")]
+            SmsFast = 2
+
+            
         }
 
-        public enum SendType
-        {
+        public enum SendType {
             [StringValue("/simpleSend.ft?")]
             Simple,
             [StringValue("/multipleSend.ft?")]
@@ -56,7 +56,6 @@ namespace Warden.Persistences {
 
         #region Methods
 
-
         public override void Send() {
             base.Send();
             LoadAndVerify();
@@ -75,7 +74,7 @@ namespace Warden.Persistences {
         private dynamic WebReq() {
             dynamic Result;
             String ApiUrl = "";
-            
+
             ServicePointManager.ServerCertificateValidationCallback = (sender, certificate, chain, sslPolicyErrors) => { return true; };
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
@@ -88,16 +87,16 @@ namespace Warden.Persistences {
 
                     switch (SelectedAPI) {
                         case APIs.SmsFast: {
-                            WebFields = SmsFast();
-                            ApiUrl = APIs.SmsFast.GetStringValue();
-                            break;
-                        }
+                                WebFields = SmsFast();
+                                ApiUrl = APIs.SmsFast.GetStringValue();
+                                break;
+                            }
                         case APIs.FacilitaSms: {
-                            WebFields = FacilitaSms();
-                            ApiUrl = APIs.FacilitaSms.GetStringValue();
-                            ApiUrl += SelectedSendType.GetStringValue();
-                            break;
-                        }
+                                WebFields = FacilitaSms();
+                                ApiUrl = APIs.FacilitaSms.GetStringValue();
+                                ApiUrl += SelectedSendType.GetStringValue();
+                                break;
+                            }
                     }
 
                     WebResponse = WebPost.UploadValues(ApiUrl, "POST", WebFields);
@@ -131,7 +130,7 @@ namespace Warden.Persistences {
             Result["lgn"] = this.Sender.User;
             Result["pwd"] = this.Sender.Pass;
             Result["content"] = this.Text;
-            Result["numbers"] = this.Recipient.PhoneNumber;
+            Result["numbers"] = this.Recipient.PhoneNumber.Replace(";", ",");
             Result["type_service"] = "LONGCODE";
             //Result["url_callback"] = "URL DE RETORNO";
 
@@ -174,10 +173,11 @@ namespace Warden.Persistences {
         public string Save() {
             String Result = "";
             Int32 NewId = (Int32)DbType.Int32;
+            String Query = "EXEC[marketing].[stp_sms_salvar] @id OUTPUT, ";
 
             try {
-                
-                Sql.CommandText = "EXEC [marketing].[stp_sms_salvar] @id OUTPUT, " + COMMON_ATTRIBUTES;
+
+                /*Sql.CommandText = "EXEC [marketing].[stp_sms_salvar] @id OUTPUT, " + COMMON_ATTRIBUTES;
                 Sql.Parameters.AddWithValue("@id", NewId);
                 Sql.Parameters.AddWithValue("@auditoria", "SALVAR");
                 Sql.Parameters.AddWithValue("@status", this.Status);
@@ -190,10 +190,28 @@ namespace Warden.Persistences {
                 Sql.Parameters.AddWithValue("@data_envio", this.SendDate);
                 Sql.Parameters.AddWithValue("@data_cadastro", this.RegistrationDate);
                 Sql.Parameters.AddWithValue("@gateway_id", this.Gateway.Id);
-                Sql.Parameters.AddWithValue("@resultado", this.Result);
+                Sql.Parameters.AddWithValue("@resultado", this.Result);*/
+
+                DbConnect = new DbConnect();
+                DbConnect.ExecuteNonQuery(Query, COMMON_ATTRIBUTES, new SqlParameter[] {
+                     new SqlParameter("@id", NewId),
+                     new SqlParameter("@auditoria", "SALVAR"),
+                     new SqlParameter("@status", this.Status),
+                     new SqlParameter("@tipo", this.SelectedSendType.GetStringValue()),
+                     new SqlParameter("@campanha", this.Title),
+                     new SqlParameter("@mensagem", this.Text),
+                     new SqlParameter("@celular", this.Recipient.PhoneNumber),
+                     new SqlParameter("@quantidade", this.Amount),
+                     new SqlParameter("@valor", this.Credit),
+                     new SqlParameter("@data_envio", this.SendDate),
+                     new SqlParameter("@data_cadastro", this.RegistrationDate),
+                     new SqlParameter("@gateway_id", this.Gateway.Id),
+                     new SqlParameter("@resultado", this.Result)
+                });
 
 
-                Sql.ExecuteNonQuery();
+
+                //Sql.ExecuteNonQuery();
             } catch {
                 throw;
             } finally {

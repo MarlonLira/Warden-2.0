@@ -10,20 +10,23 @@
             </div>
             <div role="form" runat="server">
                 <div class="form-group mb-3">
-                    <usc:TextBoxUsc ID="txt_email" runat="server" Placeholder="CPF"/>
+                    <usc:TextInputUsc ID="txt_email" runat="server" Placeholder="CPF"/>
                 </div>
                 <div class="form-group">
-                    <usc:TextBoxUsc ID="txt_password" runat="server" Placeholder="Senha" TextMode="Password"/>
+                    <usc:TextInputUsc ID="txt_password" runat="server" Placeholder="Senha" TextMode="password"/>
                 </div>
                 <div class="custom-control custom-control-alternative custom-checkbox">
                     <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
                     <label class="custom-control-label" for=" customCheckLogin">
                         <span>Remember me</span>
                     </label>
+                    <usc:ButtonUsc ID="btnLogin" runat="server" Text="Confirmar"/>
+                    <usc:ButtonUsc ID="BtnTeste" runat="server" Text="Testar" />
                 </div>
+                
                 <div class="text-center">
                     <br />
-                    <usc:ButtonUsc ID="ButtonUsc" runat="server" Text="Confirmar"/>
+                    
                       
                 </div>
             </div>

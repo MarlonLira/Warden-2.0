@@ -1,4 +1,5 @@
 ﻿using System;
+using Warden.Components.Common;
 
 namespace Warden.Views.Marketing {
     public partial class MessagePge : BasePge {
@@ -6,6 +7,8 @@ namespace Warden.Views.Marketing {
             base.OnLoad(e);
             VerifyAndLoad();
         }
+
+        
 
         public void VerifyAndLoad() {
             String Result = Request.QueryString["page"];

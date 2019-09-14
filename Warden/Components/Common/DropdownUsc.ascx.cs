@@ -9,6 +9,8 @@ namespace Warden.Components.Common {
         public class Item {
             public String Value { get; set; }
             public String Text { get; set; }
+
+            public object Entite { get; set; }
         }
 
         protected override void OnLoad(EventArgs e) {

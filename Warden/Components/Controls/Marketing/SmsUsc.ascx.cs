@@ -8,18 +8,21 @@ using Warden.Persistences;
 
 namespace Warden.Components.Controls
 {
-    public partial class SmsUsc : BaseUsc
+    public partial class SmsUsc : BaseControlsUsc
     {
         private DataTable UserTable { get; set; }
+        DataTable GatewayTable { get; set; }
+
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
             VerifyAndLoad();
             Loading();
             
-            
             btnPesquisar.OnClick += new ButtonUsc.OnClickEvent(BtnPesquisar_OnClick);
             btnEnviar.OnClick += new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
         }
+
+        private ModalUsc ShowMessage { get { return mdlControl; } }
 
         private void BtnEnviar_OnClick() {
             Enviar();
@@ -30,17 +33,22 @@ namespace Warden.Components.Controls
         }
 
         private void VerifyAndLoad() {
-            DataTable Table = new DataTable();
-            //gateway
             GatewayPst Gateway = new GatewayPst();
-            Table = Gateway.Search();
-            ddGateway.LoadDataSource(Table);
+            if (GatewayTable == null) {
+                GatewayTable = new DataTable();
+                GatewayTable = Gateway.Search();
+            }
+            
+            ddGateway.LoadDataSource(GatewayTable);
         }
 
         private void Enviar() {
+            DataRow SelectedGateway;
             SmsPst Sms;
             DateTime CurrentDate = DateTime.UtcNow.AddHours(-3);
+            Int32 GatewayId = Convert.ToInt32(ddGateway.SelectedValue);
             try {
+                
                 Sms = new SmsPst();
                 Sms.Title = txtTitle.Text;
                 Sms.Text = txtText.Text;
@@ -48,22 +56,27 @@ namespace Warden.Components.Controls
                 Sms.SelectedSendType = SmsPst.SendType.Multiple;
                 Sms.RegistrationDate = CurrentDate;
                 Sms.SendDate = CurrentDate;
-                Sms.Gateway = new GatewayPst() { Id = 1 };
                 Sms.Amount = 1;
                 Sms.Credit = 0.7f;
                 Sms.Audit = "Enviar";
-                
+
+                Sms.Gateway = new GatewayPst() { Id = GatewayId };
+                SelectedGateway = Sms.Gateway.Search(GatewayId);
+                Sms.Gateway.Url = Convert.ToString(SelectedGateway["url"]);
+                Sms.Sender = new Sender() {
+                    User = Convert.ToString(SelectedGateway["usuario"]),
+                    Pass = Convert.ToString(SelectedGateway["senha"])
+                };
+
                 if (ddSendType.SelectedValue == "1")
                     Sms.SelectedSendType = SmsPst.SendType.Simple;
                 else if (ddSendType.SelectedValue == "2")
                     Sms.SelectedSendType = SmsPst.SendType.Multiple;
 
-                if (ddGateway.SelectedValue == "1")
+                if (GatewayId == 2)
                     Sms.SelectedAPI = SmsPst.APIs.SmsFast;
-                else if (ddGateway.SelectedValue == "2") {
+                else if (GatewayId == 1) 
                     Sms.SelectedAPI = SmsPst.APIs.FacilitaSms;
-                    //AJUSTAR
-                }
 
                 if (String.IsNullOrEmpty(txtNumberList.Text)) {
                     foreach (DataRow Row in UserTable.Rows) {
@@ -74,6 +87,7 @@ namespace Warden.Components.Controls
 
                         Sms.Send();
                     }
+                    Sms.Amount = UserTable.Rows.Count;
                 } else {
                     Sms.Recipient = new Recipient() {
                         Name = Convert.ToString("Lista"),
@@ -82,9 +96,12 @@ namespace Warden.Components.Controls
 
                     Sms.Send();
                 }
+                ShowMessage.OpenModal("Resultado", "Envio Concluido com Sucesso!");
 
-            } catch {
-                throw;
+            } catch(Exception Except) {
+                mdlControl.Title = "Error";
+                mdlControl.Text = Except.Message;
+                mdlControl.OpenModal();
             }
         }
 
@@ -111,12 +128,6 @@ namespace Warden.Components.Controls
                 new ListItem {Text = "Empresa 2", Value = "2"},
                 new ListItem {Text = "Empresa 3", Value = "3"}
             };
-
-            /*ddGateway.ItemList = new List<ListItem>() {
-                new ListItem { Text = "Selecione uma opção", Value="0" },
-                new ListItem {Text = "SmsFast", Value = "1"},
-                new ListItem {Text = "FacilitaMovel", Value = "2"}
-            };*/
 
             ddSendType.ItemList = new List<ListItem>() {
                 new ListItem { Text = "Selecione uma opção", Value="0" },

@@ -172,6 +172,7 @@
     <Content Include="Components\Common\TextBoxUsc.ascx" />
     <Content Include="Components\Common\TextInputUsc.ascx" />
     <Content Include="Components\Common\TimeLineUsc.ascx" />
+    <Content Include="Components\Controls\BaseControlsUsc.ascx" />
     <Content Include="Components\Controls\FooterUsc.ascx" />
     <Content Include="Components\Controls\LoginUsc.ascx" />
     <Content Include="Components\Controls\MainUsc.ascx" />
@@ -201,6 +202,7 @@
     <Content Include="Views\CalendarTeste.aspx" />
     <Content Include="Views\LoginTeste.aspx" />
     <Content Include="Views\Marketing\MessagePge.aspx" />
+    <Content Include="Views\Marketing\MktConfigPge.aspx" />
     <Content Include="Views\testando.aspx" />
     <Content Include="Views\Teste.aspx" />
     <Content Include="Views\Calendar.aspx" />
@@ -400,6 +402,13 @@
     <Compile Include="Components\Common\TimeLineUsc.ascx.designer.cs">
       <DependentUpon>TimeLineUsc.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Controls\BaseControlsUsc.ascx.cs">
+      <DependentUpon>BaseControlsUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\BaseControlsUsc.ascx.designer.cs">
+      <DependentUpon>BaseControlsUsc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\Controls\FooterUsc.ascx.cs">
       <DependentUpon>FooterUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -565,6 +574,13 @@
     </Compile>
     <Compile Include="Views\Marketing\MessagePge.aspx.designer.cs">
       <DependentUpon>MessagePge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Marketing\MktConfigPge.aspx.cs">
+      <DependentUpon>MktConfigPge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Marketing\MktConfigPge.aspx.designer.cs">
+      <DependentUpon>MktConfigPge.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\testando.aspx.cs">
       <DependentUpon>testando.aspx</DependentUpon>

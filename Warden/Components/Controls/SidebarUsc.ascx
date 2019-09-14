@@ -31,36 +31,11 @@
             </a>
             <div class="collapse" id="marketing">
               <ul class="nav">
-                  <usc:MenuButtonUsc runat="server" ID="mnuPricing" Url="#" Text="Princing" SmallText="PG" />
+                  <usc:MenuButtonUsc runat="server" ID="mnuMktConfig" Url="/Views/Marketing/MktConfigPge.aspx" Text="Configurações" SmallText="CFG" />
                   <usc:MenuButtonUsc runat="server" ID="mnuSms" Url="/Views/Marketing/MessagePge.aspx?page=sms" Text="SMS" SmallText="SMS" />
                   <usc:MenuButtonUsc runat="server" ID="mnuEmail" Url="/Views/Marketing/MessagePge.aspx?page=email" Text="EMAIL" SmallText="EML" />
               </ul>
             </div>
-          </li>
-          <li>
-            <a data-toggle="collapse" href="#mapsExamples">
-              <i class="tim-icons icon-pin"></i>
-              <p>
-                Maps
-                <b class="caret"></b>
-              </p>
-            </a>
-            <div class="collapse" id="mapsExamples">
-              <ul class="nav">
-                <li>
-                  <a href="<%=Help.FormatUrl("/Views/TesteMap.aspx") %>">
-                    <span class="sidebar-mini-icon">GM</span>
-                    <span class="sidebar-normal"> Google Maps </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="<%=Help.FormatUrl("/Views/CalendarTeste.aspx") %>">
-              <i class="tim-icons icon-time-alarm"></i>
-              <p>Calendar</p>
-            </a>
           </li>
         </ul>
       </div>

@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="BaseControlsUsc.ascx.cs" Inherits="Warden.Components.Controls.BaseControlsUsc" %>
+<usc:ModalUsc runat="server" ComponentId="mdl_base_control" ID="mdlBaseControl" Title="BaseControlsUsc"/>
