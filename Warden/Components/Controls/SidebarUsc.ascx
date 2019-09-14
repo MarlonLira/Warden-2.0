@@ -31,7 +31,7 @@
             </a>
             <div class="collapse" id="marketing">
               <ul class="nav">
-                  <usc:MenuButtonUsc runat="server" ID="mnuPricing" Url="#" Text="Princing" SmallText="PG" />
+                  <usc:MenuButtonUsc runat="server" ID="mnuMktConfig" Url="/Views/Marketing/MktConfigPge.aspx" Text="Configurações" SmallText="CFG" />
                   <usc:MenuButtonUsc runat="server" ID="mnuSms" Url="/Views/Marketing/MessagePge.aspx?page=sms" Text="SMS" SmallText="SMS" />
                   <usc:MenuButtonUsc runat="server" ID="mnuEmail" Url="/Views/Marketing/MessagePge.aspx?page=email" Text="EMAIL" SmallText="EML" />
               </ul>
