@@ -130,7 +130,7 @@ namespace Warden.Persistences {
             Result["lgn"] = this.Sender.User;
             Result["pwd"] = this.Sender.Pass;
             Result["content"] = this.Text;
-            Result["numbers"] = this.Recipient.PhoneNumber;
+            Result["numbers"] = this.Recipient.PhoneNumber.Replace(";", ",");
             Result["type_service"] = "LONGCODE";
             //Result["url_callback"] = "URL DE RETORNO";
 

@@ -8,20 +8,21 @@ using Warden.Persistences;
 
 namespace Warden.Components.Controls
 {
-    public partial class SmsUsc : BaseUsc
+    public partial class SmsUsc : BaseControlsUsc
     {
         private DataTable UserTable { get; set; }
+        DataTable GatewayTable { get; set; }
+
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
             VerifyAndLoad();
             Loading();
             
-            
             btnPesquisar.OnClick += new ButtonUsc.OnClickEvent(BtnPesquisar_OnClick);
             btnEnviar.OnClick += new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
         }
 
-        private ModalUsc ShowMessage { get; set; }
+        private ModalUsc ShowMessage { get { return mdlControl; } }
 
         private void BtnEnviar_OnClick() {
             Enviar();
@@ -32,15 +33,16 @@ namespace Warden.Components.Controls
         }
 
         private void VerifyAndLoad() {
-            DataTable Table = new DataTable();
-            //gateway
             GatewayPst Gateway = new GatewayPst();
-            Table = Gateway.Search();
-            ddGateway.LoadDataSource(Table);
+            if (GatewayTable == null) {
+                GatewayTable = new DataTable();
+                GatewayTable = Gateway.Search();
+            }
+            
+            ddGateway.LoadDataSource(GatewayTable);
         }
 
         private void Enviar() {
-            ShowMessage = new ModalUsc();
             DataRow SelectedGateway;
             SmsPst Sms;
             DateTime CurrentDate = DateTime.UtcNow.AddHours(-3);
@@ -83,8 +85,6 @@ namespace Warden.Components.Controls
                             PhoneNumber = Convert.ToString(Row["PhoneNumber"])
                         };
 
-                        
-
                         Sms.Send();
                     }
                     Sms.Amount = UserTable.Rows.Count;
@@ -96,11 +96,12 @@ namespace Warden.Components.Controls
 
                     Sms.Send();
                 }
-                
-                //ShowMessage.OpenModal("Resultado","Mensagens Enviadas!","mdl_control");
+                ShowMessage.OpenModal("Resultado", "Envio Concluido com Sucesso!");
 
-            } catch {
-                throw;
+            } catch(Exception Except) {
+                mdlControl.Title = "Error";
+                mdlControl.Text = Except.Message;
+                mdlControl.OpenModal();
             }
         }
 
@@ -127,12 +128,6 @@ namespace Warden.Components.Controls
                 new ListItem {Text = "Empresa 2", Value = "2"},
                 new ListItem {Text = "Empresa 3", Value = "3"}
             };
-
-            /*ddGateway.ItemList = new List<ListItem>() {
-                new ListItem { Text = "Selecione uma opção", Value="0" },
-                new ListItem {Text = "SmsFast", Value = "1"},
-                new ListItem {Text = "FacilitaMovel", Value = "2"}
-            };*/
 
             ddSendType.ItemList = new List<ListItem>() {
                 new ListItem { Text = "Selecione uma opção", Value="0" },

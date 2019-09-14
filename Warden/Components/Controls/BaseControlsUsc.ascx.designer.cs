@@ -7,18 +7,18 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Warden {
+namespace Warden.Components.Controls {
     
     
-    public partial class Login {
+    public partial class BaseControlsUsc {
         
         /// <summary>
-        /// Controle userLogin.
+        /// Controle mdlBaseControl.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Controls.UserLoginUsc userLogin;
+        protected global::Warden.Components.Common.ModalUsc mdlBaseControl;
     }
 }

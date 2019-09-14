@@ -19,7 +19,7 @@ namespace Warden.Components.Controls {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.TextBoxUsc txt_email;
+        protected global::Warden.Components.Common.TextInputUsc txt_email;
         
         /// <summary>
         /// Controle txt_password.
@@ -28,15 +28,15 @@ namespace Warden.Components.Controls {
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.TextBoxUsc txt_password;
+        protected global::Warden.Components.Common.TextInputUsc txt_password;
         
         /// <summary>
-        /// Controle ButtonUsc.
+        /// Controle btnLogin.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.ButtonUsc ButtonUsc;
+        protected global::Warden.Components.Common.ButtonUsc btnLogin;
     }
 }

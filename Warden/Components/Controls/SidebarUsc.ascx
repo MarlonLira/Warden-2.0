@@ -37,31 +37,6 @@
               </ul>
             </div>
           </li>
-          <li>
-            <a data-toggle="collapse" href="#mapsExamples">
-              <i class="tim-icons icon-pin"></i>
-              <p>
-                Maps
-                <b class="caret"></b>
-              </p>
-            </a>
-            <div class="collapse" id="mapsExamples">
-              <ul class="nav">
-                <li>
-                  <a href="<%=Help.FormatUrl("/Views/TesteMap.aspx") %>">
-                    <span class="sidebar-mini-icon">GM</span>
-                    <span class="sidebar-normal"> Google Maps </span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li>
-            <a href="<%=Help.FormatUrl("/Views/CalendarTeste.aspx") %>">
-              <i class="tim-icons icon-time-alarm"></i>
-              <p>Calendar</p>
-            </a>
-          </li>
         </ul>
       </div>
     </div>
