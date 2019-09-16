@@ -7,6 +7,7 @@
                     <div class="card-body">
                         <usc:LabelUsc Text ="Gateways" Bold="true" FontSize="15" runat="server"/>
                         <usc:TableUsc runat="server"  ComponentId="tblMktControl"  ID="tblMktConfig"/>
+                        <usc:GatewayCadastroUsc runat="server" ComponentId="gtwCadastro" ID="gtwCadastro" />
                         <usc:ButtonUsc runat="server" ID="btnGatewayRegister" Text="Cadastrar" />
                     </div>
                 </div>

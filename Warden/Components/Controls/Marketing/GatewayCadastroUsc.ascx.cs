@@ -11,6 +11,8 @@ namespace Warden.Components.Controls.Marketing
             VerifyAndLoad();
         }
 
+        //public Boolean Visible { set { this.pnlControl.Visible = value; } }
+
         private void VerifyAndLoad() {
             TypePst Type = new TypePst();
             DataTable TypeTable = Session["TypeTable"] == null ? Type.Search() : (DataTable)Session["TypeTable"];

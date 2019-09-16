@@ -9,7 +9,18 @@ namespace Warden.Views.Marketing {
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
             LoadTable();
+            btnGatewayRegister.OnClick += new ButtonUsc.OnClickEvent(BtnGatewayRegister_OnClick);
         }
+
+        private void BtnGatewayRegister_OnClick() {
+            IsGatewayCadastro = true;
+
+            gtwCadastro.Visible = true;
+            tblMktConfig.Visible = false;
+            tblTypeConfig.Visible = false;
+        }
+
+        private Boolean IsGatewayCadastro { get; set; }
 
         private void LoadTable() {
             GatewayPst Gateway = new GatewayPst();
@@ -26,7 +37,19 @@ namespace Warden.Views.Marketing {
             if (Session["GatewayTable"] == null) {
                 Session.Add("GatewayTable", GatewayTable);
             }
-            
+
+            if (IsPostBack) {
+                if(IsGatewayCadastro == true) {
+                    gtwCadastro.Visible = true;
+                    tblMktConfig.Visible = false;
+                    tblTypeConfig.Visible = false;
+                } else {
+                    gtwCadastro.Visible = false;
+                    tblMktConfig.Visible = true;
+                    tblTypeConfig.Visible = true;
+                }
+            }
+
             tblMktConfig.DataSource = GatewayTable;
         }
     }

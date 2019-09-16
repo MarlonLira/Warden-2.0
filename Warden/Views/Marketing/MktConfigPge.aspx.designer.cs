@@ -22,6 +22,15 @@ namespace Warden.Views.Marketing {
         protected global::Warden.Components.Common.TableUsc tblMktConfig;
         
         /// <summary>
+        /// Controle gtwCadastro.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Controls.Marketing.GatewayCadastroUsc gtwCadastro;
+        
+        /// <summary>
         /// Controle btnGatewayRegister.
         /// </summary>
         /// <remarks>
