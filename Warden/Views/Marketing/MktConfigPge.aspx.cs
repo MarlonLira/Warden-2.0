@@ -19,7 +19,8 @@ namespace Warden.Views.Marketing {
                 new BaseTableUsc.TableColumn(){ Name = "nome", Text ="Nome"},
                 new BaseTableUsc.TableColumn(){ Name = "usuario", Text ="Usuario"},
                 new BaseTableUsc.TableColumn(){ Name = "senha", Text ="Senha"},
-                new BaseTableUsc.TableColumn(){ Name = "saldo", Text ="Saldo"}
+                new BaseTableUsc.TableColumn(){ Name = "saldo", Text ="Saldo"},
+                new BaseTableUsc.TableColumn(){Name = "tipo_nome", Text = "Tipo"}
             };
 
             if (Session["GatewayTable"] == null) {

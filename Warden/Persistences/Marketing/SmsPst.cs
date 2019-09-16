@@ -103,7 +103,6 @@ namespace Warden.Persistences {
                     Result = HTTP_ENCODING.GetString(WebResponse);
 
                     this.Result = Result;
-                    Save();
 
                     if (SelectedAPI == APIs.SmsFast) {
                         dynamic Json = JValue.Parse(Result);
@@ -111,6 +110,8 @@ namespace Warden.Persistences {
                         this.Campaign = Json.data;
                         this.Return = Json.msg;
                     }
+
+                    Save();
 
                 } catch {
                     throw;
@@ -176,21 +177,6 @@ namespace Warden.Persistences {
             String Query = "EXEC[marketing].[stp_sms_salvar] @id OUTPUT, ";
 
             try {
-
-                /*Sql.CommandText = "EXEC [marketing].[stp_sms_salvar] @id OUTPUT, " + COMMON_ATTRIBUTES;
-                Sql.Parameters.AddWithValue("@id", NewId);
-                Sql.Parameters.AddWithValue("@auditoria", "SALVAR");
-                Sql.Parameters.AddWithValue("@status", this.Status);
-                Sql.Parameters.AddWithValue("@tipo", this.SelectedSendType.GetStringValue());
-                Sql.Parameters.AddWithValue("@campanha", this.Title);
-                Sql.Parameters.AddWithValue("@mensagem", this.Text);
-                Sql.Parameters.AddWithValue("@celular", this.Recipient.PhoneNumber);
-                Sql.Parameters.AddWithValue("@quantidade", this.Amount);
-                Sql.Parameters.AddWithValue("@valor", this.Credit);
-                Sql.Parameters.AddWithValue("@data_envio", this.SendDate);
-                Sql.Parameters.AddWithValue("@data_cadastro", this.RegistrationDate);
-                Sql.Parameters.AddWithValue("@gateway_id", this.Gateway.Id);
-                Sql.Parameters.AddWithValue("@resultado", this.Result);*/
 
                 DbConnect = new DbConnect();
                 DbConnect.ExecuteNonQuery(Query, COMMON_ATTRIBUTES, new SqlParameter[] {

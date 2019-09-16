@@ -49,9 +49,9 @@ IF [dbahelper].[stf_exists_table]('[marketing].[tbl_sms]') = 0 BEGIN
 
 END;
 
-IF [dbahelper].[stf_exists_table]('[marketing].[tbl_sms_gateway]') = 0 BEGIN
+IF [dbahelper].[stf_exists_table]('[marketing].[tbl_gateway]') = 0 BEGIN
 
-  CREATE TABLE [marketing].[tbl_sms_gateway] (
+  CREATE TABLE [marketing].[tbl_gateway] (
     [id] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
 	[auditoria] [varchar](255) NULL,
 	[status] [varchar](2) NULL,
@@ -60,8 +60,25 @@ IF [dbahelper].[stf_exists_table]('[marketing].[tbl_sms_gateway]') = 0 BEGIN
 	[saldo] [float] NULL,
 	[usuario][varchar](255) NULL,
 	[senha] [varchar](255) NULL,
-	[token] [varchar](255) NULL
-  CONSTRAINT [pk_tbl_sms_gateway] PRIMARY KEY CLUSTERED 
+	[token] [varchar](255) NULL,
+	[tipo_id] [numeric] NULL
+  CONSTRAINT [pk_tbl_gateway] PRIMARY KEY CLUSTERED 
+  (
+	  [id] ASC
+  )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, 
+         ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 80) ON [PRIMARY]
+  ) ON [PRIMARY];
+
+END;
+
+IF [dbahelper].[stf_exists_table]('[marketing].[tbl_tipo]') = 0 BEGIN
+
+  CREATE TABLE [marketing].[tbl_tipo] (
+    [id] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
+	[auditoria] [varchar](255) NULL,
+	[status] [varchar](2) NULL,
+	[nome] [varchar](255) NULL
+  CONSTRAINT [pk_tbl_tipo] PRIMARY KEY CLUSTERED 
   (
 	  [id] ASC
   )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, 
@@ -82,8 +99,9 @@ END;
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[data_cadastro]', 'DATETIME NULL';
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[gateway_id]', 'NUMERIC NULL';
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[resultado]', 'VARCHAR(255) NULL';
+	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_gateway]', '[tipo_id]', 'NUMERIC NULL';
 	*/
-
+	
 -- EXEC [dbahelper].[stp_drop_column] '[schema].[table_name]', '[column]';
 	
 -- índices

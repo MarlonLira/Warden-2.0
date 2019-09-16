@@ -22,30 +22,30 @@ namespace Warden.Views.Marketing {
         protected global::Warden.Components.Common.TableUsc tblMktConfig;
         
         /// <summary>
-        /// Controle btnGatewayCadastrar.
+        /// Controle btnGatewayRegister.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.ButtonUsc btnGatewayCadastrar;
+        protected global::Warden.Components.Common.ButtonUsc btnGatewayRegister;
         
         /// <summary>
-        /// Controle tblEmpConfig.
+        /// Controle tblTypeConfig.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.TableUsc tblEmpConfig;
+        protected global::Warden.Components.Common.TableUsc tblTypeConfig;
         
         /// <summary>
-        /// Controle btnEmpresaCadastrar.
+        /// Controle btnTypeRegister.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.ButtonUsc btnEmpresaCadastrar;
+        protected global::Warden.Components.Common.ButtonUsc btnTypeRegister;
     }
 }
