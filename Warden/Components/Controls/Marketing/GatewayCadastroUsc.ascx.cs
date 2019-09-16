@@ -21,7 +21,9 @@ namespace Warden.Components.Controls.Marketing
             Session.Add("GatewayRegister", true);
         }
 
-        //public override Boolean Visible { set { this.pnlControl.Visible = value; } }
+        public Boolean Visibled { set { this.pnlControl.Visible = value; } }
+        public Boolean Enabled { set { this.pnlControl.Enabled = value; } }
+
 
         private void VerifyAndLoad() {
             TypePst Type = new TypePst();

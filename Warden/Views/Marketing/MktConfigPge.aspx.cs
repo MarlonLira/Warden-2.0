@@ -15,13 +15,15 @@ namespace Warden.Views.Marketing {
 
         private void BtnGatewayRegister_OnClick() {
             gtwCadastro.Visible = true;
+            gtwCadastro.Visibled = true;
+            gtwCadastro.Enabled = true;
             tblMktConfig.Visible = false;
             btnGatewayRegister.Visible = false;
             lblGateway.Visible = false;
         }
 
         private Boolean IsGatewayCadastro { get; set; }
-        private Boolean IsGatewayRegister {
+        public Boolean IsGatewayRegister {
             get { return Session["GatewayRegister"] == null ? false : Convert.ToBoolean(Session["GatewayRegister"]);}
         }
 
@@ -54,8 +56,11 @@ namespace Warden.Views.Marketing {
                 Session.Add("TypeTable", TypeTable);
             }
 
+            
             if (IsGatewayRegister) {
                 gtwCadastro.Visible = false;
+                gtwCadastro.Visibled = false;
+                gtwCadastro.Enabled = false;
                 tblMktConfig.Visible = true;
                 btnGatewayRegister.Visible = true;
                 lblGateway.Visible = true;
