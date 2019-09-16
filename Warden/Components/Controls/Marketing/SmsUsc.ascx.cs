@@ -145,7 +145,6 @@ namespace Warden.Components.Controls
             ddType.LoadDataSource();
             ddCompany.LoadDataSource();
             ddSendType.LoadDataSource();
-            ddGateway.LoadDataSource();
         }
 
         private DataTable GetData() {

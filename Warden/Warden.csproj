@@ -177,6 +177,7 @@
     <Content Include="Components\Controls\LoginUsc.ascx" />
     <Content Include="Components\Controls\MainUsc.ascx" />
     <Content Include="Components\Controls\MapUsc.ascx" />
+    <Content Include="Components\Controls\Marketing\GatewayCadastroUsc.ascx" />
     <Content Include="Components\Controls\NavbarUsc.ascx" />
     <Content Include="Components\Controls\SettingsUsc.ascx" />
     <Content Include="Components\Controls\SidebarUsc.ascx" />
@@ -199,6 +200,8 @@
     <Content Include="TransactSql\ddl\Schemas.sql" />
     <Content Include="TransactSql\stp\Marketing\stp_gateway.sql" />
     <Content Include="TransactSql\stp\Marketing\stp_sms.sql" />
+    <Content Include="TransactSql\stp\Marketing\stp_tipo.sql" />
+    <Content Include="TransactSql\Views\Marketing\viw_gateway.sql.sql" />
     <Content Include="Views\CalendarTeste.aspx" />
     <Content Include="Views\LoginTeste.aspx" />
     <Content Include="Views\Marketing\MessagePge.aspx" />
@@ -436,6 +439,13 @@
     </Compile>
     <Compile Include="Components\Controls\MapUsc.ascx.designer.cs">
       <DependentUpon>MapUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Controls\Marketing\GatewayCadastroUsc.ascx.cs">
+      <DependentUpon>GatewayCadastroUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\Marketing\GatewayCadastroUsc.ascx.designer.cs">
+      <DependentUpon>GatewayCadastroUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Controls\NavbarUsc.ascx.cs">
       <DependentUpon>NavbarUsc.ascx</DependentUpon>
