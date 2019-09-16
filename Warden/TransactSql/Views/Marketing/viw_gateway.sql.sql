@@ -1,4 +1,5 @@
 ﻿
+--EXEC [marketing].[viw_gateway]
 IF [dbahelper].[stf_exists_view]('[marketing].[viw_gateway]') = 1 
   DROP VIEW [marketing].[viw_gateway];
 GO

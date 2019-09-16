@@ -9,9 +9,19 @@ namespace Warden.Components.Controls.Marketing
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
             VerifyAndLoad();
+            btnGatewayRegister.OnClick += new Common.ButtonUsc.OnClickEvent(BtnGatewayRegister_OnClick);
+            btnBack.OnClick += new Common.ButtonUsc.OnClickEvent(BtnBack_OnClick);
         }
 
-        //public Boolean Visible { set { this.pnlControl.Visible = value; } }
+        private void BtnBack_OnClick() {
+            Session.Add("GatewayRegister", true);
+        }
+
+        private void BtnGatewayRegister_OnClick() {
+            Session.Add("GatewayRegister", true);
+        }
+
+        //public override Boolean Visible { set { this.pnlControl.Visible = value; } }
 
         private void VerifyAndLoad() {
             TypePst Type = new TypePst();

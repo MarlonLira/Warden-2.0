@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using Warden.Components.Common;
 using Warden.Persistences;
+using Warden.Persistences.Marketing;
 
 namespace Warden.Views.Marketing {
     public partial class MktConfigPge : BasePge{
@@ -13,19 +14,24 @@ namespace Warden.Views.Marketing {
         }
 
         private void BtnGatewayRegister_OnClick() {
-            IsGatewayCadastro = true;
-
             gtwCadastro.Visible = true;
             tblMktConfig.Visible = false;
-            tblTypeConfig.Visible = false;
+            btnGatewayRegister.Visible = false;
+            lblGateway.Visible = false;
         }
 
         private Boolean IsGatewayCadastro { get; set; }
+        private Boolean IsGatewayRegister {
+            get { return Session["GatewayRegister"] == null ? false : Convert.ToBoolean(Session["GatewayRegister"]);}
+        }
+
 
         private void LoadTable() {
             GatewayPst Gateway = new GatewayPst();
+            TypePst Type = new TypePst();
             DataTable GatewayTable = Session["GatewayTable"] == null ? Gateway.Search() : (DataTable)Session["GatewayTable"];
-            
+            DataTable TypeTable = Session["TypeTable"] == null ? Type.Search() : (DataTable)Session["TypeTable"];
+
             tblMktConfig.TableColumns = new List<BaseTableUsc.TableColumn>() {
                 new BaseTableUsc.TableColumn(){ Name = "nome", Text ="Nome"},
                 new BaseTableUsc.TableColumn(){ Name = "usuario", Text ="Usuario"},
@@ -34,22 +40,30 @@ namespace Warden.Views.Marketing {
                 new BaseTableUsc.TableColumn(){Name = "tipo_nome", Text = "Tipo"}
             };
 
+            tblTypeConfig.TableColumns = new List<BaseTableUsc.TableColumn>() {
+                new BaseTableUsc.TableColumn(){ Name = "id", Text ="ID"},
+                new BaseTableUsc.TableColumn(){ Name = "nome", Text ="Nome"},
+                new BaseTableUsc.TableColumn(){ Name = "status", Text ="Status"}
+            };
+
             if (Session["GatewayTable"] == null) {
                 Session.Add("GatewayTable", GatewayTable);
             }
 
-            if (IsPostBack) {
-                if(IsGatewayCadastro == true) {
-                    gtwCadastro.Visible = true;
-                    tblMktConfig.Visible = false;
-                    tblTypeConfig.Visible = false;
-                } else {
-                    gtwCadastro.Visible = false;
-                    tblMktConfig.Visible = true;
-                    tblTypeConfig.Visible = true;
-                }
+            if (Session["TypeTable"] == null) {
+                Session.Add("TypeTable", TypeTable);
             }
 
+            if (IsGatewayRegister) {
+                gtwCadastro.Visible = false;
+                tblMktConfig.Visible = true;
+                btnGatewayRegister.Visible = true;
+                lblGateway.Visible = true;
+                Session["GatewayRegister"] = null;
+                Response.Redirect("~/Views/Marketing/MktConfigPge.aspx", false);
+            }
+
+            tblTypeConfig.DataSource = TypeTable;
             tblMktConfig.DataSource = GatewayTable;
         }
     }

@@ -92,5 +92,23 @@ namespace Warden.Components.Controls.Marketing {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::Warden.Components.Common.DropdownUsc ddType;
+        
+        /// <summary>
+        /// Controle btnGatewayRegister.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ButtonUsc btnGatewayRegister;
+        
+        /// <summary>
+        /// Controle btnBack.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ButtonUsc btnBack;
     }
 }
