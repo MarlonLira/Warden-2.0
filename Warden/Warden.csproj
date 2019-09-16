@@ -202,6 +202,7 @@
     <Content Include="Views\CalendarTeste.aspx" />
     <Content Include="Views\LoginTeste.aspx" />
     <Content Include="Views\Marketing\MessagePge.aspx" />
+    <Content Include="Views\Marketing\MktConfigPge.aspx" />
     <Content Include="Views\testando.aspx" />
     <Content Include="Views\Teste.aspx" />
     <Content Include="Views\Calendar.aspx" />
@@ -573,6 +574,13 @@
     </Compile>
     <Compile Include="Views\Marketing\MessagePge.aspx.designer.cs">
       <DependentUpon>MessagePge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Marketing\MktConfigPge.aspx.cs">
+      <DependentUpon>MktConfigPge.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Marketing\MktConfigPge.aspx.designer.cs">
+      <DependentUpon>MktConfigPge.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\testando.aspx.cs">
       <DependentUpon>testando.aspx</DependentUpon>

@@ -14,25 +14,12 @@
                   <h1 class="card-title">Log in</h1>
                 </div>
                 <div class="card-body">
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="tim-icons icon-email-85"></i>
-                      </div>
-                    </div>
-                    <input type="text" class="form-control" placeholder="Email">
-                  </div>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="tim-icons icon-lock-circle"></i>
-                      </div>
-                    </div>
-                    <input type="text" placeholder="Password" class="form-control">
-                  </div>
+                    <usc:TextInputUsc Placeholder="Email" ComponentStyle="form-control" ID="txtEmail" Type="text" runat="server" IsIcon="true" Icon="Email" />
+                    <usc:TextInputUsc Placeholder="Password" ComponentStyle="form-control" ID="txtPassword" Type="password" runat="server" IsIcon="true" Icon="Password" />
+                  
                 </div>
                 <div class="card-footer">
-                    <usc:ButtonUsc runat="server" Text="Confirmar" ComponentSize="large" ComponentStyle="block mb-3" />
+                    <usc:ButtonUsc runat="server" Text="Confirmar" ComponentSize="large" ComponentStyle="block mb-3"  ID="btnConfirm"/>
                   <div class="pull-left">
                     <h6>
                       <a href="javascript:void(0)" class="link footer-link">Criar Conta</a>

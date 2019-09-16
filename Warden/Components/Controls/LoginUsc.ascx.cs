@@ -1,12 +1,19 @@
 ﻿using System;
+using Warden.Components.Common;
 
 namespace Warden.Components.Controls
 {
     public partial class LoginUsc : BaseUsc {
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
-            btnLogin.OnClick += new Common.ButtonUsc.OnClickEvent(BtnLogin_OnClick);
+            btnLogin.OnClick += new ButtonUsc.OnClickEvent(BtnLogin_OnClick1);
+            
         }
+
+        private void BtnLogin_OnClick1() {
+            throw new NotImplementedException();
+        }
+
         public Boolean IsUser { get; set; }
         private void BtnLogin_OnClick() {
             IsUser = LoginVerify();
@@ -27,6 +34,10 @@ namespace Warden.Components.Controls
                 Result = false;
             }
             return Result;
+        }
+
+        protected void btnLogin_OnClick1() {
+            LoginVerify();
         }
     }
 }

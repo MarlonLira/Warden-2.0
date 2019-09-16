@@ -13,13 +13,13 @@ namespace Warden.Components.Controls {
     public partial class SidebarUsc {
         
         /// <summary>
-        /// Controle mnuPricing.
+        /// Controle mnuMktConfig.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.MenuButtonUsc mnuPricing;
+        protected global::Warden.Components.Common.MenuButtonUsc mnuMktConfig;
         
         /// <summary>
         /// Controle mnuSms.

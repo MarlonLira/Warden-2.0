@@ -38,5 +38,14 @@ namespace Warden.Components.Controls {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::Warden.Components.Common.ButtonUsc btnLogin;
+        
+        /// <summary>
+        /// Controle BtnTeste.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ButtonUsc BtnTeste;
     }
 }
