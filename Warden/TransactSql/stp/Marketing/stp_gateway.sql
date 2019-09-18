@@ -22,7 +22,7 @@ BEGIN CATCH
 END CATCH END;
 GO
 
---
+-- EXEC [marketing].[stp_gateway_salvar] 0, 'SALVAR', 'AT', 'TESTEBANCO', 'TESTEBANCO.COM.BR/API?', 0, 'TESTEbANCO', '585684', '', 2
 
 IF EXISTS (SELECT TOP 1 [id] FROM dbo.sysobjects WHERE id = object_id(N'[marketing].[stp_gateway_salvar]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
   DROP PROCEDURE [marketing].[stp_gateway_salvar];

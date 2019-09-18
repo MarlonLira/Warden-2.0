@@ -13,8 +13,17 @@ namespace Warden.Components.Controls {
                     if (txtPassword.Text == "Root1526") {
                         Session.Add("User", "ADMIN");
                         Response.Redirect("~/Default.aspx", false);
+                    } else {
+                        txtError.Visible = true;
+                        txtError.Text = "Erro: a senha está incorreta!";
                     }
+                } else {
+                    txtError.Visible = true;
+                    txtError.Text = "Erro: O login está incorreto!";
                 }
+            } else {
+                txtError.Visible = true;
+                txtError.Text = "Erro: O login está Vazio!";
             } 
         }
     }

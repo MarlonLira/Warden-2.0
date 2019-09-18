@@ -12,7 +12,7 @@
             <div class="toolbar">
                 <!--        Here you can write extra buttons/actions for the toolbar              -->
             </div>
-            <table id="<%=ComponentId %>" class="table table-striped">
+            <table id="<%=ComponentId%>" class="table table-striped">
                 <thead>
                 <tr>
                     <%foreach (TableColumn Column in this.TableColumns) {%>
@@ -59,7 +59,7 @@
 
 <script>
     $(document).ready(function() {
-      $('#<%=ComponentId %>').DataTable({
+        var table1 = $('#<%=ComponentId%>').DataTable({
         "pagingType": "full_numbers",
         "lengthMenu": [
           [10, 25, 50, -1],
@@ -71,27 +71,28 @@
           searchPlaceholder: "Search records",
         }
 
-      });
+        });
 
-      var table = $('#<%=ComponentId %>').DataTable();
-
+        var table = $('#<%=ComponentId%>').DataTable();
+       
       // Edit record
-      table.on('click', '.edit', function() {
+        table1.on('click', '.edit', function() {
         $tr = $(this).closest('tr');
 
-        var data = table.row($tr).data();
-        alert('You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.');
+            var data = table1.row($tr).data();
+            alert('You press on Row: ' + '\'s row.');
       });
 
       // Delete a record
-      table.on('click', '.remove', function(e) {
+        table1.on('click', '.remove', function(e) {
         $tr = $(this).closest('tr');
-        table.row($tr).remove().draw();
-        e.preventDefault();
+        table1.row($tr).remove().draw();
+          e.preventDefault();
+          alert('You press on Row: ' + '\'s row.');
       });
 
       //Like record
-      table.on('click', '.like', function() {
+        table1.on('click', '.like', function() {
         alert('You clicked on Like button');
       });
     });

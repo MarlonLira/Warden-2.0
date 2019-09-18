@@ -22,11 +22,13 @@
                         </div>
 
                         <div style="padding-left:5px; padding-right:5px;padding-top:10px; padding-bottom:10px">
-                            <usc:LabelUsc runat="server" Text="Tipo" ID="lblType" Bold="true"  FontSize="10" />
+                            <usc:LabelUsc runat="server" Text="Tipo" ID="lblType" Bold="true" FontSize="10" />
                             <usc:DropdownUsc runat="server" ID="ddType" />
                         </div>
-                        <usc:ButtonUsc runat="server" ID="btnGatewayRegister" Text="Cadastrar" />
-                        <usc:ButtonUsc runat="server" ID="btnBack" Text="Voltar" />
+                        <div>
+                            <usc:ButtonUsc runat="server" ID="btnGatewayRegister" Text="Cadastrar"/>
+                            <usc:ButtonUsc runat="server" ID="btnBack" Text="Voltar" />
+                        </div>
                     </div>
                 </div>
             </div>

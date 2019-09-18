@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
-using System.Web.UI.WebControls;
-using Warden.Interfaces;
+using System.Web.UI;
+using Warden.Components.Common;
 using Warden.Persistences;
 using Warden.Persistences.Marketing;
 
@@ -16,15 +16,27 @@ namespace Warden.Components.Controls.Marketing
             btnBack.OnClick += new Common.ButtonUsc.OnClickEvent(BtnBack_OnClick);
         }
 
+        private ModalUsc ShowMessage { get { return mdlControl; } }
+        private Boolean IsRegister {
+            get { return Session["IsRegister"] == null ? false : Convert.ToBoolean(Session["IsRegister"]); }
+            set { Session.Add("IsRegister", value); }
+        }
+
+       private Boolean GatewayRegister {
+            get { return Session["GatewayRegister"] == null ? false : Convert.ToBoolean(Session["GatewayRegister"]); }
+            set { Session.Add("GatewayRegister", value); }
+        }
+
         private void BtnBack_OnClick() {
-            Session.Add("GatewayRegister", true);
+            GatewayRegister = true;
             Response.Redirect("~/Views/Marketing/MktConfigPge.aspx", false);
         }
 
         private void BtnGatewayRegister_OnClick() {
-            Session.Add("GatewayRegister", true);
-            Register();
-            Response.Redirect("~/Views/Marketing/MktConfigPge.aspx", false);
+            GatewayRegister = true;
+            if (!IsRegister) {
+                Register();
+            }
         }
 
         public Boolean Visibled { set { this.pnlControl.Visible = value; } }
@@ -44,20 +56,31 @@ namespace Warden.Components.Controls.Marketing
 
         private void Register() {
             GatewayPst Gateway;
+            IsRegister = true;
             try {
 
                 Gateway = new GatewayPst();
+                Gateway.Status = "AT";
                 Gateway.Audit = "SALVAR";
+                Gateway.Url = txtUrl.Text;
                 Gateway.Credit = 0;
                 Gateway.Name = txtName.Text;
                 Gateway.Pass = txtPass.Text;
-                Gateway.Token = txtToken.Text;
-                ListItem listItem = ddType.SelectedItem;
+                Gateway.User = txtUser.Text;
+                Gateway.Token = String.IsNullOrEmpty(txtToken.Text) ? "SEM TOKEN" : txtToken.Text;
                 Gateway.Type = new TypePst() {Id = Convert.ToInt32(ddType.SelectedValue), Name = ddType.Text };
-                Gateway.Save();
+               
+                if (!String.IsNullOrEmpty(txtUser.Text)) {
+                    Gateway.Save();
+                }
+                
+                ShowMessage.OpenModal("Resultado", "Cadastro Realizado com Sucesso!");
 
             } catch (Exception Except) {
-
+                ShowMessage.OpenModal("Error", Except.Message);
+            } finally {
+                btnGatewayRegister = null;
+                Response.Redirect("~/Views/Marketing/MktConfigPge.aspx", false);
             }
         }
     }

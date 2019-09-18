@@ -25,7 +25,6 @@ namespace Warden {
             mdl_control_error.OpenModal();
         }
 
-
         public void UserVerify() {
             if (String.IsNullOrEmpty(UserLogin)) {
                 Response.Redirect("~/Login.aspx", false);

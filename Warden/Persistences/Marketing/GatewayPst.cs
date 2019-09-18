@@ -8,7 +8,7 @@ using Warden.Persistences.Marketing;
 namespace Warden.Persistences {
     public class GatewayPst : Gateway, IEntitie {
 
-        private const String COMMON_ATTRIBUTES = "@auditoria, @status, @nome, @url, @saldo, @usuario, @senha, @token, @tipo_id";
+        private const String COMMON_ATTRIBUTES = " @auditoria, @status, @nome, @url, @saldo, @usuario, @senha, @token, @tipo_id";
 
         private DbConnect DbConnect { get; set; }
         private SqlCommand Sql {
@@ -22,7 +22,7 @@ namespace Warden.Persistences {
 
         public string Save() {
             String Result = "Falha ao tentar cadastrar o gateway, verifique os dados informados!";
-            String Query = "EXEC [marketing].[stp_gateway_salvar] @id NUMERIC OUTPUT";
+            String Query = "EXEC [marketing].[stp_gateway_salvar] @id OUTPUT, ";
             Int32 NewId = (Int32)DbType.Int32;
             try {
                 DbConnect = new DbConnect();

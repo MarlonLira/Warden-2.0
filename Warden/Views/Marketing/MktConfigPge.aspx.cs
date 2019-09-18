@@ -26,7 +26,6 @@ namespace Warden.Views.Marketing {
             get { return Session["GatewayRegister"] == null ? false : Convert.ToBoolean(Session["GatewayRegister"]);}
         }
 
-
         private void LoadTable() {
             GatewayPst Gateway = new GatewayPst();
             TypePst Type = new TypePst();
@@ -54,7 +53,6 @@ namespace Warden.Views.Marketing {
             if (Session["TypeTable"] == null) {
                 Session.Add("TypeTable", TypeTable);
             }
-
             
             if (IsGatewayRegister) {
                 gtwCadastro.Visible = false;
@@ -65,6 +63,7 @@ namespace Warden.Views.Marketing {
                 lblGateway.Visible = true;
                 Session["GatewayRegister"] = null;
                 Response.Redirect("~/Views/Marketing/MktConfigPge.aspx", false);
+                
             }
 
             tblTypeConfig.DataSource = TypeTable;

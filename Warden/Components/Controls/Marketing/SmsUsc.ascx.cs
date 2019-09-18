@@ -105,9 +105,7 @@ namespace Warden.Components.Controls
                 ShowMessage.OpenModal("Resultado", "Envio Concluido com Sucesso!");
 
             } catch(Exception Except) {
-                mdlControl.Title = "Error";
-                mdlControl.Text = Except.Message;
-                mdlControl.OpenModal();
+                ShowMessage.OpenModal("Error", Except.Message);
             }
         }
 

@@ -195,9 +195,6 @@ namespace Warden.Persistences {
                      new SqlParameter("@resultado", this.Result)
                 });
 
-
-
-                //Sql.ExecuteNonQuery();
             } catch {
                 throw;
             } finally {
