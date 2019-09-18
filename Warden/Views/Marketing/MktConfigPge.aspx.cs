@@ -22,7 +22,6 @@ namespace Warden.Views.Marketing {
             lblGateway.Visible = false;
         }
 
-        private Boolean IsGatewayCadastro { get; set; }
         public Boolean IsGatewayRegister {
             get { return Session["GatewayRegister"] == null ? false : Convert.ToBoolean(Session["GatewayRegister"]);}
         }

@@ -29,7 +29,7 @@ namespace Warden.Persistences {
 
                 DbConnect.ExecuteNonQuery(Query, COMMON_ATTRIBUTES, new SqlParameter[] {
                      new SqlParameter("@id", NewId),
-                     new SqlParameter("@auditoria", "SALVAR"),
+                     new SqlParameter("@auditoria", this.Audit),
                      new SqlParameter("@status", this.Status),
                      new SqlParameter("@nome", this.Name),
                      new SqlParameter("@url", this.Url),

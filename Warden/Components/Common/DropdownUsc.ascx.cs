@@ -18,9 +18,8 @@ namespace Warden.Components.Common {
         }
         
         public List<ListItem> ItemList { get; set; }
-        public String SelectedItem {
-            get { return dd_control.SelectedItem.Text; }
-            set { this.dd_control.SelectedItem.Text = value; }
+        public ListItem SelectedItem {
+            get { return dd_control.SelectedItem; }
         }
 
         public String SelectedValue {

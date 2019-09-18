@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Data;
+using System.Web.UI.WebControls;
+using Warden.Interfaces;
+using Warden.Persistences;
 using Warden.Persistences.Marketing;
 
 namespace Warden.Components.Controls.Marketing
@@ -15,10 +18,13 @@ namespace Warden.Components.Controls.Marketing
 
         private void BtnBack_OnClick() {
             Session.Add("GatewayRegister", true);
+            Response.Redirect("~/Views/Marketing/MktConfigPge.aspx", false);
         }
 
         private void BtnGatewayRegister_OnClick() {
             Session.Add("GatewayRegister", true);
+            Register();
+            Response.Redirect("~/Views/Marketing/MktConfigPge.aspx", false);
         }
 
         public Boolean Visibled { set { this.pnlControl.Visible = value; } }
@@ -34,6 +40,25 @@ namespace Warden.Components.Controls.Marketing
             }
 
             ddType.LoadDataSource(TypeTable);
+        }
+
+        private void Register() {
+            GatewayPst Gateway;
+            try {
+
+                Gateway = new GatewayPst();
+                Gateway.Audit = "SALVAR";
+                Gateway.Credit = 0;
+                Gateway.Name = txtName.Text;
+                Gateway.Pass = txtPass.Text;
+                Gateway.Token = txtToken.Text;
+                ListItem listItem = ddType.SelectedItem;
+                Gateway.Type = new TypePst() {Id = Convert.ToInt32(ddType.SelectedValue), Name = ddType.Text };
+                Gateway.Save();
+
+            } catch (Exception Except) {
+
+            }
         }
     }
 }
