@@ -5,6 +5,7 @@ using System.Web.UI.WebControls;
 using Warden.Components.Common;
 using Warden.Models;
 using Warden.Persistences;
+using Warden.Persistences.Marketing;
 
 namespace Warden.Components.Controls
 {
@@ -34,9 +35,14 @@ namespace Warden.Components.Controls
 
         private void VerifyAndLoad() {
             GatewayPst Gateway = new GatewayPst();
+            TypePst Type = new TypePst() {
+                Id = 1,
+                Name = "SMS"
+            };
+
             if (GatewayTable == null) {
                 GatewayTable = new DataTable();
-                GatewayTable = Gateway.Search();
+                GatewayTable = Gateway.Search(Type);
             }
             
             ddGateway.LoadDataSource(GatewayTable);
@@ -99,9 +105,7 @@ namespace Warden.Components.Controls
                 ShowMessage.OpenModal("Resultado", "Envio Concluido com Sucesso!");
 
             } catch(Exception Except) {
-                mdlControl.Title = "Error";
-                mdlControl.Text = Except.Message;
-                mdlControl.OpenModal();
+                ShowMessage.OpenModal("Error", Except.Message);
             }
         }
 
@@ -139,7 +143,6 @@ namespace Warden.Components.Controls
             ddType.LoadDataSource();
             ddCompany.LoadDataSource();
             ddSendType.LoadDataSource();
-            ddGateway.LoadDataSource();
         }
 
         private DataTable GetData() {

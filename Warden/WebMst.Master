@@ -11,17 +11,21 @@
 </head>
 <body class="sidebar-mini">
     <form id="frm_main" runat="server" class="wrapper">
-     <usc:SearchModalUsc runat="server" />
+        <usc:SearchModalUsc runat="server" />
         <usc:SidebarUsc runat="server" />
         <usc:NavbarUsc runat="server" />
         <asp:ScriptManager ID="scpManager" runat="server"></asp:ScriptManager>
-        <div class="main-panel">
-            <div class="content">
-                <asp:ContentPlaceHolder ID="cph_main" runat="server">
-                </asp:ContentPlaceHolder>
-            </div>
-            <usc:FooterUsc runat="server" />
-        </div>
+        <asp:UpdatePanel ID="updPainel" runat="server" UpdateMode="Conditional" ChildrenAsTriggers="false">
+            <ContentTemplate>
+                <div class="main-panel">
+                    <div class="content">
+                        <asp:ContentPlaceHolder ID="cph_main" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                    <usc:FooterUsc runat="server" />
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
     </form>
 
     

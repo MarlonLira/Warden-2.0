@@ -177,6 +177,7 @@
     <Content Include="Components\Controls\LoginUsc.ascx" />
     <Content Include="Components\Controls\MainUsc.ascx" />
     <Content Include="Components\Controls\MapUsc.ascx" />
+    <Content Include="Components\Controls\Marketing\GatewayCadastroUsc.ascx" />
     <Content Include="Components\Controls\NavbarUsc.ascx" />
     <Content Include="Components\Controls\SettingsUsc.ascx" />
     <Content Include="Components\Controls\SidebarUsc.ascx" />
@@ -197,8 +198,10 @@
     <Content Include="TransactSql\dbahelper\stp_error.sql" />
     <Content Include="TransactSql\ddl\ddl.sql" />
     <Content Include="TransactSql\ddl\Schemas.sql" />
-    <Content Include="TransactSql\stp\stp_gateway.sql" />
-    <Content Include="TransactSql\stp\stp_sms.sql" />
+    <Content Include="TransactSql\stp\Marketing\stp_gateway.sql" />
+    <Content Include="TransactSql\stp\Marketing\stp_sms.sql" />
+    <Content Include="TransactSql\stp\Marketing\stp_tipo.sql" />
+    <Content Include="TransactSql\Views\Marketing\viw_gateway.sql.sql" />
     <Content Include="Views\CalendarTeste.aspx" />
     <Content Include="Views\LoginTeste.aspx" />
     <Content Include="Views\Marketing\MessagePge.aspx" />
@@ -437,6 +440,13 @@
     <Compile Include="Components\Controls\MapUsc.ascx.designer.cs">
       <DependentUpon>MapUsc.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Controls\Marketing\GatewayCadastroUsc.ascx.cs">
+      <DependentUpon>GatewayCadastroUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\Marketing\GatewayCadastroUsc.ascx.designer.cs">
+      <DependentUpon>GatewayCadastroUsc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\Controls\NavbarUsc.ascx.cs">
       <DependentUpon>NavbarUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -547,11 +557,13 @@
     <Compile Include="Models\ImproperCalendarEvent.cs" />
     <Compile Include="Models\Marketing\Messages.cs" />
     <Compile Include="Models\Marketing\Sms.cs" />
+    <Compile Include="Models\Marketing\Type.cs" />
     <Compile Include="Models\Marketing\WhatsApp.cs" />
     <Compile Include="Persistences\DbConnect.cs" />
     <Compile Include="Persistences\Marketing\EmailPst.cs" />
     <Compile Include="Persistences\Marketing\GatewayPst.cs" />
     <Compile Include="Persistences\Marketing\SmsPst.cs" />
+    <Compile Include="Persistences\Marketing\TypePst.cs" />
     <Compile Include="Persistences\Marketing\WhatsAppPst.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\CalendarTeste.aspx.cs">

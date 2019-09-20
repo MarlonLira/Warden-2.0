@@ -20,6 +20,7 @@
                 </div>
                 <div class="card-footer">
                     <usc:ButtonUsc runat="server" Text="Confirmar" ComponentSize="large" ComponentStyle="block mb-3"  ID="btnConfirm"/>
+                    <usc:LabelUsc runat="server" Visible ="false" Bold="true" FontSize="15" ID="txtError" BackColor="red"/>
                   <div class="pull-left">
                     <h6>
                       <a href="javascript:void(0)" class="link footer-link">Criar Conta</a>

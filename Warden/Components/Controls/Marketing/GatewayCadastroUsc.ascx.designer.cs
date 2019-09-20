@@ -7,46 +7,73 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Warden.Views.Marketing {
+namespace Warden.Components.Controls.Marketing {
     
     
-    public partial class MktConfigPge {
+    public partial class GatewayCadastroUsc {
         
         /// <summary>
-        /// Controle lblGateway.
+        /// Controle mdlControl.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.LabelUsc lblGateway;
+        protected global::Warden.Components.Common.ModalUsc mdlControl;
         
         /// <summary>
-        /// Controle tblMktConfig.
+        /// Controle pnlControl.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.TableUsc tblMktConfig;
+        protected global::System.Web.UI.WebControls.Panel pnlControl;
         
         /// <summary>
-        /// Controle gtwCadastro.
+        /// Controle txtName.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Controls.Marketing.GatewayCadastroUsc gtwCadastro;
+        protected global::Warden.Components.Common.TextInputUsc txtName;
         
         /// <summary>
-        /// Controle btnGatewayRegister.
+        /// Controle txtUrl.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.ButtonUsc btnGatewayRegister;
+        protected global::Warden.Components.Common.TextInputUsc txtUrl;
+        
+        /// <summary>
+        /// Controle txtUser.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextInputUsc txtUser;
+        
+        /// <summary>
+        /// Controle txtPass.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextInputUsc txtPass;
+        
+        /// <summary>
+        /// Controle txtToken.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextInputUsc txtToken;
         
         /// <summary>
         /// Controle lblType.
@@ -58,21 +85,30 @@ namespace Warden.Views.Marketing {
         protected global::Warden.Components.Common.LabelUsc lblType;
         
         /// <summary>
-        /// Controle tblTypeConfig.
+        /// Controle ddType.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.TableUsc tblTypeConfig;
+        protected global::Warden.Components.Common.DropdownUsc ddType;
         
         /// <summary>
-        /// Controle btnTypeRegister.
+        /// Controle btnGatewayRegister.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.ButtonUsc btnTypeRegister;
+        protected global::Warden.Components.Common.ButtonUsc btnGatewayRegister;
+        
+        /// <summary>
+        /// Controle btnBack.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ButtonUsc btnBack;
     }
 }

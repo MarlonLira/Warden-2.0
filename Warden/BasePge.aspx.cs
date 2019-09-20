@@ -6,7 +6,7 @@ namespace Warden {
     public partial class BasePge : Page {
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
-            UserVerify();
+            //UserVerify();
         }
 
         private String UserLogin {
@@ -24,7 +24,6 @@ namespace Warden {
             mdl_control_error.Title = "Error";
             mdl_control_error.OpenModal();
         }
-
 
         public void UserVerify() {
             if (String.IsNullOrEmpty(UserLogin)) {

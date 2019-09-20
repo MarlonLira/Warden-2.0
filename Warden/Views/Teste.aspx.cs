@@ -33,10 +33,7 @@ namespace Warden.Views {
             mdl_control.OpenModal();
         }
         private void Btn_teste_OnClick() {
-            lbl_teste.Text = dd_teste.SelectedItem;
             txt_teste.Text = dd_teste2.SelectedValue;
-            txt_teste2.Text = dd_teste.SelectedItem;
-            
         }
 
         private void load() {
