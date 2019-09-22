@@ -16,11 +16,11 @@ namespace Warden.Components.Common {
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
         }
-        
+
+        public Boolean Enabled { set { this.pnlControl.Enabled = value; } }
         public List<ListItem> ItemList { get; set; }
-        public String SelectedItem {
-            get { return dd_control.SelectedItem.Text; }
-            set { this.dd_control.SelectedItem.Text = value; }
+        public ListItem SelectedItem {
+            get { return dd_control.SelectedItem; }
         }
 
         public String SelectedValue {

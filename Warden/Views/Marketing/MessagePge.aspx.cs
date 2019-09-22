@@ -16,6 +16,7 @@ namespace Warden.Views.Marketing {
                 switch (Result.ToUpperInvariant()) {
                     case "SMS": {
                             Sms_control.Visible = true;
+                            pnlSms.Visible = true;
                             break;
                         }
                     case "EMAIL": {

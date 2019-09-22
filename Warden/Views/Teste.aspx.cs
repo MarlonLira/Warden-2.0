@@ -5,6 +5,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Web;
 using System.Web.UI;
+using Warden.Persistences;
 
 namespace Warden.Views {
     public partial class Teste : BasePge {
@@ -33,10 +34,7 @@ namespace Warden.Views {
             mdl_control.OpenModal();
         }
         private void Btn_teste_OnClick() {
-            lbl_teste.Text = dd_teste.SelectedItem;
             txt_teste.Text = dd_teste2.SelectedValue;
-            txt_teste2.Text = dd_teste.SelectedItem;
-            
         }
 
         private void load() {
@@ -64,21 +62,22 @@ namespace Warden.Views {
         }
 
         private void LoadCharBar() {
+            SmsPst Sms = new SmsPst();
             chartBar_control.Itens = new List<ListItem>() {
                 new ListItem {Text = "Opção 1", Value = "10"},
                 new ListItem {Text = "Opção 2", Value = "25"},
                 new ListItem {Text = "Opção 3", Value = "30"},
                 new ListItem {Text = "Opção 4", Value = "46"}
             };
+            
 
-            chartLine_control.Itens = new List<ListItem>() {
-                new ListItem {Text = "Pesquisa 1", Value = "54"},
-                new ListItem {Text = "Pesquisa 2", Value = "29"},
-                new ListItem {Text = "Pesquisa 3", Value = "40"},
-                new ListItem {Text = "Pesquisa 4", Value = "70"}
+            ListItem Column = new ListItem() {
+                Text = "mes",
+                Value = "quantidade_total"
             };
+
             chartBar_control.LoadDataSource();
-            chartLine_control.LoadDataSource();
+            chartLine_control.LoadDataSource(Sms.SearchAmount(), Column);
         }
 
         private void LoadDropdown() {

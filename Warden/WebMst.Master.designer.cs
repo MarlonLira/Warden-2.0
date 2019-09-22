@@ -40,6 +40,15 @@ namespace Warden {
         protected global::System.Web.UI.ScriptManager scpManager;
         
         /// <summary>
+        /// Controle updPainel.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel updPainel;
+        
+        /// <summary>
         /// Controle cph_main.
         /// </summary>
         /// <remarks>
