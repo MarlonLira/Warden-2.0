@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using Warden.Persistences;
 
@@ -17,9 +13,12 @@ namespace Warden.Components.Controls {
             SmsPst Sms = new SmsPst();
             try {
 
-                ListItem Column = new ListItem() {Text = "gateway_nome", Value = "quantidade" };
+                ListItem Column = new ListItem() {
+                    Text = "mes",
+                    Value = "quantidade_total"
+                };
 
-                chartLineControl.LoadDataSource(Sms.Search());
+                chartLineControl.LoadDataSource(Sms.SearchAmount(), Column);
             } catch {
                 throw;
             }

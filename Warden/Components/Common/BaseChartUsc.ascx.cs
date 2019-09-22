@@ -12,11 +12,38 @@ namespace Warden.Components.Common {
         public String[] ArrayTitles { get; set; }
         public String Titles;
         public String Values;
+        protected Int32 TotalValue { get; set; }
         public String Labels {
             get { return "'" + Text + "'"; }
             set { this.Labels = "'" + Text + "'"; }
         }
+        public String Icon { get; set; }
 
+        protected String LoadIcon() {
+            String Result = "";
+            this.Icon = String.IsNullOrEmpty(Icon) ? " " : Icon.ToUpperInvariant();
+
+            switch (Icon) {
+                case "MESSAGE": {
+                        Result = "tim-icons icon-send text-success";
+                        break;
+                    }
+                case "BELLS": {
+                        Result = "tim-icons icon-bell-55 text-primary";
+                        break;
+                    }
+                case "DELIVERY": {
+                        Result = "tim-icons icon-delivery-fast text-info";
+                        break;
+                    }
+                default: {
+                        Result = "tim-icons icon-delivery-fast text-info";
+                        break;
+                    }
+            }
+            return Result;
+
+        }
 
         public override void LoadDataSource() {
             base.LoadDataSource();
@@ -44,6 +71,7 @@ namespace Warden.Components.Common {
                         Text = Convert.ToString(Row[Column.Text]),
                         Value = Convert.ToString(Row[Column.Value])
                     });
+                    TotalValue += Convert.ToInt32(Row[Column.Value]);
                 }
             }
             if (Itens != null) {

@@ -161,6 +161,25 @@ namespace Warden.Persistences {
             DataTable Table = new DataTable();
             String Query = "EXEC [marketing].[stp_sms_pesquisar]";
             try {
+                DbConnect = new DbConnect();
+                Table = DbConnect.ExecuteReader(Query);
+
+                /*DbConnect.OpenAdpter("EXEC [marketing].[stp_sms_pesquisar]");
+                DbConnect.Adapt.Fill(Table);*/
+            } catch {
+                throw;
+            } finally {
+                //DbConnect.CloseCon();
+            }
+
+            return Table;
+        }
+
+        public DataTable SearchAmount() {
+            DataTable Table = new DataTable();
+            String Query = "EXEC [marketing].[stp_sms_pesquisar_quantidade]";
+            try {
+                DbConnect = new DbConnect();
                 Table = DbConnect.ExecuteReader(Query);
 
                 /*DbConnect.OpenAdpter("EXEC [marketing].[stp_sms_pesquisar]");

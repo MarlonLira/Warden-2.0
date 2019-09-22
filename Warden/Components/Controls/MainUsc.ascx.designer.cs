@@ -22,6 +22,15 @@ namespace Warden.Components.Controls {
         protected global::System.Web.UI.WebControls.Panel pnl_control;
         
         /// <summary>
+        /// Controle BigChartLineControl.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.BigChartLineUsc BigChartLineControl;
+        
+        /// <summary>
         /// Controle chartLineControl.
         /// </summary>
         /// <remarks>
@@ -29,5 +38,23 @@ namespace Warden.Components.Controls {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::Warden.Components.Common.ChartLineUsc chartLineControl;
+        
+        /// <summary>
+        /// Controle ChartBarControl.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ChartBarUsc ChartBarControl;
+        
+        /// <summary>
+        /// Controle chartLineGreenControl.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ChartLineUsc chartLineGreenControl;
     }
 }

@@ -22,6 +22,15 @@ namespace Warden.Views.Marketing {
         protected global::Warden.Components.Common.ModalUsc mdlControl;
         
         /// <summary>
+        /// Controle pnlSms.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlSms;
+        
+        /// <summary>
         /// Controle Sms_control.
         /// </summary>
         /// <remarks>

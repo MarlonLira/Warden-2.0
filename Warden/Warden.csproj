@@ -201,7 +201,8 @@
     <Content Include="TransactSql\stp\Marketing\stp_gateway.sql" />
     <Content Include="TransactSql\stp\Marketing\stp_sms.sql" />
     <Content Include="TransactSql\stp\Marketing\stp_tipo.sql" />
-    <Content Include="TransactSql\Views\Marketing\viw_gateway.sql.sql" />
+    <Content Include="TransactSql\Views\Marketing\viw_sms.sql" />
+    <Content Include="TransactSql\Views\Marketing\viw_gateway.sql" />
     <Content Include="Views\CalendarTeste.aspx" />
     <Content Include="Views\LoginTeste.aspx" />
     <Content Include="Views\Marketing\MessagePge.aspx" />

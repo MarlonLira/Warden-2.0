@@ -30,7 +30,7 @@ namespace Warden.Components.Controls
         }
 
         private void BtnPesquisar_OnClick() {
-            LoadTable();
+            //LoadTable();
         }
 
         private void VerifyAndLoad() {
@@ -53,8 +53,10 @@ namespace Warden.Components.Controls
             SmsPst Sms;
             DateTime CurrentDate = DateTime.UtcNow.AddHours(-3);
             Int32 GatewayId = Convert.ToInt32(ddGateway.SelectedValue);
+            String [] AmountEdit = String.IsNullOrEmpty(txtNumberList.Text) ? null : txtNumberList.Text.Split(';');
             try {
-                
+                if (AmountEdit == null || AmountEdit.Length == 0) { throw new Exception("Porfavor Informe um número!"); }
+
                 Sms = new SmsPst();
                 Sms.Title = txtTitle.Text;
                 Sms.Text = txtText.Text;
@@ -62,7 +64,7 @@ namespace Warden.Components.Controls
                 Sms.SelectedSendType = SmsPst.SendType.Multiple;
                 Sms.RegistrationDate = CurrentDate;
                 Sms.SendDate = CurrentDate;
-                Sms.Amount = 1;
+                Sms.Amount = AmountEdit.Length;
                 Sms.Credit = 0.7f;
                 Sms.Audit = "Enviar";
 
@@ -115,6 +117,7 @@ namespace Warden.Components.Controls
                 new ListItem {Text = "Aluno", Value = "1"},
                 new ListItem {Text = "Visitante", Value = "2"}
             };
+           
 
             ddType.ItemList = new List<ListItem>() {
                 new ListItem { Text = "Selecione uma opção", Value="0" },
@@ -124,7 +127,7 @@ namespace Warden.Components.Controls
             };
 
             ddType.SelectedValue = "2";
-            ddType.ReadOnly = true;
+            
 
             ddCompany.ItemList = new List<ListItem>() {
                 new ListItem { Text = "Selecione uma opção", Value="0" },
@@ -133,16 +136,25 @@ namespace Warden.Components.Controls
                 new ListItem {Text = "Empresa 3", Value = "3"}
             };
 
+            
+
             ddSendType.ItemList = new List<ListItem>() {
                 new ListItem { Text = "Selecione uma opção", Value="0" },
                 new ListItem {Text = "Simples", Value = "1"},
                 new ListItem {Text = "Multiplo", Value = "2"}
             };
+            ddSendType.SelectedValue = "2";
+            
 
             ddRecipient.LoadDataSource();
             ddType.LoadDataSource();
             ddCompany.LoadDataSource();
             ddSendType.LoadDataSource();
+
+            ddCompany.Enabled = false;
+            ddSendType.Enabled = false;
+            ddType.Enabled = false;
+            ddRecipient.Enabled = false;
         }
 
         private DataTable GetData() {

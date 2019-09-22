@@ -1,5 +1,5 @@
 ﻿
---EXEC [marketing].[viw_sms];
+--select * from [marketing].[viw_sms];
 IF [dbahelper].[stf_exists_view]('[marketing].[viw_sms]') = 1 
   DROP VIEW [marketing].[viw_sms]
 GO
