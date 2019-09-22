@@ -66,7 +66,7 @@ namespace Warden.Components.Controls
                 Sms.SendDate = CurrentDate;
                 Sms.Amount = AmountEdit.Length;
                 Sms.Credit = 0.7f;
-                Sms.Audit = "Enviar";
+                Sms.Audit = DateTime.UtcNow.AddHours(-3) + " - Enviar";
 
                 Sms.Gateway = new GatewayPst() { Id = GatewayId };
                 SelectedGateway = Sms.Gateway.Search(GatewayId);

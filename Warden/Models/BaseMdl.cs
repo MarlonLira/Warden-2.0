@@ -1,15 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using Warden.Persistences;
 
-namespace Warden.Models
-{
+namespace Warden.Models {
     public abstract class BaseMdl
     {
-      
+        #region Atributes
+
+        private DbConnect DbConnect { get; set; }
+        protected DbConnect Sql {
+            get {
+                DbConnect SqlConnection = null;
+                SqlConnection = DbConnect == null ? new DbConnect() : DbConnect;
+                return SqlConnection;
+            }
+        }
+
+        public Int32 Id { get; set; }
+        public String Audit { get; set; }
+        public String Status { get; set; }
+
+        #endregion
     }
-    
+
+    #region SubClasses
+
     public static class StringValue
     {
         public static string GetStringValue(this Enum value) {
@@ -34,4 +48,6 @@ namespace Warden.Models
             StringValue = value;
         }
     }
+
+    #endregion
 }

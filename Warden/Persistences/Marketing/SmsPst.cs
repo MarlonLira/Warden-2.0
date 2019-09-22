@@ -19,8 +19,6 @@ namespace Warden.Persistences {
 
             [StringValue("http://app.smsfast.com.br/api.ashx?")]
             SmsFast = 2
-
-            
         }
 
         public enum SendType {
@@ -44,13 +42,6 @@ namespace Warden.Persistences {
         public APIs SelectedAPI { get; set; }
         public SendType SelectedSendType { get; set; }
         public Boolean IsFlashSms { get; set; }
-        private DbConnect DbConnect { get; set; }
-        private SqlCommand Sql {
-            get {
-                DbConnect = Connection.VerifyAndConnect(DbConnect, "WARDEN");
-                return DbConnect.Sql;
-            }
-        }
 
         #endregion
 
@@ -142,7 +133,6 @@ namespace Warden.Persistences {
             NameValueCollection Result = new NameValueCollection();
 
             Result = new NameValueCollection();
-            //Result["action"] = "sendsms";
             Result["user"] = this.Sender.User;
             Result["password"] = this.Sender.Pass;
             Result["msg"] = this.Text;
@@ -161,16 +151,12 @@ namespace Warden.Persistences {
             DataTable Table = new DataTable();
             String Query = "EXEC [marketing].[stp_sms_pesquisar]";
             try {
-                DbConnect = new DbConnect();
-                Table = DbConnect.ExecuteReader(Query);
 
-                /*DbConnect.OpenAdpter("EXEC [marketing].[stp_sms_pesquisar]");
-                DbConnect.Adapt.Fill(Table);*/
+                Table = Sql.ExecuteReader(Query);
+
             } catch {
                 throw;
-            } finally {
-                //DbConnect.CloseCon();
-            }
+            } 
 
             return Table;
         }
@@ -179,16 +165,11 @@ namespace Warden.Persistences {
             DataTable Table = new DataTable();
             String Query = "EXEC [marketing].[stp_sms_pesquisar_quantidade]";
             try {
-                DbConnect = new DbConnect();
-                Table = DbConnect.ExecuteReader(Query);
+                Table = Sql.ExecuteReader(Query);
 
-                /*DbConnect.OpenAdpter("EXEC [marketing].[stp_sms_pesquisar]");
-                DbConnect.Adapt.Fill(Table);*/
             } catch {
                 throw;
-            } finally {
-                //DbConnect.CloseCon();
-            }
+            } 
 
             return Table;
         }
@@ -200,8 +181,7 @@ namespace Warden.Persistences {
 
             try {
 
-                DbConnect = new DbConnect();
-                DbConnect.ExecuteNonQuery(Query, COMMON_ATTRIBUTES, new SqlParameter[] {
+                Sql.ExecuteNonQuery(Query, COMMON_ATTRIBUTES, new SqlParameter[] {
                      new SqlParameter("@id", NewId),
                      new SqlParameter("@auditoria", "SALVAR"),
                      new SqlParameter("@status", this.Status),
