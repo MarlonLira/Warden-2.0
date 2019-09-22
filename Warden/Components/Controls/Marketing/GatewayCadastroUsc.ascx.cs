@@ -66,7 +66,7 @@ namespace Warden.Components.Controls.Marketing {
 
                 Gateway = new GatewayPst();
                 Gateway.Status = "AT";
-                Gateway.Audit = DateTime.UtcNow.AddHours(-3) + " - SALVAR";
+                Gateway.Audit = AuthenticatedUser.RegistryCode + " - " + DateTime.UtcNow.AddHours(-3) + " - SALVAR";
                 Gateway.Url = txtUrl.Text;
                 Gateway.Credit = 0;
                 Gateway.Name = txtName.Text;

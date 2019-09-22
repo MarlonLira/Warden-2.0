@@ -3,6 +3,9 @@ using Warden.Persistences.Administration;
 
 namespace Warden.Components.Controls {
     public partial class UserLoginUsc : BaseUsc {
+
+        #region Events
+
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
             btnConfirm.OnClick += new Common.ButtonUsc.OnClickEvent(BtnConfirm_OnClick);
@@ -35,5 +38,7 @@ namespace Warden.Components.Controls {
                 txtError.Text = "Erro: O login está Vazio!";
             } 
         }
+
+        #endregion
     }
 }

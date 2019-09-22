@@ -11,8 +11,8 @@ namespace Warden.Components.Controls
 {
     public partial class SmsUsc : BaseControlsUsc
     {
-        private DataTable UserTable { get; set; }
-        DataTable GatewayTable { get; set; }
+       
+        #region Events
 
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
@@ -23,8 +23,6 @@ namespace Warden.Components.Controls
             btnEnviar.OnClick += new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
         }
 
-        private ModalUsc ShowMessage { get { return mdlControl; } }
-
         private void BtnEnviar_OnClick() {
             Enviar();
         }
@@ -32,6 +30,18 @@ namespace Warden.Components.Controls
         private void BtnPesquisar_OnClick() {
             //LoadTable();
         }
+
+        #endregion
+
+        #region Atributes
+
+        private DataTable UserTable { get; set; }
+        DataTable GatewayTable { get; set; }
+        private ModalUsc ShowMessage { get { return mdlControl; } }
+
+        #endregion
+
+        #region Methods
 
         private void VerifyAndLoad() {
             GatewayPst Gateway = new GatewayPst();
@@ -66,7 +76,7 @@ namespace Warden.Components.Controls
                 Sms.SendDate = CurrentDate;
                 Sms.Amount = AmountEdit.Length;
                 Sms.Credit = 0.7f;
-                Sms.Audit = DateTime.UtcNow.AddHours(-3) + " - Enviar";
+                Sms.Audit =  AuthenticatedUser.RegistryCode + " - " + DateTime.UtcNow.AddHours(-3) + " - Enviar";
 
                 Sms.Gateway = new GatewayPst() { Id = GatewayId };
                 SelectedGateway = Sms.Gateway.Search(GatewayId);
@@ -192,6 +202,8 @@ namespace Warden.Components.Controls
 
             tblMessage.DataSource = GetData();
         }
+
+        #endregion
 
     }
 }
