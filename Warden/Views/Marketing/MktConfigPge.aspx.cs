@@ -55,6 +55,7 @@ namespace Warden.Views.Marketing {
             }
             
             if (IsGatewayRegister) {
+                Session["GatewayTable"] = null;
                 gtwCadastro.Visible = false;
                 gtwCadastro.Visibled = false;
                 gtwCadastro.Enabled = false;

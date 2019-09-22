@@ -9,7 +9,7 @@ WITH ENCRYPTION AS
 BEGIN SET NOCOUNT ON BEGIN TRY
 
 	IF @id IS NULL
-		SELECT * FROM [marketing].[tbl_sms];
+		SELECT * FROM [marketing].[viw_sms];
 	ELSE
 		SELECT * FROM [marketing].[tbl_sms] WHERE [id] = @id;
 END TRY
@@ -18,6 +18,46 @@ BEGIN CATCH
 END CATCH END;
 GO
 
+--
+
+IF EXISTS (SELECT TOP 1 [id] FROM dbo.sysobjects WHERE id = object_id(N'[marketing].[stp_sms_pesquisar_quantidade]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
+  DROP PROCEDURE [marketing].[stp_sms_pesquisar_quantidade];
+GO
+
+CREATE PROCEDURE [marketing].[stp_sms_pesquisar_quantidade]
+@gateway_id NUMERIC = NULL
+WITH ENCRYPTION AS
+BEGIN SET NOCOUNT ON BEGIN TRY
+
+SET LANGUAGE Português
+
+	IF @gateway_id IS NULL
+		SELECT SUM(Z.[quantidade_total]) AS [quantidade_total], Z.[mes]
+			FROM (
+				SELECT SUM(A.[quantidade]) AS [quantidade_total], DATENAME(MONTH, A.[data_cadastro]) AS [mes]
+					FROM [marketing].[tbl_sms] AS A
+					INNER JOIN [marketing].[tbl_gateway] AS B
+						ON a.[gateway_id] = B.[id]
+				GROUP BY A.[data_cadastro]
+				) AS Z
+		GROUP BY Z.[mes];
+	ELSE
+		SELECT SUM(Z.[quantidade_total]) AS [quantidade_total], Z.[mes]
+			FROM (
+				SELECT SUM(A.[quantidade]) AS [quantidade_total], DATENAME(MONTH, A.[data_cadastro]) AS [mes]
+					FROM [marketing].[tbl_sms] AS A
+					INNER JOIN [marketing].[tbl_gateway] AS B
+						ON a.[gateway_id] = B.[id]
+					WHERE A.[gateway_id] = @gateway_id
+				GROUP BY A.[data_cadastro]
+				) AS Z
+		GROUP BY Z.[mes];
+
+END TRY
+BEGIN CATCH	 
+  EXEC [dbahelper].[stp_errorhandler] '[marketing].[stp_sms_pesquisar_quantidade]';
+END CATCH END;
+GO
 --
 
 IF EXISTS (SELECT TOP 1 [id] FROM dbo.sysobjects WHERE id = object_id(N'[marketing].[stp_sms_salvar]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)

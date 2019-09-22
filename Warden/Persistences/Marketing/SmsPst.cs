@@ -159,13 +159,16 @@ namespace Warden.Persistences {
 
         public DataTable Search() {
             DataTable Table = new DataTable();
+            String Query = "EXEC [marketing].[stp_sms_pesquisar]";
             try {
-                DbConnect.OpenAdpter("EXEC [marketing].[stp_sms_pesquisar]");
-                DbConnect.Adapt.Fill(Table);
+                Table = DbConnect.ExecuteReader(Query);
+
+                /*DbConnect.OpenAdpter("EXEC [marketing].[stp_sms_pesquisar]");
+                DbConnect.Adapt.Fill(Table);*/
             } catch {
                 throw;
             } finally {
-                DbConnect.CloseCon();
+                //DbConnect.CloseCon();
             }
 
             return Table;
@@ -197,8 +200,6 @@ namespace Warden.Persistences {
 
             } catch {
                 throw;
-            } finally {
-                DbConnect.CloseCon();
             }
 
             return Result;
