@@ -1,19 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Warden.Persistences;
+using Warden.Persistences.Administration;
 
 namespace Warden.Components {
     public partial class BaseUsc : UserControl {
+
+        #region Events
 
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
         }
 
-        DbConnect DbConnect { get; set; }
+        #endregion
+
+        #region Atributes
+
+        protected UserPst AuthenticatedUser { get { return Session["User"] == null ? null : (UserPst)Session["User"]; } }
 
         public List<ListItem> Itens { get; set; }
         //Text
@@ -27,6 +32,10 @@ namespace Warden.Components {
         public String ComponentSize { get; set; }
         public String ComponentColor { get; set; }
 
+        #endregion
+
+        #region Methods
+
         public virtual void LoadDataSource() {
             //Carregamento de dados dos Componentes
         }
@@ -38,5 +47,7 @@ namespace Warden.Components {
         public virtual void LoadDataSource(DataTable Table) {
             //Carregamento de dados dos Componentes
         }
+
+        #endregion
     }
 }

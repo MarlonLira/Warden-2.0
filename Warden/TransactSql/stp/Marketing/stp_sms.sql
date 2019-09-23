@@ -67,7 +67,7 @@ CREATE PROCEDURE [marketing].[stp_sms_salvar]
 @id NUMERIC OUTPUT,
 @auditoria VARCHAR(255),
 @status VARCHAR(2),
-@tipo VARCHAR(15),
+@tipo VARCHAR(50),
 @campanha VARCHAR(255),
 @mensagem VARCHAR(255),
 @celular VARCHAR(15),

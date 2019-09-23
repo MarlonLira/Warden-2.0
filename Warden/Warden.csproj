@@ -177,6 +177,7 @@
     <Content Include="Components\Controls\LoginUsc.ascx" />
     <Content Include="Components\Controls\MainUsc.ascx" />
     <Content Include="Components\Controls\MapUsc.ascx" />
+    <Content Include="Components\Controls\Marketing\EmailUsc.ascx" />
     <Content Include="Components\Controls\Marketing\GatewayCadastroUsc.ascx" />
     <Content Include="Components\Controls\NavbarUsc.ascx" />
     <Content Include="Components\Controls\SettingsUsc.ascx" />
@@ -441,6 +442,13 @@
     <Compile Include="Components\Controls\MapUsc.ascx.designer.cs">
       <DependentUpon>MapUsc.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Controls\Marketing\EmailUsc.ascx.cs">
+      <DependentUpon>EmailUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\Marketing\EmailUsc.ascx.designer.cs">
+      <DependentUpon>EmailUsc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\Controls\Marketing\GatewayCadastroUsc.ascx.cs">
       <DependentUpon>GatewayCadastroUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -550,6 +558,7 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Administration\User.cs" />
     <Compile Include="Models\BaseMdl.cs" />
     <Compile Include="Models\CalendarEvent.cs" />
     <Compile Include="Models\Marketing\Email.cs" />
@@ -560,6 +569,7 @@
     <Compile Include="Models\Marketing\Sms.cs" />
     <Compile Include="Models\Marketing\Type.cs" />
     <Compile Include="Models\Marketing\WhatsApp.cs" />
+    <Compile Include="Persistences\Administration\UserPst.cs" />
     <Compile Include="Persistences\DbConnect.cs" />
     <Compile Include="Persistences\Marketing\EmailPst.cs" />
     <Compile Include="Persistences\Marketing\GatewayPst.cs" />

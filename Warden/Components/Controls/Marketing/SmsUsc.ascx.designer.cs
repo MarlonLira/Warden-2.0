@@ -175,13 +175,13 @@ namespace Warden.Components.Controls {
         protected global::Warden.Components.Common.TextInputUsc txtDataFinal;
         
         /// <summary>
-        /// Controle tblMessage.
+        /// Controle tblSms.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.TableUsc tblMessage;
+        protected global::Warden.Components.Common.TableUsc tblSms;
         
         /// <summary>
         /// Controle btnPesquisar.

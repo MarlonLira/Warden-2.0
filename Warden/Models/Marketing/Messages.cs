@@ -6,19 +6,18 @@ namespace Warden.Models {
 
         #region Atributes
 
-        public Int32 Id { get; set; }
         public String Title { get; set; }
         public String Text { get; set; }
         public Sender Sender { get; set; }
         public Recipient Recipient { get; set; }
-        public String Status { get; set; }
         public String Return { get; set; }
         public String Image { get; set; }
-        public String Audit { get; set; }
         public Single Credit { get; set; }
         public Int32 Amount { get; set; }
         public String Result { get; set; }
         public GatewayPst Gateway { get; set; }
+        public DateTime SendDate { get; set; }
+        public DateTime RegistrationDate { get; set; }
 
         #endregion
 

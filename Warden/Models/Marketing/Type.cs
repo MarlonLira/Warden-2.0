@@ -1,12 +1,8 @@
 ﻿using System;
 
-namespace Warden.Models.Marketing
-{
-    public class Type
+namespace Warden.Models.Marketing {
+    public class Type : BaseMdl
     {
-        public Int32 Id { get; set; }
         public String Name { get; set; }
-        public String Status { get; set; }
-        public String Audit { get; set; }
     }
 }
