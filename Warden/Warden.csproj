@@ -177,6 +177,7 @@
     <Content Include="Components\Controls\LoginUsc.ascx" />
     <Content Include="Components\Controls\MainUsc.ascx" />
     <Content Include="Components\Controls\MapUsc.ascx" />
+    <Content Include="Components\Controls\Marketing\EmailUsc.ascx" />
     <Content Include="Components\Controls\Marketing\GatewayCadastroUsc.ascx" />
     <Content Include="Components\Controls\NavbarUsc.ascx" />
     <Content Include="Components\Controls\SettingsUsc.ascx" />
@@ -201,7 +202,8 @@
     <Content Include="TransactSql\stp\Marketing\stp_gateway.sql" />
     <Content Include="TransactSql\stp\Marketing\stp_sms.sql" />
     <Content Include="TransactSql\stp\Marketing\stp_tipo.sql" />
-    <Content Include="TransactSql\Views\Marketing\viw_gateway.sql.sql" />
+    <Content Include="TransactSql\Views\Marketing\viw_sms.sql" />
+    <Content Include="TransactSql\Views\Marketing\viw_gateway.sql" />
     <Content Include="Views\CalendarTeste.aspx" />
     <Content Include="Views\LoginTeste.aspx" />
     <Content Include="Views\Marketing\MessagePge.aspx" />
@@ -440,6 +442,13 @@
     <Compile Include="Components\Controls\MapUsc.ascx.designer.cs">
       <DependentUpon>MapUsc.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Components\Controls\Marketing\EmailUsc.ascx.cs">
+      <DependentUpon>EmailUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\Marketing\EmailUsc.ascx.designer.cs">
+      <DependentUpon>EmailUsc.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Components\Controls\Marketing\GatewayCadastroUsc.ascx.cs">
       <DependentUpon>GatewayCadastroUsc.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -549,6 +558,7 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Administration\User.cs" />
     <Compile Include="Models\BaseMdl.cs" />
     <Compile Include="Models\CalendarEvent.cs" />
     <Compile Include="Models\Marketing\Email.cs" />
@@ -559,6 +569,7 @@
     <Compile Include="Models\Marketing\Sms.cs" />
     <Compile Include="Models\Marketing\Type.cs" />
     <Compile Include="Models\Marketing\WhatsApp.cs" />
+    <Compile Include="Persistences\Administration\UserPst.cs" />
     <Compile Include="Persistences\DbConnect.cs" />
     <Compile Include="Persistences\Marketing\EmailPst.cs" />
     <Compile Include="Persistences\Marketing\GatewayPst.cs" />
@@ -792,6 +803,7 @@
     <Content Include="assets\scss\black-dashboard\_typography.scss" />
     <Content Include="JsonResponse.ashx" />
     <None Include="packages.config" />
+    <Content Include="wardenkey.pfx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -804,6 +816,15 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>wardenkey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

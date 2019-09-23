@@ -7,6 +7,9 @@ using Warden.Persistences.Marketing;
 
 namespace Warden.Views.Marketing {
     public partial class MktConfigPge : BasePge{
+
+        #region Events
+
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
             LoadTable();
@@ -22,9 +25,17 @@ namespace Warden.Views.Marketing {
             lblGateway.Visible = false;
         }
 
+        #endregion
+
+        #region Atributes
+
         public Boolean IsGatewayRegister {
             get { return Session["GatewayRegister"] == null ? false : Convert.ToBoolean(Session["GatewayRegister"]);}
         }
+
+        #endregion
+
+        #region Methods
 
         private void LoadTable() {
             GatewayPst Gateway = new GatewayPst();
@@ -55,6 +66,7 @@ namespace Warden.Views.Marketing {
             }
             
             if (IsGatewayRegister) {
+                Session["GatewayTable"] = null;
                 gtwCadastro.Visible = false;
                 gtwCadastro.Visibled = false;
                 gtwCadastro.Enabled = false;
@@ -69,5 +81,7 @@ namespace Warden.Views.Marketing {
             tblTypeConfig.DataSource = TypeTable;
             tblMktConfig.DataSource = GatewayTable;
         }
+
+        #endregion
     }
 }

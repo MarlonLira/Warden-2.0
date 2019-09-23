@@ -15,10 +15,11 @@
                     <div style="padding-top:10px;padding-bottom:10px">
                         <div class="row">
                             <usc:TextInputUsc runat="server" Title="Nome" ID="txtName" Size="6" />
-                            <usc:TextInputUsc runat="server" Title="Url" ID="txtUrl" Size="6" />
+                            <usc:TextInputUsc runat="server" Title="Token" ID="txtToken" Size="6" />
                             <usc:TextInputUsc runat="server" Title="Usuario" ID="txtUser" Size="6" />
                             <usc:TextInputUsc runat="server" Title="Senha" ID="txtPass" Size="6" />
-                            <usc:TextInputUsc runat="server" Title="Token" ID="txtToken" Size="6" />
+                            <usc:TextInputUsc runat="server" Title="Url" ID="txtUrl" Size="6" />
+                            <usc:TextInputUsc runat="server" Title="Port" ID="txtPort" Size="6" Visible="false"/>
                         </div>
 
                         <div style="padding-left:5px; padding-right:5px;padding-top:10px; padding-bottom:10px">

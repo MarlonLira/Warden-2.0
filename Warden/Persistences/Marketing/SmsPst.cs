@@ -19,15 +19,22 @@ namespace Warden.Persistences {
 
             [StringValue("http://app.smsfast.com.br/api.ashx?")]
             SmsFast = 2
-
-            
         }
 
         public enum SendType {
             [StringValue("/simpleSend.ft?")]
-            Simple,
+            Simple = 1,
             [StringValue("/multipleSend.ft?")]
-            Multiple
+            Multiple = 2
+        }
+
+        public enum Type {
+            [StringValue("SHORTCODE")]
+            ShortCode = 1,
+            [StringValue("LONGCODE")]
+            LongCode = 2,
+            [StringValue("FLASH")]
+            Flash = 3
         }
 
         #endregion
@@ -43,14 +50,8 @@ namespace Warden.Persistences {
 
         public APIs SelectedAPI { get; set; }
         public SendType SelectedSendType { get; set; }
+        public Type SelectedType { get; set; }
         public Boolean IsFlashSms { get; set; }
-        private DbConnect DbConnect { get; set; }
-        private SqlCommand Sql {
-            get {
-                DbConnect = Connection.VerifyAndConnect(DbConnect, "WARDEN");
-                return DbConnect.Sql;
-            }
-        }
 
         #endregion
 
@@ -109,6 +110,13 @@ namespace Warden.Persistences {
                         this.Status = Json.status;
                         this.Campaign = Json.data;
                         this.Return = Json.msg;
+                        this.Result = this.Return;
+                    } else if(SelectedAPI == APIs.FacilitaSms) {
+                        String[] ResultPart = this.Result.Split(';');
+                        String[] ResultAmount = this.Result.Split('-');
+                        Int32 FindResultId = Convert.ToInt32(ResultPart[0]);
+                        Int32 FindResultAmount = ResultAmount.Length - 1;
+                        this.Result = FindResultId == 6 ? "SUCESSO " + Convert.ToInt32(FindResultAmount) + " ENVIOS" : "FALHA";
                     }
 
                     Save();
@@ -126,13 +134,16 @@ namespace Warden.Persistences {
         private NameValueCollection SmsFast() {
             NameValueCollection Result = new NameValueCollection();
 
+            this.SelectedType = SelectedType == Type.Flash ? Type.LongCode : SelectedType;
+
             Result = new NameValueCollection();
             Result["action"] = "sendsms";
             Result["lgn"] = this.Sender.User;
             Result["pwd"] = this.Sender.Pass;
             Result["content"] = this.Text;
             Result["numbers"] = this.Recipient.PhoneNumber.Replace(";", ",");
-            Result["type_service"] = "LONGCODE";
+            Result["type_service"] = SelectedType.GetStringValue();
+            
             //Result["url_callback"] = "URL DE RETORNO";
 
             return Result;
@@ -142,31 +153,39 @@ namespace Warden.Persistences {
             NameValueCollection Result = new NameValueCollection();
 
             Result = new NameValueCollection();
-            //Result["action"] = "sendsms";
             Result["user"] = this.Sender.User;
             Result["password"] = this.Sender.Pass;
             Result["msg"] = this.Text;
             Result["destinatario"] = this.Recipient.PhoneNumber;
             Result["externalkey"] = Helper.Help.RandomIdGenerator();
-            if (IsFlashSms) {
-                Result["flashsms"] = "1";
-            } else {
-                Result["flashsms"] = "0";
-            }
+            Result["flashsms"] = SelectedType == Type.Flash ? "1" : "0";
 
             return Result;
         }
 
         public DataTable Search() {
             DataTable Table = new DataTable();
+            String Query = "EXEC [marketing].[stp_sms_pesquisar]";
             try {
-                DbConnect.OpenAdpter("EXEC [marketing].[stp_sms_pesquisar]");
-                DbConnect.Adapt.Fill(Table);
+
+                Table = Sql.ExecuteReader(Query);
+
             } catch {
                 throw;
-            } finally {
-                DbConnect.CloseCon();
-            }
+            } 
+
+            return Table;
+        }
+
+        public DataTable SearchAmount() {
+            DataTable Table = new DataTable();
+            String Query = "EXEC [marketing].[stp_sms_pesquisar_quantidade]";
+            try {
+                Table = Sql.ExecuteReader(Query);
+
+            } catch {
+                throw;
+            } 
 
             return Table;
         }
@@ -178,12 +197,11 @@ namespace Warden.Persistences {
 
             try {
 
-                DbConnect = new DbConnect();
-                DbConnect.ExecuteNonQuery(Query, COMMON_ATTRIBUTES, new SqlParameter[] {
+                Sql.ExecuteNonQuery(Query, COMMON_ATTRIBUTES, new SqlParameter[] {
                      new SqlParameter("@id", NewId),
-                     new SqlParameter("@auditoria", "SALVAR"),
+                     new SqlParameter("@auditoria", this.Audit),
                      new SqlParameter("@status", this.Status),
-                     new SqlParameter("@tipo", this.SelectedSendType.GetStringValue()),
+                     new SqlParameter("@tipo", this.SelectedSendType.ToString() + " - " + this.SelectedType.GetStringValue()),
                      new SqlParameter("@campanha", this.Title),
                      new SqlParameter("@mensagem", this.Text),
                      new SqlParameter("@celular", this.Recipient.PhoneNumber),
@@ -197,8 +215,6 @@ namespace Warden.Persistences {
 
             } catch {
                 throw;
-            } finally {
-                DbConnect.CloseCon();
             }
 
             return Result;

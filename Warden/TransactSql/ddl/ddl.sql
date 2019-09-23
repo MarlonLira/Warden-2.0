@@ -30,7 +30,7 @@ IF [dbahelper].[stf_exists_table]('[marketing].[tbl_sms]') = 0 BEGIN
     [id] [numeric](18, 0) IDENTITY(1,1) NOT NULL,
 	[auditoria] [varchar](255) NULL,
 	[status] [varchar](2) NULL,
-	[tipo] [varchar](15) NULL,
+	[tipo] [varchar](50) NULL,
 	[campanha] [varchar](255) NULL,
 	[mensagem] [varchar](255) NULL,
 	[celular] [varchar](15) NULL,
@@ -100,6 +100,7 @@ END;
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[gateway_id]', 'NUMERIC NULL';
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_sms]', '[resultado]', 'VARCHAR(255) NULL';
 	EXEC [dbahelper].[stp_create_column] '[marketing].[tbl_gateway]', '[tipo_id]', 'NUMERIC NULL';
+	alter table [marketing].[tbl_sms] alter column [tipo] varchar(50) null;
 	*/
 	
 -- EXEC [dbahelper].[stp_drop_column] '[schema].[table_name]', '[column]';

@@ -16,14 +16,14 @@ namespace Warden.Persistences.Marketing
 
         public string Save() {
             String Result = "Falha ao tentar cadastrar o tipo, verifique os dados informados!";
-            String Query = "EXEC [marketing].[stp_tipo_salvar] @id NUMERIC OUTPUT";
+            String Query = "EXEC [marketing].[stp_tipo_salvar] @id OUTPUT, ";
             Int32 NewId = (Int32)DbType.Int32;
             try {
                 DbConnect = new DbConnect();
 
                 DbConnect.ExecuteNonQuery(Query, COMMON_ATTRIBUTES, new SqlParameter[] {
                      new SqlParameter("@id", NewId),
-                     new SqlParameter("@auditoria", "SALVAR"),
+                     new SqlParameter("@auditoria", this.Audit),
                      new SqlParameter("@status", this.Status),
                      new SqlParameter("@nome", this.Name)
                 });

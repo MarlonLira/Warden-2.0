@@ -1,18 +1,29 @@
 ﻿using System;
 using System.Web.UI;
 using Warden.Persistences;
+using Warden.Persistences.Administration;
 
 namespace Warden {
     public partial class BasePge : Page {
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
-            //UserVerify();
+            UserPst Teste = new UserPst() {
+                Name = "Administrator",
+                Id = 1,
+                Email = "Admin",
+                Pass = "000000",
+                Status = "AT",
+                RegistryCode = "000.111.333-44"
+            };
+
+            Session.Add("User", Teste);
+            UserVerify();
         }
 
-        private String UserLogin {
+        private UserPst UserLogin {
             get {
                 object Result = Session["User"] == null ? "" : Session["User"];
-                return Convert.ToString(Result);
+                return (UserPst)Result;
             }
         }
 
@@ -26,7 +37,7 @@ namespace Warden {
         }
 
         public void UserVerify() {
-            if (String.IsNullOrEmpty(UserLogin)) {
+            if (UserLogin == null) {
                 Response.Redirect("~/Login.aspx", false);
             }
         }
