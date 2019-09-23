@@ -6,8 +6,7 @@ namespace Warden.Models {
         #region Atributes
 
         public String Campaign { get; set; }
-        public DateTime SendDate { get; set; }
-        public DateTime RegistrationDate { get; set; }
+
 
         #endregion
 

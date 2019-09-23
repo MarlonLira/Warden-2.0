@@ -40,13 +40,13 @@ namespace Warden.Components.Controls.Marketing {
         protected global::Warden.Components.Common.TextInputUsc txtName;
         
         /// <summary>
-        /// Controle txtUrl.
+        /// Controle txtToken.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.TextInputUsc txtUrl;
+        protected global::Warden.Components.Common.TextInputUsc txtToken;
         
         /// <summary>
         /// Controle txtUser.
@@ -67,13 +67,22 @@ namespace Warden.Components.Controls.Marketing {
         protected global::Warden.Components.Common.TextInputUsc txtPass;
         
         /// <summary>
-        /// Controle txtToken.
+        /// Controle txtUrl.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Common.TextInputUsc txtToken;
+        protected global::Warden.Components.Common.TextInputUsc txtUrl;
+        
+        /// <summary>
+        /// Controle txtPort.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.TextInputUsc txtPort;
         
         /// <summary>
         /// Controle lblType.

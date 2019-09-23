@@ -13,6 +13,9 @@ namespace Warden.Components.Common {
             public object Entite { get; set; }
         }
 
+        public delegate void OnSelectedIndexChangedEvent();
+        public event OnSelectedIndexChangedEvent OnSelectedIndexChanged;
+
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
         }
@@ -21,6 +24,10 @@ namespace Warden.Components.Common {
         public List<ListItem> ItemList { get; set; }
         public ListItem SelectedItem {
             get { return dd_control.SelectedItem; }
+        }
+
+        public String SelectedText {
+            get { return String.IsNullOrEmpty(dd_control.SelectedItem.Text)? "" : dd_control.SelectedItem.Text; }
         }
 
         public String SelectedValue {
@@ -59,6 +66,14 @@ namespace Warden.Components.Common {
                         }
                     }
                 }
+            }
+        }
+
+        protected void dd_control_SelectedIndexChanged(object sender, EventArgs e) {
+            try {
+                OnSelectedIndexChanged?.Invoke();
+            } catch (Exception Except) {
+                throw new Exception(Except.Message);
             }
         }
     }

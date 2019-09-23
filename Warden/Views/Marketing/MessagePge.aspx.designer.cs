@@ -31,12 +31,30 @@ namespace Warden.Views.Marketing {
         protected global::System.Web.UI.WebControls.Panel pnlSms;
         
         /// <summary>
-        /// Controle Sms_control.
+        /// Controle SmsControl.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::Warden.Components.Controls.SmsUsc Sms_control;
+        protected global::Warden.Components.Controls.SmsUsc SmsControl;
+        
+        /// <summary>
+        /// Controle pnlEmail.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel pnlEmail;
+        
+        /// <summary>
+        /// Controle EmailControl.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Controls.Marketing.EmailUsc EmailControl;
     }
 }

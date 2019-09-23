@@ -12,9 +12,9 @@
                 <div class="card-body">
                     <usc:LabelUsc runat="server" Text="Mensagem" Bold="true"  FontSize="15"/>
                     <div style="padding-top:10px;padding-bottom:10px">
-                        <usc:TextInputUsc runat="server" Title="Titulo" ID="txtTitle" Size="4" Text="teste" />
-                        <usc:TextAreaUsc runat="server" Placeholder="Escreva a mensagem aqui!" Title="Mensagem" Size="8" ID="txtText" Text="Teste"/>
-                        <usc:TextAreaUsc runat="server" Placeholder="Escreva aqui a lista de números só se for usar" Title="Lista de Números" Size="8" ID="txtNumberList" Text="81983460962"/>
+                        <usc:TextInputUsc runat="server" Title="Titulo" ID="txtTitle" Size="4"/>
+                        <usc:TextAreaUsc runat="server" Placeholder="Escreva a mensagem aqui!" Title="Mensagem" Size="8" ID="txtText"/>
+                        <usc:TextAreaUsc runat="server" Placeholder="Escreva aqui a lista de números" Title="Lista de Números" Size="8" ID="txtNumberList"/>
                     </div>
                 </div>
             </div>
@@ -65,7 +65,7 @@
         <div class="col-lg-6 col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <usc:TableUsc runat="server"  ComponentId="tableControl2"  ID="tblMessage"/>
+                    <usc:TableUsc runat="server"  ComponentId="tblSmsControl"  ID="tblSms"/>
                     <usc:ButtonUsc runat="server" ID="btnPesquisar" Text="Pesquisar" />
                     <usc:ButtonUsc runat="server" ID="btnEnviar" Text="Enviar" />
                     <usc:ButtonUsc runat="server" ID="btnCancelar" Text="Cancelar" />

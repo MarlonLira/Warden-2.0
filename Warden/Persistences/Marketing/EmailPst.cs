@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Net;
 using System.Net.Mail;
+using Warden.Interfaces;
 using Warden.Models;
 
 namespace Warden.Persistences {
-    public class EmailPst: Email {
+    public class EmailPst: Email, IEntitie {
 
         public override void Send() {
             base.Send();
@@ -13,27 +16,15 @@ namespace Warden.Persistences {
 
         }
 
+        private const String COMMON_ATTRIBUTES = "@auditoria, @status, @tipo, @campanha, @mensagem, @email, @quantidade, @valor, @data_envio, @data_cadastro, @gateway_id, @resultado";
+
         protected override void LoadAndVerify() {
-
-            if (this.Sender == null) {
-                Sender = new Sender() {
-                    Email = "mailing@hiacademia.com.br",
-                    User = "vitoriag1",
-                    Pass = "AcYNvtHU9360"
-                };
-            }
-
-            if (this.Service == null) {
-                Service = new Service() {
-                    Host = "smtplw.com.br",
-                    Port = 587
-                };
-            }
         }
 
         public void WebReq() {
             String Body = "";
-
+            String[] FoundEmails = this.Recipient.Email.Split(new[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
+            String Email = "";
             try {
                 using (SmtpClient Smtp = new SmtpClient()) {
 
@@ -49,7 +40,10 @@ namespace Warden.Persistences {
                     using (MailMessage Mail = new MailMessage()) {
                         //Armazenamento dos dados
                         Mail.From = new MailAddress(Sender.Email);
-                        Mail.To.Add(new MailAddress(this.Recipient.Email));
+                        foreach (String FindEmail in FoundEmails) {
+                            Email = FindEmail.Trim();
+                            Mail.To.Add(new MailAddress(Email));
+                        }
                         Mail.Subject = this.Title;
                         Mail.IsBodyHtml = true;
                         Mail.Body = Body;
@@ -57,13 +51,52 @@ namespace Warden.Persistences {
                         Smtp.Send(Mail);
                         Mail.Dispose();
                         Smtp.Dispose();
-
                     }
                 }
             } catch {
                 throw;
-            } finally {
+            } 
+        }
+
+        public DataTable Search() {
+            throw new NotImplementedException();
+        }
+
+        public string Save() {
+            String Result = "";
+            Int32 NewId = (Int32)DbType.Int32;
+            String Query = "EXEC[marketing].[stp_email_salvar] @id OUTPUT, ";
+
+            try {
+
+                Sql.ExecuteNonQuery(Query, COMMON_ATTRIBUTES, new SqlParameter[] {
+                     new SqlParameter("@id", NewId),
+                     new SqlParameter("@auditoria", this.Audit),
+                     new SqlParameter("@status", this.Status),
+                     new SqlParameter("@campanha", this.Title),
+                     new SqlParameter("@mensagem", this.Text),
+                     new SqlParameter("@email", this.Recipient.Email),
+                     new SqlParameter("@quantidade", this.Amount),
+                     new SqlParameter("@valor", this.Credit),
+                     new SqlParameter("@data_envio", this.SendDate),
+                     new SqlParameter("@data_cadastro", this.RegistrationDate),
+                     new SqlParameter("@gateway_id", this.Gateway.Id),
+                     new SqlParameter("@resultado", this.Result)
+                });
+
+            } catch {
+                throw;
             }
+
+            return Result;
+        }
+
+        public string Update() {
+            throw new NotImplementedException();
+        }
+
+        public string Delete() {
+            throw new NotImplementedException();
         }
     }
 }

@@ -14,6 +14,23 @@ namespace Warden.Components.Controls.Marketing {
             VerifyAndLoad();
             btnGatewayRegister.OnClick += new ButtonUsc.OnClickEvent(BtnGatewayRegister_OnClick);
             btnBack.OnClick += new ButtonUsc.OnClickEvent(BtnBack_OnClick);
+            ddType.OnSelectedIndexChanged += new DropdownUsc.OnSelectedIndexChangedEvent(DdType_OnSelectedIndexChanged);
+        }
+
+        private void DdType_OnSelectedIndexChanged() {
+            switch (ddType.SelectedText.ToUpperInvariant()) {
+                case "EMAIL": {
+                        txtToken.Title = "Email";
+                        txtUrl.Title = "Host";
+                        txtPort.Visible = true;
+                        break;
+                    }
+                default: {
+                        txtToken.Title = "Token";
+                        txtPort.Visible = false;
+                        break;
+                    }
+            }
         }
 
         private void BtnBack_OnClick() {
@@ -74,7 +91,11 @@ namespace Warden.Components.Controls.Marketing {
                 Gateway.User = txtUser.Text;
                 Gateway.Token = String.IsNullOrEmpty(txtToken.Text) ? "SEM TOKEN" : txtToken.Text;
                 Gateway.Type = new TypePst() {Id = Convert.ToInt32(ddType.SelectedValue), Name = ddType.Text };
-               
+
+                if (Gateway.Type.Id == 2) {
+                    Gateway.Url = txtUrl.Text + "|" + txtPort.Text;
+                }
+
                 if (!String.IsNullOrEmpty(txtUser.Text)) {
                     Gateway.Save();
                 }

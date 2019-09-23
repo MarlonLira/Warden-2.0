@@ -12,11 +12,13 @@ namespace Warden.Views.Marketing {
             if (!String.IsNullOrEmpty(Result)) {
                 switch (Result.ToUpperInvariant()) {
                     case "SMS": {
-                            Sms_control.Visible = true;
+                            SmsControl.Visible = true;
                             pnlSms.Visible = true;
                             break;
                         }
                     case "EMAIL": {
+                            EmailControl.Visible = true;
+                            pnlEmail.Visible = true;
                             break;
                         }
                     case "WHATSAPP": {

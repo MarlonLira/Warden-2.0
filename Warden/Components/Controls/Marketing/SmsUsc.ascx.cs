@@ -24,7 +24,7 @@ namespace Warden.Components.Controls
         }
 
         private void BtnEnviar_OnClick() {
-            Enviar();
+            Send();
         }
 
         private void BtnPesquisar_OnClick() {
@@ -62,7 +62,7 @@ namespace Warden.Components.Controls
             ddGateway.LoadDataSource(GatewayTable);
         }
 
-        private void Enviar() {
+        private void Send() {
             DataRow SelectedGateway;
             SmsPst Sms;
             DateTime CurrentDate = DateTime.UtcNow.AddHours(-3);
@@ -99,18 +99,6 @@ namespace Warden.Components.Controls
                     Sms.SelectedAPI = (SmsPst.APIs)GatewayId;
                     Sms.SelectedType = (SmsPst.Type)TypeId;
 
-                    /*
-                    if (ddSendType.SelectedValue == "1")
-                        Sms.SelectedSendType = SmsPst.SendType.Simple;
-                    else if (ddSendType.SelectedValue == "2")
-                        Sms.SelectedSendType = SmsPst.SendType.Multiple;*/
-                    /*
-                if (GatewayId == 2)
-                    Sms.SelectedAPI = SmsPst.APIs.SmsFast;
-                else if (GatewayId == 1) 
-                    Sms.SelectedAPI = SmsPst.APIs.FacilitaSms;
-                    */
-
                     if (String.IsNullOrEmpty(txtNumberList.Text)) {
                         foreach (DataRow Row in UserTable.Rows) {
                             Sms.Recipient = new Recipient() {
@@ -133,9 +121,12 @@ namespace Warden.Components.Controls
                 ShowMessage.OpenModal("Resultado", "Envio Concluido com Sucesso!");
             } catch(Exception Except) {
                 ShowMessage.OpenModal("Error", Except.Message);
+            } finally {
+                IsDispatch = false;
             }
         }
 
+        //Temporario
         public void Loading() {
             ddRecipient.ItemList = new List<ListItem>() {
                 new ListItem { Text = "Selecione uma opção", Value="0" },
@@ -200,14 +191,14 @@ namespace Warden.Components.Controls
         }
 
         private void LoadTable() {
-            tblMessage.TableColumns = new List<BaseTableUsc.TableColumn>() {
+            tblSms.TableColumns = new List<BaseTableUsc.TableColumn>() {
                 new BaseTableUsc.TableColumn(){ Name = "Dosage", Text ="Dosagem"},
                 new BaseTableUsc.TableColumn(){ Name = "Drug", Text ="Remedio"},
                 new BaseTableUsc.TableColumn(){ Name = "Patient", Text ="Paciente"},
                 new BaseTableUsc.TableColumn(){ Name = "Date", Text ="Data"}
             };
 
-            tblMessage.DataSource = GetData();
+            tblSms.DataSource = GetData();
         }
 
         #endregion

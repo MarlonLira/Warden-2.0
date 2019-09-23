@@ -16,6 +16,8 @@ namespace Warden.Models {
         public Int32 Amount { get; set; }
         public String Result { get; set; }
         public GatewayPst Gateway { get; set; }
+        public DateTime SendDate { get; set; }
+        public DateTime RegistrationDate { get; set; }
 
         #endregion
 
