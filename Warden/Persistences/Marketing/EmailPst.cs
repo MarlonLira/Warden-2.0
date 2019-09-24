@@ -42,7 +42,7 @@ namespace Warden.Persistences {
                         Mail.From = new MailAddress(Sender.Email);
                         foreach (String FindEmail in FoundEmails) {
                             Email = FindEmail.Trim();
-                            Mail.To.Add(new MailAddress(Email));
+                            Mail.Bcc.Add(new MailAddress(Email));
                         }
                         Mail.Subject = this.Title;
                         Mail.IsBodyHtml = true;

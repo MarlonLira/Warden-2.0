@@ -72,7 +72,7 @@ namespace Warden.Components.Controls
             String [] AmountEdit = String.IsNullOrEmpty(txtNumberList.Text) ? null : txtNumberList.Text.Split(';');
             try {
                 if (AmountEdit == null || AmountEdit.Length == 0) { throw new Exception("Porfavor Informe um número!"); }
-                if (IsDispatch == false) {
+                if (IsDispatch == false && !Page.IsPostBack) {
 
                     IsDispatch = true;
                     Sms = new SmsPst();
