@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ButtonUsc.ascx.cs" Inherits="Warden.Components.Common.ButtonUsc" %>
+﻿<%@ Control Language="C#" CodeBehind="ButtonUsc.ascx.cs" Inherits="Warden.Components.Common.ButtonUsc" %>
 
 <button 
     id="btn_control"

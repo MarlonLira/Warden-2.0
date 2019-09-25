@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebMst.Master" AutoEventWireup="true" CodeBehind="MessagePge.aspx.cs" Inherits="Warden.Views.Marketing.MessagePge" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebMst.Master" CodeBehind="MessagePge.aspx.cs" Inherits="Warden.Views.Marketing.MessagePge" %>
 <%@ Import Namespace="Warden.Helper" %>
 
 <asp:Content ID="cttMessage" ContentPlaceHolderID="cph_main" runat="server">
