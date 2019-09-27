@@ -107,7 +107,6 @@ namespace Warden.Persistences {
 
                     if (SelectedAPI == APIs.SmsFast) {
                         dynamic Json = JValue.Parse(Result);
-                        this.Status = Json.status;
                         this.Campaign = Json.data;
                         this.Return = Json.msg;
                         this.Result = this.Return;

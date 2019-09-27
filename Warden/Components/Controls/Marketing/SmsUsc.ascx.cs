@@ -28,13 +28,9 @@ namespace Warden.Components.Controls
 
         private void BtnEnviar_OnClick() {
             btnEnviar.OnClick -= new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
-            try {
-                if (IsDispatch == false) {
-                    IsDispatch = true;
-                    Send();
-                }
-            } finally {
-                IsDispatch = false;
+            if (IsDispatch == false) {
+                IsDispatch = true;
+                Send();
             }
         }
 
@@ -82,8 +78,8 @@ namespace Warden.Components.Controls
             Int32 TypeId = Convert.ToInt32(ddType.SelectedValue);
             String[] AmountEdit = String.IsNullOrEmpty(txtNumberList.Text) ? null : txtNumberList.Text.Split(';');
             try {
-                if (AmountEdit == null || AmountEdit.Length == 0) { throw new Exception("Porfavor Informe um número!"); }
-
+                if (AmountEdit == null || AmountEdit.Length == 0) { throw new Exception("Porfavor informe um número!"); }
+                if (txtText.Text.Length < 11 || txtText.Text.Length > 11) { throw new Exception("Porfavor informe um número valido no formato de 11 digitos (Ex:81988887777)!"); }
                 IsDispatch = true;
                 Sms = new SmsPst();
                 Sms.Title = txtTitle.Text;
@@ -115,10 +111,11 @@ namespace Warden.Components.Controls
                 };
 
                 Sms.Send();
-
+                ResultEvent =  new ResultEvent("Envio Concluido com Sucesso!");
                 ShowMessage.OpenModal("Resultado", "Envio Concluido com Sucesso!");
             } catch (Exception Except) {
                 ShowMessage.OpenModal("Error", Except.Message);
+                ResultEvent = new ResultEvent(Except.Message);
             }
         }
 

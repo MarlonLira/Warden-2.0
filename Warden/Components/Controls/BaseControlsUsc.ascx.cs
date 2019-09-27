@@ -1,5 +1,6 @@
 ﻿using System;
 using Warden.Components.Common;
+using Warden.Models;
 
 namespace Warden.Components.Controls {
     public partial class BaseControlsUsc : BaseUsc
@@ -11,6 +12,10 @@ namespace Warden.Components.Controls {
             } else {
                 this.Visible = true;
             }
+        }
+        public ResultEvent ResultEvent {
+            get { return Session["ResultEvent"] != null ? (ResultEvent)Session["ResultEvent"] : null; }
+            set { Session.Add("ResultEvent", value); }
         }
 
         public ModalUsc Message {
