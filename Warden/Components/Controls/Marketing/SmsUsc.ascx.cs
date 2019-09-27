@@ -18,14 +18,18 @@ namespace Warden.Components.Controls
             base.OnLoad(e);
             VerifyAndLoad();
             Loading();
-            
+            if (IsDispatch != true) {
+                btnEnviar.OnClick += new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
+            } else {
+                IsDispatch = false;
+            }
             btnPesquisar.OnClick += new ButtonUsc.OnClickEvent(BtnPesquisar_OnClick);
-            btnEnviar.OnClick += new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
         }
 
         private void BtnEnviar_OnClick() {
+            btnEnviar.OnClick -= new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
             try {
-                if (IsDispatch == false && !Page.IsPostBack) {
+                if (IsDispatch == false) {
                     IsDispatch = true;
                     Send();
                 }
