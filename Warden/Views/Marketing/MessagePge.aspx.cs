@@ -7,7 +7,6 @@ namespace Warden.Views.Marketing {
             base.OnLoad(e);
             VerifyAndLoad();
         }
-
         
         public void VerifyAndLoad() {
             String Result = Request.QueryString["page"];

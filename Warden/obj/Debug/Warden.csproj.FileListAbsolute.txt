@@ -33,7 +33,6 @@ C:\Web\Warden-2.0\Warden\Warden\obj\Debug\Warden.csproj.CoreCompileInputs.cache
 C:\Web\Warden-2.0\Warden\Warden\obj\Debug\Warden.csproj.CopyComplete
 C:\Web\Warden-2.0\Warden\Warden\obj\Debug\Warden.dll
 C:\Web\Warden-2.0\Warden\Warden\obj\Debug\Warden.pdb
-C:\Web\Warden-2.0\Warden\Warden\obj\Debug\Warden.csprojAssemblyReference.cache
 C:\Web\Warden-2.0\Warden\Warden\bin\Newtonsoft.Json.dll
 C:\Web\Warden-2.0\Warden\Warden\bin\Newtonsoft.Json.xml
 C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\Warden.dll.config
@@ -82,3 +81,4 @@ C:\Web\Warden-2.0\Warden\Warden\bin\EntityFramework.SqlServer.dll
 C:\Web\Warden-2.0\Warden\Warden\bin\EntityFramework.xml
 C:\Web\Warden-2.0\Warden\Warden\bin\EntityFramework.SqlServer.xml
 C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\obj\Debug\Warden.csprojAssemblyReference.cache
+C:\Web\Warden-2.0\Warden\Warden\obj\Debug\Warden.csprojAssemblyReference.cache

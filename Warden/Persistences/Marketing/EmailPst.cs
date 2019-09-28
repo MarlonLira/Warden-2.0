@@ -9,16 +9,17 @@ using Warden.Models;
 namespace Warden.Persistences {
     public class EmailPst: Email, IEntitie {
 
-        public override void Send() {
-            base.Send();
-            LoadAndVerify();
-            WebReq();
-
-        }
+        #region Const
 
         private const String COMMON_ATTRIBUTES = "@auditoria, @status, @tipo, @campanha, @mensagem, @email, @quantidade, @valor, @data_envio, @data_cadastro, @gateway_id, @resultado";
 
-        protected override void LoadAndVerify() {
+        #endregion
+
+        #region Methods
+
+        public override void Send() {
+            base.Send();
+            WebReq();
         }
 
         public void WebReq() {
@@ -98,5 +99,7 @@ namespace Warden.Persistences {
         public string Delete() {
             throw new NotImplementedException();
         }
+
+        #endregion
     }
 }

@@ -22,8 +22,11 @@
                         <asp:ContentPlaceHolder ID="cph_main" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
-                    <usc:FooterUsc runat="server" />
+                    <div style="margin-top:10px">
+                        <usc:FooterUsc runat="server" />
+                    </div>
                 </div>
+                 
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>
