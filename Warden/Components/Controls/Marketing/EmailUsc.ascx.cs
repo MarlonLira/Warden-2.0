@@ -15,11 +15,18 @@ namespace Warden.Components.Controls.Marketing {
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
             VerifyAndLoad();
-            btnEnviar.OnClick += new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
+
+            if (IsDispatch != true) {
+                btnEnviar.OnClick += new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
+            } else {
+                IsDispatch = false;
+            }
         }
 
         private void BtnEnviar_OnClick() {
-            if (Page.IsPostBack) {
+            btnEnviar.OnClick -= new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
+            if (IsDispatch == false) {
+                IsDispatch = true;
                 Send();
             }
         }
@@ -53,7 +60,7 @@ namespace Warden.Components.Controls.Marketing {
 
             ddRecipient.ItemList = new List<ListItem>() {
                 new ListItem { Text = "Selecione uma opção", Value="0" },
-                new ListItem {Text = "Aluno", Value = "1"},
+                new ListItem {Text = "Leads", Value = "1"},
                 new ListItem {Text = "Visitante", Value = "2"}
             };
 
@@ -67,7 +74,7 @@ namespace Warden.Components.Controls.Marketing {
             ddRecipient.LoadDataSource();
             ddCompany.LoadDataSource();
             ddGateway.LoadDataSource(GatewayTable);
-
+            ddRecipient.SelectedValue = "1";
             ddCompany.Enabled = false;
             ddRecipient.Enabled = false;
         }
@@ -80,49 +87,47 @@ namespace Warden.Components.Controls.Marketing {
             String[] AmountEdit = String.IsNullOrEmpty(txtEmailList.Text) ? null : txtEmailList.Text.Split(';');
             try {
                 if (AmountEdit == null || AmountEdit.Length == 0) { throw new Exception("Porfavor Informe um email!"); }
-                if (IsDispatch == false) {
 
-                    IsDispatch = true;
-                    Email = new EmailPst();
-                    Email.Title = txtTitle.Text;
-                    Email.Text = txtText.Text;
-                    Email.Status = "AT";
-                    Email.RegistrationDate = CurrentDate;
-                    Email.SendDate = CurrentDate;
-                    Email.Amount = AmountEdit.Length;
-                    Email.Credit = 0.7f;
-                    Email.Audit = AuthenticatedUser.RegistryCode + " - " + DateTime.UtcNow.AddHours(-3) + " - Enviar";
 
-                    Email.Gateway = new GatewayPst() { Id = GatewayId };
-                    SelectedGateway = Email.Gateway.Search(GatewayId);
-                    Email.Gateway.Url = Convert.ToString(SelectedGateway["url"]);
-                    
-                    Email.Sender = new Sender() {
-                        User = Convert.ToString(SelectedGateway["usuario"]),
-                        Pass = Convert.ToString(SelectedGateway["senha"]),
-                        Email = Convert.ToString(SelectedGateway["token"])
-                    };
+                IsDispatch = true;
+                Email = new EmailPst();
+                Email.Title = txtTitle.Text;
+                Email.Text = txtText.Text;
+                Email.Status = "AT";
+                Email.RegistrationDate = CurrentDate;
+                Email.SendDate = CurrentDate;
+                Email.Amount = AmountEdit.Length;
+                Email.Credit = 0.7f;
+                Email.Audit = AuthenticatedUser.RegistryCode + " - " + DateTime.UtcNow.AddHours(-3) + " - Enviar";
 
-                    String[] ServicePart = Convert.ToString(SelectedGateway["url"]).Split('|');
-                    Email.Service = new Service() {
-                        Host = ServicePart[0],
-                        Port = Convert.ToInt32(ServicePart[1])
+                Email.Gateway = new GatewayPst() { Id = GatewayId };
+                SelectedGateway = Email.Gateway.Search(GatewayId);
+                Email.Gateway.Url = Convert.ToString(SelectedGateway["url"]);
 
-                    };
-                    
-                    Email.Recipient = new Recipient() {
-                        Name = Convert.ToString("Lista"),
-                        Email = txtEmailList.Text
-                    };
+                Email.Sender = new Sender() {
+                    User = Convert.ToString(SelectedGateway["usuario"]),
+                    Pass = Convert.ToString(SelectedGateway["senha"]),
+                    Email = Convert.ToString(SelectedGateway["token"])
+                };
 
-                    Email.Send();
-                }
+                String[] ServicePart = Convert.ToString(SelectedGateway["url"]).Split('|');
+                Email.Service = new Service() {
+                    Host = ServicePart[0],
+                    Port = Convert.ToInt32(ServicePart[1])
+
+                };
+
+                Email.Recipient = new Recipient() {
+                    Name = Convert.ToString("Lista"),
+                    Email = txtEmailList.Text
+                };
+
+                Email.Send();
+
                 ShowMessage.OpenModal("Resultado", "Envio Concluido com Sucesso!");
             } catch (Exception Except) {
                 ShowMessage.OpenModal("Error", Except.Message);
-            } finally {
-                IsDispatch = false;
-            }
+            } 
         }
 
         #endregion

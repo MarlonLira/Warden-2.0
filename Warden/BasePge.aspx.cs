@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.UI;
+using Warden.Models;
 using Warden.Persistences;
 using Warden.Persistences.Administration;
 
@@ -20,9 +21,14 @@ namespace Warden {
             UserVerify();
         }
 
+        public ResultEvent ResultEvent {
+            get { return Session["ResultEvent"] != null ? (ResultEvent)Session["ResultEvent"] : null; }
+            set { Session.Add("ResultEvent", value); }
+        }
+
         private UserPst UserLogin {
             get {
-                object Result = Session["User"] == null ? "" : Session["User"];
+                object Result = Session["User"] == null ? null : Session["User"];
                 return (UserPst)Result;
             }
         }

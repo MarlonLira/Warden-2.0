@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="WebMst.master.cs" Inherits="Warden.WebMst" %>
+﻿<%@ Master Language="C#" AutoEventWireup="false" CodeBehind="WebMst.master.cs" Inherits="Warden.WebMst" %>
 
 <!DOCTYPE html>
 
@@ -22,8 +22,11 @@
                         <asp:ContentPlaceHolder ID="cph_main" runat="server">
                         </asp:ContentPlaceHolder>
                     </div>
-                    <usc:FooterUsc runat="server" />
+                    <div style="margin-top:10px">
+                        <usc:FooterUsc runat="server" />
+                    </div>
                 </div>
+                 
             </ContentTemplate>
         </asp:UpdatePanel>
     </form>

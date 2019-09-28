@@ -13,15 +13,6 @@ namespace Warden.Views.Marketing {
     public partial class MessagePge {
         
         /// <summary>
-        /// Controle mdlControl.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::Warden.Components.Common.ModalUsc mdlControl;
-        
-        /// <summary>
         /// Controle pnlSms.
         /// </summary>
         /// <remarks>
@@ -56,5 +47,14 @@ namespace Warden.Views.Marketing {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::Warden.Components.Controls.Marketing.EmailUsc EmailControl;
+        
+        /// <summary>
+        /// Controle AlertResult.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.AlertUsc AlertResult;
     }
 }

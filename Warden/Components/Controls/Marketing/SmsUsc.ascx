@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="SmsUsc.ascx.cs" Inherits="Warden.Components.Controls.SmsUsc" %>
+﻿<%@ Control Language="C#" AutoEventWireup="false" CodeBehind="SmsUsc.ascx.cs" Inherits="Warden.Components.Controls.SmsUsc" %>
 <%@ Import Namespace="Warden.Helper" %>
 
 <usc:ModalUsc runat="server" ComponentId="mdl_sms" ID="mdlControl" Title="Resultado"/>

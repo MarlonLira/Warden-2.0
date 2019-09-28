@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ModalUsc.ascx.cs" Inherits="Warden.Components.Common.ModalUsc" %>
+﻿<%@ Control Language="C#" CodeBehind="ModalUsc.ascx.cs" Inherits="Warden.Components.Common.ModalUsc" %>
 
 <div class="modal fade" id="<%=ComponentId%>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
