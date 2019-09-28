@@ -8,7 +8,7 @@ CREATE PROCEDURE [marketing].[stp_tipo_pesquisar]
 WITH ENCRYPTION AS
 BEGIN SET NOCOUNT ON BEGIN TRY
 
-	SELECT * FROM [marketing].[tbl_tipo]
+	SELECT * FROM [marketing].[tbl_tipo] WHERE [status] = 'AT'
 	
 END TRY
 BEGIN CATCH	 

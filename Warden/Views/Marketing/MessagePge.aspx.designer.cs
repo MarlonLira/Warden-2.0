@@ -56,5 +56,14 @@ namespace Warden.Views.Marketing {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::Warden.Components.Controls.Marketing.EmailUsc EmailControl;
+        
+        /// <summary>
+        /// Controle AlertResult.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.AlertUsc AlertResult;
     }
 }

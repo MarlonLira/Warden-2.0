@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.UI;
+using Warden.Models;
 using Warden.Persistences;
 using Warden.Persistences.Administration;
 
@@ -7,22 +8,27 @@ namespace Warden {
     public partial class BasePge : Page {
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
-            UserPst Teste = new UserPst() {
+            /*UserPst Teste = new UserPst() {
                 Name = "Administrator",
                 Id = 1,
                 Email = "Admin",
                 Pass = "000000",
                 Status = "AT",
                 RegistryCode = "000.111.333-44"
-            };
+            };*/
 
-            Session.Add("User", Teste);
+            //Session.Add("User", Teste);
             UserVerify();
+        }
+
+        public ResultEvent ResultEvent {
+            get { return Session["ResultEvent"] != null ? (ResultEvent)Session["ResultEvent"] : null; }
+            set { Session.Add("ResultEvent", value); }
         }
 
         private UserPst UserLogin {
             get {
-                object Result = Session["User"] == null ? "" : Session["User"];
+                object Result = Session["User"] == null ? null : Session["User"];
                 return (UserPst)Result;
             }
         }

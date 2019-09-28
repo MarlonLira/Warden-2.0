@@ -18,13 +18,20 @@ namespace Warden.Components.Controls
             base.OnLoad(e);
             VerifyAndLoad();
             Loading();
-            
+            if (IsDispatch != true) {
+                btnEnviar.OnClick += new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
+            } else {
+                IsDispatch = false;
+            }
             btnPesquisar.OnClick += new ButtonUsc.OnClickEvent(BtnPesquisar_OnClick);
-            btnEnviar.OnClick += new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
         }
 
         private void BtnEnviar_OnClick() {
-            Send();
+            btnEnviar.OnClick -= new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
+            if (IsDispatch == false) {
+                IsDispatch = true;
+                Send();
+            }
         }
 
         private void BtnPesquisar_OnClick() {
@@ -69,60 +76,46 @@ namespace Warden.Components.Controls
             Int32 GatewayId = Convert.ToInt32(ddGateway.SelectedValue);
             Int32 SendTypeId = Convert.ToInt32(ddSendType.SelectedValue);
             Int32 TypeId = Convert.ToInt32(ddType.SelectedValue);
-            String [] AmountEdit = String.IsNullOrEmpty(txtNumberList.Text) ? null : txtNumberList.Text.Split(';');
+            String[] AmountEdit = String.IsNullOrEmpty(txtNumberList.Text) ? null : txtNumberList.Text.Split(';');
             try {
-                if (AmountEdit == null || AmountEdit.Length == 0) { throw new Exception("Porfavor Informe um número!"); }
-                if (IsDispatch == false) {
+                if (AmountEdit == null || AmountEdit.Length == 0) { throw new Exception("Porfavor informe um número!"); }
+                if (txtText.Text.Length < 11 || txtText.Text.Length > 11) { throw new Exception("Porfavor informe um número valido no formato de 11 digitos (Ex:81988887777)!"); }
+                IsDispatch = true;
+                Sms = new SmsPst();
+                Sms.Title = txtTitle.Text;
+                Sms.Text = txtText.Text;
+                Sms.Status = "AT";
+                Sms.SelectedSendType = SmsPst.SendType.Multiple;
+                Sms.RegistrationDate = CurrentDate;
+                Sms.SendDate = CurrentDate;
+                Sms.Amount = AmountEdit.Length;
+                Sms.Credit = 0.7f;
+                Sms.Audit = AuthenticatedUser.RegistryCode + " - " + DateTime.UtcNow.AddHours(-3) + " - Enviar";
+                Sms.IsFlashSms = TypeId < 3 ? false : true;
 
-                    IsDispatch = true;
-                    Sms = new SmsPst();
-                    Sms.Title = txtTitle.Text;
-                    Sms.Text = txtText.Text;
-                    Sms.Status = "AT";
-                    Sms.SelectedSendType = SmsPst.SendType.Multiple;
-                    Sms.RegistrationDate = CurrentDate;
-                    Sms.SendDate = CurrentDate;
-                    Sms.Amount = AmountEdit.Length;
-                    Sms.Credit = 0.7f;
-                    Sms.Audit = AuthenticatedUser.RegistryCode + " - " + DateTime.UtcNow.AddHours(-3) + " - Enviar";
-                    Sms.IsFlashSms = TypeId < 3 ? false : true;
+                Sms.Gateway = new GatewayPst() { Id = GatewayId };
+                SelectedGateway = Sms.Gateway.Search(GatewayId);
+                Sms.Gateway.Url = Convert.ToString(SelectedGateway["url"]);
+                Sms.Sender = new Sender() {
+                    User = Convert.ToString(SelectedGateway["usuario"]),
+                    Pass = Convert.ToString(SelectedGateway["senha"])
+                };
 
-                    Sms.Gateway = new GatewayPst() { Id = GatewayId };
-                    SelectedGateway = Sms.Gateway.Search(GatewayId);
-                    Sms.Gateway.Url = Convert.ToString(SelectedGateway["url"]);
-                    Sms.Sender = new Sender() {
-                        User = Convert.ToString(SelectedGateway["usuario"]),
-                        Pass = Convert.ToString(SelectedGateway["senha"])
-                    };
+                Sms.SelectedSendType = (SmsPst.SendType)SendTypeId;
+                Sms.SelectedAPI = (SmsPst.APIs)GatewayId;
+                Sms.SelectedType = (SmsPst.Type)TypeId;
 
-                    Sms.SelectedSendType = (SmsPst.SendType)SendTypeId;
-                    Sms.SelectedAPI = (SmsPst.APIs)GatewayId;
-                    Sms.SelectedType = (SmsPst.Type)TypeId;
+                Sms.Recipient = new Recipient() {
+                    Name = Convert.ToString("Lista"),
+                    PhoneNumber = txtNumberList.Text
+                };
 
-                    if (String.IsNullOrEmpty(txtNumberList.Text)) {
-                        foreach (DataRow Row in UserTable.Rows) {
-                            Sms.Recipient = new Recipient() {
-                                Name = Convert.ToString(Row["name"]),
-                                PhoneNumber = Convert.ToString(Row["PhoneNumber"])
-                            };
-
-                            Sms.Send();
-                        }
-                        Sms.Amount = UserTable.Rows.Count;
-                    } else {
-                        Sms.Recipient = new Recipient() {
-                            Name = Convert.ToString("Lista"),
-                            PhoneNumber = txtNumberList.Text
-                        };
-
-                        Sms.Send();
-                    }
-                }
+                Sms.Send();
+                ResultEvent =  new ResultEvent("Envio Concluido com Sucesso!");
                 ShowMessage.OpenModal("Resultado", "Envio Concluido com Sucesso!");
-            } catch(Exception Except) {
+            } catch (Exception Except) {
                 ShowMessage.OpenModal("Error", Except.Message);
-            } finally {
-                IsDispatch = false;
+                ResultEvent = new ResultEvent(Except.Message);
             }
         }
 

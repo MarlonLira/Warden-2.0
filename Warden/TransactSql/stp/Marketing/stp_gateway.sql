@@ -11,11 +11,11 @@ CREATE PROCEDURE [marketing].[stp_gateway_pesquisar]
 WITH ENCRYPTION AS
 BEGIN SET NOCOUNT ON BEGIN TRY
 	IF @id IS NULL AND @tipo_id IS NULL
-		SELECT * FROM [marketing].[viw_gateway];
+		SELECT * FROM [marketing].[viw_gateway] WHERE [status] = 'AT';
 	ELSE IF @id IS NOT NULL
-		SELECT * FROM [marketing].[tbl_gateway] WHERE [id] = @id;
+		SELECT * FROM [marketing].[tbl_gateway] WHERE [id] = @id AND [status] = 'AT';
 	ELSE IF @tipo_id IS NOT NULL
-		SELECT * FROM [marketing].[tbl_gateway] WHERE [tipo_id] = @tipo_id;
+		SELECT * FROM [marketing].[tbl_gateway] WHERE [tipo_id] = @tipo_id AND [status] = 'AT';
 END TRY
 BEGIN CATCH	 
   EXEC [dbahelper].[stp_errorhandler] '[marketing].[stp_gateway_pesquisar]';

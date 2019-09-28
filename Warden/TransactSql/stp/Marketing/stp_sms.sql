@@ -9,9 +9,9 @@ WITH ENCRYPTION AS
 BEGIN SET NOCOUNT ON BEGIN TRY
 
 	IF @id IS NULL
-		SELECT * FROM [marketing].[viw_sms];
+		SELECT * FROM [marketing].[viw_sms] WHERE [status] = 'AT';
 	ELSE
-		SELECT * FROM [marketing].[tbl_sms] WHERE [id] = @id;
+		SELECT * FROM [marketing].[tbl_sms] WHERE [id] = @id AND [status] = 'AT';
 END TRY
 BEGIN CATCH	 
   EXEC [dbahelper].[stp_errorhandler] '[marketing].[stp_sms_pesquisar]';
@@ -38,6 +38,7 @@ SET LANGUAGE Português
 					FROM [marketing].[tbl_sms] AS A
 					INNER JOIN [marketing].[tbl_gateway] AS B
 						ON a.[gateway_id] = B.[id]
+					WHERE A.[status] = 'AT'
 				GROUP BY A.[data_cadastro]
 				) AS Z
 		GROUP BY Z.[mes];
@@ -49,6 +50,7 @@ SET LANGUAGE Português
 					INNER JOIN [marketing].[tbl_gateway] AS B
 						ON a.[gateway_id] = B.[id]
 					WHERE A.[gateway_id] = @gateway_id
+					AND A.[status] = 'AT'
 				GROUP BY A.[data_cadastro]
 				) AS Z
 		GROUP BY Z.[mes];

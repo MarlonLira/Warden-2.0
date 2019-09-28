@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="EmailUsc.ascx.cs" Inherits="Warden.Components.Controls.Marketing.EmailUsc" %>
+﻿<%@ Control Language="C#" CodeBehind="EmailUsc.ascx.cs" Inherits="Warden.Components.Controls.Marketing.EmailUsc" %>
 <%@ Import Namespace="Warden.Helper" %>
 
 <usc:ModalUsc runat="server" ComponentId="mdl_email" ID="mdlControl" Title="Resultado"/>
@@ -58,7 +58,7 @@
                 <div class="card-body">
                     <usc:TableUsc runat="server"  ComponentId="tblEmailControl"  ID="tblEmail"/>
                     <usc:ButtonUsc runat="server" ID="btnPesquisar" Text="Pesquisar" />
-                    <usc:ButtonUsc runat="server" ID="btnEnviar" Text="Enviar" />
+                    <usc:ButtonUsc runat="server" ID="btnEnviar" Text="Enviar"/>
                     <usc:ButtonUsc runat="server" ID="btnCancelar" Text="Cancelar" />
                 </div>
             </div>

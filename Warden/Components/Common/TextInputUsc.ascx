@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TextInputUsc.ascx.cs" Inherits="Warden.Components.Common.TextInputUsc" %>
+﻿<%@ Control Language="C#" CodeBehind="TextInputUsc.ascx.cs" Inherits="Warden.Components.Common.TextInputUsc" %>
 
 <%if (!IsIcon) { %>
 <div class="col-md-<%=Size %> pr-md-1">
