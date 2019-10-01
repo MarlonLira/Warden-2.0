@@ -17,7 +17,7 @@ namespace Warden.Components.Controls
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
             VerifyAndLoad();
-            Loading();
+            
             if (IsDispatch != true) {
                 btnEnviar.OnClick += new ButtonUsc.OnClickEvent(BtnEnviar_OnClick);
             } else {
@@ -65,7 +65,44 @@ namespace Warden.Components.Controls
                 GatewayTable = new DataTable();
                 GatewayTable = Gateway.Search(Type);
             }
-            
+
+            ddRecipient.ItemList = new List<ListItem>() {
+                new ListItem { Text = "Selecione uma opção", Value="0" },
+                new ListItem {Text = "Leads", Value = "1"},
+                new ListItem {Text = "Visitante", Value = "2"}
+            };
+
+            ddType.ItemList = new List<ListItem>() {
+                new ListItem { Text = "Selecione uma opção", Value="0" },
+                new ListItem {Text = "ShortCode", Value = "1"},
+                new ListItem {Text = "LongCode", Value = "2"},
+                new ListItem {Text = "Flash", Value = "3"}
+            };
+
+            ddCompany.ItemList = new List<ListItem>() {
+                new ListItem { Text = "Selecione uma opção", Value="0" },
+                new ListItem {Text = "Empresa 1", Value = "1"},
+                new ListItem {Text = "Empresa 2", Value = "2"},
+                new ListItem {Text = "Empresa 3", Value = "3"}
+            };
+
+            ddSendType.ItemList = new List<ListItem>() {
+                new ListItem { Text = "Selecione uma opção", Value="0" },
+                new ListItem {Text = "Simples", Value = "1"},
+                new ListItem {Text = "Multiplo", Value = "2"}
+            };
+
+            ddRecipient.LoadDataSource();
+            ddType.LoadDataSource();
+            ddCompany.LoadDataSource();
+            ddSendType.LoadDataSource();
+
+            ddSendType.SelectedValue = "2";
+            ddCompany.Enabled = false;
+            ddSendType.Enabled = false;
+            ddRecipient.Enabled = false;
+            ddRecipient.SelectedValue = "1";
+
             ddGateway.LoadDataSource(GatewayTable);
         }
 
@@ -79,7 +116,7 @@ namespace Warden.Components.Controls
             String[] AmountEdit = String.IsNullOrEmpty(txtNumberList.Text) ? null : txtNumberList.Text.Split(';');
             try {
                 if (AmountEdit == null || AmountEdit.Length == 0) { throw new Exception("Porfavor informe um número!"); }
-                if (txtText.Text.Length < 11 || txtText.Text.Length > 11) { throw new Exception("Porfavor informe um número valido no formato de 11 digitos (Ex:81988887777)!"); }
+
                 IsDispatch = true;
                 Sms = new SmsPst();
                 Sms.Title = txtTitle.Text;
@@ -111,51 +148,12 @@ namespace Warden.Components.Controls
                 };
 
                 Sms.Send();
-                ResultEvent =  new ResultEvent("Envio Concluido com Sucesso!");
+                //ResultEvent =  new ResultEvent("Envio Concluido com Sucesso!");
                 ShowMessage.OpenModal("Resultado", "Envio Concluido com Sucesso!");
             } catch (Exception Except) {
                 ShowMessage.OpenModal("Error", Except.Message);
-                ResultEvent = new ResultEvent(Except.Message);
+                //ResultEvent = new ResultEvent(Except.Message);
             }
-        }
-
-        //Temporario
-        public void Loading() {
-            ddRecipient.ItemList = new List<ListItem>() {
-                new ListItem { Text = "Selecione uma opção", Value="0" },
-                new ListItem {Text = "Aluno", Value = "1"},
-                new ListItem {Text = "Visitante", Value = "2"}
-            };
-
-            ddType.ItemList = new List<ListItem>() {
-                new ListItem { Text = "Selecione uma opção", Value="0" },
-                new ListItem {Text = "ShortCode", Value = "1"},
-                new ListItem {Text = "LongCode", Value = "2"},
-                new ListItem {Text = "Flash", Value = "3"}
-            };
-
-            ddCompany.ItemList = new List<ListItem>() {
-                new ListItem { Text = "Selecione uma opção", Value="0" },
-                new ListItem {Text = "Empresa 1", Value = "1"},
-                new ListItem {Text = "Empresa 2", Value = "2"},
-                new ListItem {Text = "Empresa 3", Value = "3"}
-            };
-
-            ddSendType.ItemList = new List<ListItem>() {
-                new ListItem { Text = "Selecione uma opção", Value="0" },
-                new ListItem {Text = "Simples", Value = "1"},
-                new ListItem {Text = "Multiplo", Value = "2"}
-            };
-
-            ddRecipient.LoadDataSource();
-            ddType.LoadDataSource();
-            ddCompany.LoadDataSource();
-            ddSendType.LoadDataSource();
-      
-            ddSendType.SelectedValue = "2";
-            ddCompany.Enabled = false;
-            ddSendType.Enabled = false;
-            ddRecipient.Enabled = false;
         }
 
         private DataTable GetData() {

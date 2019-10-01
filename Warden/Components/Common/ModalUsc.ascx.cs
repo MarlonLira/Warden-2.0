@@ -22,7 +22,7 @@ namespace Warden.Components.Common {
 
         public void OpenModal() {
             if (!String.IsNullOrEmpty(ComponentId)) {
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), ComponentId, "$(function() {openModal();});", true);
+                ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), ComponentId, "$(function() {openModal();});", true);
             }
         }
 
@@ -31,7 +31,7 @@ namespace Warden.Components.Common {
             this.Title = Title;
 
             if (!String.IsNullOrEmpty(Component)) {
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), Component, "$(function() {openModal();});", true);
+                ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), Component, "$(function() {openModal();});", true);
             }
         }
 
@@ -40,7 +40,7 @@ namespace Warden.Components.Common {
             this.Title = Title;
 
             if (!String.IsNullOrEmpty(ComponentId)) {
-                ScriptManager.RegisterStartupScript(Page, Page.GetType(), ComponentId, "$(function() {openModal();});", true);
+                ScriptManager.RegisterStartupScript(this, GetType(), Guid.NewGuid().ToString(), "$('#"+ ComponentId +"').modal('show');", true);
             }
         }
 

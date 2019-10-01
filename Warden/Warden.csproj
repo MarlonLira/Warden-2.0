@@ -565,6 +565,7 @@
     <Compile Include="Models\EventDAO.cs" />
     <Compile Include="Models\Marketing\Gateway.cs" />
     <Compile Include="Models\ImproperCalendarEvent.cs" />
+    <Compile Include="Models\Marketing\Lead.cs" />
     <Compile Include="Models\Marketing\Messages.cs" />
     <Compile Include="Models\Marketing\Sms.cs" />
     <Compile Include="Models\Marketing\Type.cs" />
@@ -574,6 +575,7 @@
     <Compile Include="Persistences\DbConnect.cs" />
     <Compile Include="Persistences\Marketing\EmailPst.cs" />
     <Compile Include="Persistences\Marketing\GatewayPst.cs" />
+    <Compile Include="Persistences\Marketing\LeadPst.cs" />
     <Compile Include="Persistences\Marketing\SmsPst.cs" />
     <Compile Include="Persistences\Marketing\TypePst.cs" />
     <Compile Include="Persistences\Marketing\WhatsAppPst.cs" />

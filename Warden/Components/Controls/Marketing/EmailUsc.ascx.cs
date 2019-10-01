@@ -60,7 +60,7 @@ namespace Warden.Components.Controls.Marketing {
 
             ddRecipient.ItemList = new List<ListItem>() {
                 new ListItem { Text = "Selecione uma opção", Value="0" },
-                new ListItem {Text = "Aluno", Value = "1"},
+                new ListItem {Text = "Leads", Value = "1"},
                 new ListItem {Text = "Visitante", Value = "2"}
             };
 
@@ -74,7 +74,7 @@ namespace Warden.Components.Controls.Marketing {
             ddRecipient.LoadDataSource();
             ddCompany.LoadDataSource();
             ddGateway.LoadDataSource(GatewayTable);
-
+            ddRecipient.SelectedValue = "1";
             ddCompany.Enabled = false;
             ddRecipient.Enabled = false;
         }

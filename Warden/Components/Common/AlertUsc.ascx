@@ -9,3 +9,14 @@
     </div>
 </asp:Panel>
 
+<!--
+    alert-info == blue
+    alert-dark == black
+    alert-primary == pink
+    alert-secondary == white
+    alert == transparent
+    alert-danger == lightpink
+    alert-warning == orange
+    alert-light == lightgrey
+    alert-success == green
+    -->
