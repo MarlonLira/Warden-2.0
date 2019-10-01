@@ -18,7 +18,7 @@ BEGIN CATCH
 END CATCH END;
 GO
 
---
+-- exec [marketing].[stp_sms_pesquisar_quantidade]
 
 IF EXISTS (SELECT TOP 1 [id] FROM dbo.sysobjects WHERE id = object_id(N'[marketing].[stp_sms_pesquisar_quantidade]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
   DROP PROCEDURE [marketing].[stp_sms_pesquisar_quantidade];
@@ -42,6 +42,7 @@ SET LANGUAGE Português
 				GROUP BY A.[data_cadastro]
 				) AS Z
 		GROUP BY Z.[mes];
+		
 	ELSE
 		SELECT SUM(Z.[quantidade_total]) AS [quantidade_total], Z.[mes]
 			FROM (
