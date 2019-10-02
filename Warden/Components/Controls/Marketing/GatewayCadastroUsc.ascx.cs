@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using Warden.Components.Common;
+using Warden.Models;
 using Warden.Persistences;
 using Warden.Persistences.Marketing;
 
@@ -99,11 +100,13 @@ namespace Warden.Components.Controls.Marketing {
                 if (!String.IsNullOrEmpty(txtUser.Text)) {
                     Gateway.Save();
                 }
-                
+
+                ResultEvent = new ResultEvent("Cadastro Realizado com Sucesso!");
                 ShowMessage.OpenModal("Resultado", "Cadastro Realizado com Sucesso!");
 
             } catch (Exception Except) {
                 ShowMessage.OpenModal("Error", Except.Message);
+                ResultEvent = new ResultEvent(Except.Message);
             } finally {
                 btnGatewayRegister = null;
                 Response.Redirect("~/Views/Marketing/MktConfigPge.aspx", false);

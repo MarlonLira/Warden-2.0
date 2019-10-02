@@ -36,3 +36,45 @@ C:\Web\Warden-2.0\Warden\Warden\obj\Release\Warden.csproj.CopyComplete
 C:\Web\Warden-2.0\Warden\Warden\obj\Release\Warden.dll
 C:\Web\Warden-2.0\Warden\Warden\obj\Release\Warden.pdb
 C:\Web\Warden-2.0\Warden\Warden\obj\Release\Warden.csprojAssemblyReference.cache
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\Warden.dll.config
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\Warden.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\Warden.pdb
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\csc.exe
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\csc.exe.config
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\csc.rsp
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\csi.exe
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\csi.rsp
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\System.AppContext.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\vbc.exe
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\vbc.exe.config
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\vbc.rsp
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\VBCSCompiler.exe
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\EntityFramework.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\EntityFramework.SqlServer.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\Newtonsoft.Json.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\EntityFramework.xml
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\EntityFramework.SqlServer.xml
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\Newtonsoft.Json.xml
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\obj\Release\Warden.csproj.CoreCompileInputs.cache
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\obj\Release\Warden.csproj.CopyComplete
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\obj\Release\Warden.dll
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\obj\Release\Warden.pdb
+C:\Users\Academia Brilhante\Desktop\Warden\Warden-2.0\Warden\obj\Release\Warden.csprojAssemblyReference.cache

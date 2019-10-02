@@ -807,6 +807,7 @@
     <Content Include="JsonResponse.ashx" />
     <None Include="packages.config" />
     <Content Include="wardenkey.pfx" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
