@@ -148,11 +148,11 @@ namespace Warden.Components.Controls
                 };
 
                 Sms.Send();
-                //ResultEvent =  new ResultEvent("Envio Concluido com Sucesso!");
+                ResultEvent =  new ResultEvent("Envio Concluido com Sucesso!");
                 ShowMessage.OpenModal("Resultado", "Envio Concluido com Sucesso!");
             } catch (Exception Except) {
                 ShowMessage.OpenModal("Error", Except.Message);
-                //ResultEvent = new ResultEvent(Except.Message);
+                ResultEvent = new ResultEvent(Except.Message);
             }
         }
 

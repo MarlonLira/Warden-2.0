@@ -23,5 +23,16 @@
             </div>
         </div>
     </div>
+    <%if (ResultEvent != null) {
+            AlertResult.Text = ResultEvent.Text;
+       %>
+        <div style="margin: -175px; margin-left:1px; float:left" class="col-lg-6 col-md-12">
+            <usc:AlertUsc ID="AlertResult" runat="server" Title="Resultado:"/>
+        </div>
+    <%}
+        if (!String.IsNullOrEmpty(AlertResult.Text) && !IsPostBack) {
+            ResultEvent = null;
+        }
+        %>
 
 </asp:Content>

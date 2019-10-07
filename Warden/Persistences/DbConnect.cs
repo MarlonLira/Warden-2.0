@@ -13,7 +13,7 @@ namespace Warden.Persistences {
 
         #region Atributes
 
-        private string CreateGestorCon = ConfigurationManager.ConnectionStrings["gestor2"].ConnectionString;
+        private string CreateWardenWebCon = ConfigurationManager.ConnectionStrings["warden_web"].ConnectionString;
         private string CreateWardenCon = ConfigurationManager.ConnectionStrings["warden"].ConnectionString;
 
         public SqlConnection Con;
@@ -35,7 +35,6 @@ namespace Warden.Persistences {
             CloseCon();
 
         }
-
         public void ExecuteNonQuery(String Query) {
             Sql = new SqlCommand();
             OpenCon();
@@ -79,22 +78,6 @@ namespace Warden.Persistences {
             Con.Open();
         }
 
-        public void OpenGestorCon() {
-            Con = new SqlConnection(CreateGestorCon);
-            Sql = new SqlCommand();
-            Sql.CommandType = CommandType.Text;
-            Sql.CommandTimeout = 600;
-            Con.Open();
-        }
-      
-        public void OpenWardenCon() {
-            Con = new SqlConnection(CreateWardenCon);
-            Sql = new SqlCommand();
-            Sql.CommandType = CommandType.Text;
-            Sql.CommandTimeout = 600;
-            Con.Open();
-        }
-
         public void OpenAdpter(String Script) {
             Adapt = new SqlDataAdapter(Script, Con);
             Adapt.SelectCommand.CommandTimeout = 600;
@@ -114,11 +97,7 @@ namespace Warden.Persistences {
 
             if (NewDbConnect == null) {
                 NewDbConnect = new DbConnect();
-                if (Sql.ToUpperInvariant() == "GESTOR2") {
-                    DbConnect.OpenGestorCon();
-                } else {
-                    DbConnect.OpenWardenCon();
-                }
+                DbConnect.OpenCon();
             }
             NewDbConnect = DbConnect;
             return NewDbConnect;
