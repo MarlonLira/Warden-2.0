@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebMst.Master" AutoEventWireup="true" CodeBehind="MktConfigPge.aspx.cs" Inherits="Warden.Views.Marketing.MktConfigPge" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/WebMst.Master" CodeBehind="MktConfigPge.aspx.cs" Inherits="Warden.Views.Marketing.MktConfigPge" EnableEventValidation="false" AutoEventWireup="true"%> 
 <asp:Content ID="cttMktConfig" ContentPlaceHolderID="cph_main" runat="server">
 
     <div class="row">
@@ -9,6 +9,8 @@
                         <usc:TableUsc runat="server"  ComponentId="tblMktControl"  ID="tblMktConfig"/>
                         <usc:GatewayCadastroUsc runat="server" ComponentId="gtwCadastro" ID="gtwCadastro" Visibled="false" />
                         <usc:ButtonUsc runat="server" ID="btnGatewayRegister" Text="Cadastrar" />
+                        <usc:ButtonUsc runat="server" ID="btnGatewaySave" Text="Salvar" Visible="false" />
+                    <usc:ButtonUsc runat="server" ID="btnGatewayBack" Text="Voltar" Visible="false"/>
                     </div>
                 </div>
             </div>
@@ -18,7 +20,10 @@
                 <div class="card-body">
                     <usc:LabelUsc Text ="Tipos" Bold="true" FontSize="15" runat="server" ID="lblType"/>
                     <usc:TableUsc runat="server"  ComponentId="tbltypeControl"  ID="tblTypeConfig"/>
+                    <usc:TypeCadastroUsc runat="server" ComponentId="typeCadastro" ID="TypeCadastro" Visibled="false" />
                     <usc:ButtonUsc runat="server" ID="btnTypeRegister" Text="Cadastrar" />
+                    <usc:ButtonUsc runat="server" ID="btnTypeSave" Text="Salvar" Visible="false" />
+                    <usc:ButtonUsc runat="server" ID="btnTypeBack" Text="Voltar" Visible="false"/>
                 </div>
             </div>
         </div>

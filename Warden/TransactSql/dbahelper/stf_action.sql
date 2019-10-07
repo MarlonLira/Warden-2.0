@@ -1,4 +1,4 @@
-﻿
+﻿USE WARDEN;
 
 IF (SELECT COUNT(1) FROM [sys].[objects] WHERE [object_id] = OBJECT_ID(N'[dbahelper].[stf_exists_view]') AND [type] in (N'FN', N'IF', N'TF', N'FS', N'FT')) > 0
   DROP FUNCTION [dbahelper].[stf_exists_view];

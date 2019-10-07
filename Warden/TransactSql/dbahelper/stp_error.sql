@@ -1,4 +1,4 @@
-﻿
+﻿USE WARDEN;
 
 IF EXISTS (SELECT * FROM dbo.sysobjects WHERE id = object_id(N'[dbahelper].[stp_error]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
   DROP PROCEDURE [dbahelper].[stp_error]

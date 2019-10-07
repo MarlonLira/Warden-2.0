@@ -10,6 +10,7 @@
     <usc:CssUsc runat="server" ID="css_control" />
 </head>
 <body class="sidebar-mini">
+    <usc:ModalUsc runat="server" ComponentId="result" ID="mdlControl" Title="Resultado"/>
     <form id="frm_main" runat="server" class="wrapper">
         <usc:SearchModalUsc runat="server" />
         <usc:SidebarUsc runat="server" />

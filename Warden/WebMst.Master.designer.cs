@@ -7,11 +7,13 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace Warden {
-    
-    
-    public partial class WebMst {
-        
+namespace Warden
+{
+
+
+    public partial class WebMst
+    {
+
         /// <summary>
         /// Controle css_control.
         /// </summary>
@@ -20,7 +22,16 @@ namespace Warden {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::Warden.Components.Styles.CssUsc css_control;
-        
+
+        /// <summary>
+        /// Controle mdlControl.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::Warden.Components.Common.ModalUsc mdlControl;
+
         /// <summary>
         /// Controle frm_main.
         /// </summary>
@@ -29,7 +40,7 @@ namespace Warden {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm frm_main;
-        
+
         /// <summary>
         /// Controle scpManager.
         /// </summary>
@@ -38,7 +49,7 @@ namespace Warden {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager scpManager;
-        
+
         /// <summary>
         /// Controle updPainel.
         /// </summary>
@@ -47,7 +58,7 @@ namespace Warden {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel updPainel;
-        
+
         /// <summary>
         /// Controle cph_main.
         /// </summary>
@@ -56,7 +67,7 @@ namespace Warden {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder cph_main;
-        
+
         /// <summary>
         /// Controle js_control.
         /// </summary>

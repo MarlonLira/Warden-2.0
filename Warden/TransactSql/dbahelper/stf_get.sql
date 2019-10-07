@@ -1,4 +1,4 @@
-﻿
+﻿USE WARDEN;
 
 IF EXISTS (SELECT TOP 1 [object_id] FROM sys.objects WHERE [object_id] = OBJECT_ID(N'[dbahelper].[stf_get_current_date]') AND [type] in (N'FN', N'IF', N'TF', N'FS', N'FT'))
   DROP FUNCTION [dbahelper].[stf_get_current_date];

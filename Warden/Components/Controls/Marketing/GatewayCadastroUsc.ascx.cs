@@ -9,12 +9,11 @@ namespace Warden.Components.Controls.Marketing {
     public partial class GatewayCadastroUsc : BaseControlsUsc
     {
         #region Events
-
-        protected override void OnLoad(EventArgs e) {
-            base.OnLoad(e);
+ 
+        public override void LoadDataSource()
+        {
+            base.LoadDataSource();
             VerifyAndLoad();
-            btnGatewayRegister.OnClick += new ButtonUsc.OnClickEvent(BtnGatewayRegister_OnClick);
-            btnBack.OnClick += new ButtonUsc.OnClickEvent(BtnBack_OnClick);
             ddType.OnSelectedIndexChanged += new DropdownUsc.OnSelectedIndexChangedEvent(DdType_OnSelectedIndexChanged);
         }
 
@@ -76,7 +75,37 @@ namespace Warden.Components.Controls.Marketing {
 
             ddType.LoadDataSource(TypeTable);
         }
+        public GatewayPst GetValues()
+        {
+            GatewayPst Gateway;
+            try
+            {
+                IsRegister = true;
 
+                Gateway = new GatewayPst();
+                Gateway.Status = "AT";
+                Gateway.Audit = AuthenticatedUser.RegistryCode + " - " + DateTime.UtcNow.AddHours(-3) + " - SALVAR";
+                Gateway.Url = txtUrl.Text;
+                Gateway.Credit = 0;
+                Gateway.Name = txtName.Text;
+                Gateway.Pass = txtPass.Text;
+                Gateway.User = txtUser.Text;
+                Gateway.Token = String.IsNullOrEmpty(txtToken.Text) ? "SEM TOKEN" : txtToken.Text;
+                Gateway.Type = new TypePst() { Id = Convert.ToInt32(ddType.SelectedValue), Name = ddType.Text };
+
+                if (Gateway.Type.Id == 2)
+                {
+                    Gateway.Url = txtUrl.Text + "|" + txtPort.Text;
+                }
+
+                return Gateway;
+
+            }
+            finally
+            {
+                Gateway = null;
+            }
+        }
         private void Register() {
             GatewayPst Gateway;
             IsRegister = true;
@@ -102,13 +131,12 @@ namespace Warden.Components.Controls.Marketing {
                 }
 
                 ResultEvent = new ResultEvent("Cadastro Realizado com Sucesso!");
-                ShowMessage.OpenModal("Resultado", "Cadastro Realizado com Sucesso!");
+                ShowMessage.Open("Resultado", "Cadastro Realizado com Sucesso!");
 
             } catch (Exception Except) {
-                ShowMessage.OpenModal("Error", Except.Message);
+                ShowMessage.Open("Error", Except.Message);
                 ResultEvent = new ResultEvent(Except.Message);
             } finally {
-                btnGatewayRegister = null;
                 Response.Redirect("~/Views/Marketing/MktConfigPge.aspx", false);
             }
         }

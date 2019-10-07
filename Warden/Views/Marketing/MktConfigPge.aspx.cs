@@ -14,6 +14,46 @@ namespace Warden.Views.Marketing {
             base.OnLoad(e);
             LoadTable();
             btnGatewayRegister.OnClick += new ButtonUsc.OnClickEvent(BtnGatewayRegister_OnClick);
+            btnGatewayBack.OnClick += new ButtonUsc.OnClickEvent (BtnGatewayBack_OnClick);
+            btnGatewaySave.OnClick += new ButtonUsc.OnClickEvent(BtnGatewaySave_OnClick);
+            btnTypeRegister.OnClick +=  new ButtonUsc.OnClickEvent(BtnTypeRegister_OnClick);
+            btnTypeSave.OnClick += new ButtonUsc.OnClickEvent(BtnTypeSave_OnClick);
+            btnTypeBack.OnClick += new ButtonUsc.OnClickEvent(BtnTypeBack_OnClick);
+        }
+
+        private void BtnTypeBack_OnClick()
+        {
+            Response.Redirect("~/Views/Marketing/MktConfigPge.aspx", false);
+        }
+
+        private void BtnGatewaySave_OnClick()
+        {
+            IsRegister = IsRegister.Gateway;
+            Save();
+        }
+
+        private void BtnGatewayBack_OnClick()
+        {
+            Response.Redirect("~/Views/Marketing/MktConfigPge.aspx", false);
+        }
+
+        private void BtnTypeSave_OnClick()
+        {
+            if (!IsPostBack) {
+                IsRegister = IsRegister.Type;
+                Save();
+            }
+        }
+        private void BtnTypeRegister_OnClick()
+        {
+            TypeCadastro.Visible = true;
+            TypeCadastro.Visibled = true;
+            TypeCadastro.Enabled = true;
+            tblTypeConfig.Visible = false;
+            btnTypeRegister.Visible = false;
+            btnTypeSave.Visible = true;
+            btnTypeBack.Visible = true;
+            lblType.Visible = false;
         }
 
         private void BtnGatewayRegister_OnClick() {
@@ -22,7 +62,10 @@ namespace Warden.Views.Marketing {
             gtwCadastro.Enabled = true;
             tblMktConfig.Visible = false;
             btnGatewayRegister.Visible = false;
+            btnGatewaySave.Visible = true;
+            btnGatewayBack.Visible = true;
             lblGateway.Visible = false;
+            gtwCadastro.LoadDataSource();
         }
 
         #endregion
@@ -33,9 +76,41 @@ namespace Warden.Views.Marketing {
             get { return Session["GatewayRegister"] == null ? false : Convert.ToBoolean(Session["GatewayRegister"]);}
         }
 
+        private IsRegister IsRegister { get; set; }
+
         #endregion
 
         #region Methods
+
+        private void Save()
+        {
+            try
+            {
+                switch (IsRegister)
+                {
+                    case IsRegister.Gateway:
+                        {
+                            GatewayPst Gateway;
+                            Gateway= gtwCadastro.GetValues();
+                            Gateway.Save();
+                            Response.Redirect("~/Views/Marketing/MktConfigPge.aspx", false);
+                            break;
+                        }
+                    case IsRegister.Type:
+                        {
+                            TypePst Type;
+                            Type = TypeCadastro.GetValues();
+                            Type.Save();
+                            Response.Redirect("~/Views/Marketing/MktConfigPge.aspx", false);
+                            break;
+                        }
+                }
+            }
+            catch(Exception Except)
+            {
+
+            }
+        }
 
         private void LoadTable() {
             GatewayPst Gateway = new GatewayPst();
@@ -83,5 +158,10 @@ namespace Warden.Views.Marketing {
         }
 
         #endregion
+    }
+
+    public enum IsRegister{
+        Type,
+        Gateway
     }
 }

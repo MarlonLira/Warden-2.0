@@ -4,9 +4,6 @@ using System.Web.UI.WebControls;
 
 namespace Warden.Components.Common {
     public partial class BaseChartUsc : BaseUsc {
-        protected override void OnLoad(EventArgs e) {
-            base.OnLoad(e);
-        }
 
         public String[] ArrayValues { get; set; }
         public String[] ArrayTitles { get; set; }

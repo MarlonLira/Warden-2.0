@@ -8,14 +8,6 @@ using Warden.Persistences.Administration;
 namespace Warden.Components {
     public partial class BaseUsc : UserControl {
 
-        #region Events
-
-        protected override void OnLoad(EventArgs e) {
-            base.OnLoad(e);
-        }
-
-        #endregion
-
         #region Atributes
 
         protected UserPst AuthenticatedUser { get { return Session["User"] == null ? null : (UserPst)Session["User"]; } }

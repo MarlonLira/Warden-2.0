@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="GatewayCadastroUsc.ascx.cs" Inherits="Warden.Components.Controls.Marketing.GatewayCadastroUsc" %>
+﻿<%@ Control Language="C#" CodeBehind="GatewayCadastroUsc.ascx.cs" Inherits="Warden.Components.Controls.Marketing.GatewayCadastroUsc" %>
 
 <usc:ModalUsc runat="server" ComponentId="mdl_gateway_cadastro" ID="mdlControl" Title="Resultado"/>
 
@@ -25,10 +25,6 @@
                         <div style="padding-left:5px; padding-right:5px;padding-top:10px; padding-bottom:10px">
                             <usc:LabelUsc runat="server" Text="Tipo" ID="lblType" Bold="true" FontSize="10" />
                             <usc:DropdownUsc runat="server" ID="ddType" />
-                        </div>
-                        <div>
-                            <usc:ButtonUsc runat="server" ID="btnGatewayRegister" Text="Cadastrar"/>
-                            <usc:ButtonUsc runat="server" ID="btnBack" Text="Voltar" />
                         </div>
                     </div>
                 </div>

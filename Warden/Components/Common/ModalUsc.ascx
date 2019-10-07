@@ -9,13 +9,9 @@
                     <i class="tim-icons icon-simple-remove"></i>
                 </button>
             </div>
-            <asp:UpdatePanel ID="updPainel2" runat="server" UpdateMode="Conditional" >
-                <ContentTemplate>
-                    <div class="modal-body">
-                    <%=Text%>
-                    </div>
-                </ContentTemplate>
-            </asp:UpdatePanel>
+                <div class="modal-body">
+                <%=Text%>
+                </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                 <!--<button type="button" class="btn btn-primary">Ok</button>-->
@@ -26,7 +22,7 @@
 
 
 <script type="text/javascript">
-    function openModal() {
+    function Open() {
         $('#<%=ComponentId%>').modal('show');
     }
 </script>

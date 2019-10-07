@@ -24,14 +24,14 @@ namespace Warden.Views {
         private void ButtonUsc1_OnClick() {
             //Session.Add("Error", "Testando componente");
             mdl_control.Text = "Testando o Componente Modal";
-            mdl_control.OpenModal();
-            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "mdl_erro", "$(function() {openModal();});", true);
-            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "mdl_erro", "openModal();", true);
+            mdl_control.Open();
+            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "mdl_erro", "$(function() {Open();});", true);
+            //ScriptManager.RegisterStartupScript(Page, Page.GetType(), "mdl_erro", "Open();", true);
         }
 
         private void ButtonUsc2_OnClick() {
             mdl_control.Text = "Testando o Componente Modal 2";
-            mdl_control.OpenModal();
+            mdl_control.Open();
         }
         private void Btn_teste_OnClick() {
             txt_teste.Text = dd_teste2.SelectedValue;

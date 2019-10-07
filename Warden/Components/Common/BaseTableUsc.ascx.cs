@@ -18,10 +18,6 @@ namespace Warden.Components.Common {
         public String HtmlDataSource { get; set; }
         public DataTable DataSource { get; set; }
 
-        protected override void OnLoad(EventArgs e) {
-            base.OnLoad(e);
-        }
-
         public String TableLoad(DataTable Table) {
             StringBuilder NewTable;
             Int32 Count = 1;

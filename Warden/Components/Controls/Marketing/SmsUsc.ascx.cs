@@ -149,9 +149,9 @@ namespace Warden.Components.Controls
 
                 Sms.Send();
                 ResultEvent =  new ResultEvent("Envio Concluido com Sucesso!");
-                ShowMessage.OpenModal("Resultado", "Envio Concluido com Sucesso!");
+                ShowMessage.Open("Resultado", "Envio Concluido com Sucesso!");
             } catch (Exception Except) {
-                ShowMessage.OpenModal("Error", Except.Message);
+                ShowMessage.Open("Error", Except.Message);
                 ResultEvent = new ResultEvent(Except.Message);
             }
         }

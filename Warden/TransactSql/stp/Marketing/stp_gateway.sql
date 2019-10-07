@@ -1,4 +1,4 @@
-﻿
+﻿USE WARDEN;
 
 --EXEC [marketing].[stp_gateway_pesquisar]
 IF EXISTS (SELECT TOP 1 [id] FROM dbo.sysobjects WHERE id = object_id(N'[marketing].[stp_gateway_pesquisar]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)

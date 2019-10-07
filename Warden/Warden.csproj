@@ -179,6 +179,7 @@
     <Content Include="Components\Controls\MapUsc.ascx" />
     <Content Include="Components\Controls\Marketing\EmailUsc.ascx" />
     <Content Include="Components\Controls\Marketing\GatewayCadastroUsc.ascx" />
+    <Content Include="Components\Controls\Marketing\TypeCadastroUsc.ascx" />
     <Content Include="Components\Controls\NavbarUsc.ascx" />
     <Content Include="Components\Controls\SettingsUsc.ascx" />
     <Content Include="Components\Controls\SidebarUsc.ascx" />
@@ -455,6 +456,13 @@
     </Compile>
     <Compile Include="Components\Controls\Marketing\GatewayCadastroUsc.ascx.designer.cs">
       <DependentUpon>GatewayCadastroUsc.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Components\Controls\Marketing\TypeCadastroUsc.ascx.cs">
+      <DependentUpon>TypeCadastroUsc.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Components\Controls\Marketing\TypeCadastroUsc.ascx.designer.cs">
+      <DependentUpon>TypeCadastroUsc.ascx</DependentUpon>
     </Compile>
     <Compile Include="Components\Controls\NavbarUsc.ascx.cs">
       <DependentUpon>NavbarUsc.ascx</DependentUpon>
@@ -806,7 +814,6 @@
     <Content Include="assets\scss\black-dashboard\_typography.scss" />
     <Content Include="JsonResponse.ashx" />
     <None Include="packages.config" />
-    <Content Include="wardenkey.pfx" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -822,10 +829,11 @@
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>wardenkey.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>false</DelaySign>

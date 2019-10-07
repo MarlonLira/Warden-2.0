@@ -1,3 +1,4 @@
+USE WARDEN;
 
 IF EXISTS (SELECT TOP 1 [id] FROM dbo.sysobjects WHERE id = object_id(N'[marketing].[stp_sms_pesquisar]') AND OBJECTPROPERTY(id, N'IsProcedure') = 1)
   DROP PROCEDURE [marketing].[stp_sms_pesquisar];

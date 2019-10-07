@@ -8,8 +8,6 @@ namespace Warden.Persistences.Marketing
     public class TypePst : Models.Marketing.Type, IEntitie
     {
         private const String COMMON_ATTRIBUTES = "@auditoria, @status, @nome";
-
-        private DbConnect DbConnect { get; set; }
         public string Delete() {
             throw new NotImplementedException();
         }
@@ -19,9 +17,8 @@ namespace Warden.Persistences.Marketing
             String Query = "EXEC [marketing].[stp_tipo_salvar] @id OUTPUT, ";
             Int32 NewId = (Int32)DbType.Int32;
             try {
-                DbConnect = new DbConnect();
 
-                DbConnect.ExecuteNonQuery(Query, COMMON_ATTRIBUTES, new SqlParameter[] {
+                Sql.ExecuteNonQuery(Query, COMMON_ATTRIBUTES, new SqlParameter[] {
                      new SqlParameter("@id", NewId),
                      new SqlParameter("@auditoria", this.Audit),
                      new SqlParameter("@status", this.Status),
@@ -38,9 +35,8 @@ namespace Warden.Persistences.Marketing
         public DataTable Search() {
             DataTable Table;
             String Query = "EXEC [marketing].[stp_tipo_pesquisar]";
-
-            DbConnect = new DbConnect();
-            Table = DbConnect.ExecuteReader(Query);
+          
+            Table = Sql.ExecuteReader(Query);
 
             return Table;
         }

@@ -8,7 +8,7 @@ namespace Warden {
     public partial class BasePge : Page {
         protected override void OnLoad(EventArgs e) {
             base.OnLoad(e);
-            /*UserPst Teste = new UserPst() {
+            UserPst Teste = new UserPst() {
                 Name = "Administrator",
                 Id = 1,
                 Email = "Admin",
@@ -17,7 +17,7 @@ namespace Warden {
                 RegistryCode = "000.111.333-44"
             };
 
-            Session.Add("User", Teste);*/
+            Session.Add("User", Teste);
             UserVerify();
         }
 
@@ -39,7 +39,7 @@ namespace Warden {
             mdl_control_error = new Components.Common.ModalUsc();
             mdl_control_error.Text = Error;
             mdl_control_error.Title = "Error";
-            mdl_control_error.OpenModal();
+            mdl_control_error.Open();
         }
 
         public void UserVerify() {

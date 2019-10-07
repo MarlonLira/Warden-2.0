@@ -9,10 +9,6 @@ namespace Warden.Components.Common
 {
     public partial class MenuButtonUsc : BaseUsc
     {
-        protected override void OnLoad(EventArgs e) {
-            base.OnLoad(e);
-        }
-
         public String Url { get; set; }
         public String SmallText { get; set; }
     }

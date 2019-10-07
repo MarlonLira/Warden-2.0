@@ -16,10 +16,6 @@ namespace Warden.Components.Common {
         public delegate void OnSelectedIndexChangedEvent();
         public event OnSelectedIndexChangedEvent OnSelectedIndexChanged;
 
-        protected override void OnLoad(EventArgs e) {
-            base.OnLoad(e);
-        }
-
         public Boolean Enabled { set { this.pnlControl.Enabled = value; } }
         public List<ListItem> ItemList { get; set; }
         public ListItem SelectedItem {

@@ -124,9 +124,9 @@ namespace Warden.Components.Controls.Marketing {
 
                 Email.Send();
 
-                ShowMessage.OpenModal("Resultado", "Envio Concluido com Sucesso!");
+                ShowMessage.Open("Resultado", "Envio Concluido com Sucesso!");
             } catch (Exception Except) {
-                ShowMessage.OpenModal("Error", Except.Message);
+                ShowMessage.Open("Error", Except.Message);
             } 
         }
 
